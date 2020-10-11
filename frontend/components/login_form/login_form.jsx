@@ -1,4 +1,5 @@
 import React from 'react'
+import Errors from '../errors/errors'
 
 class LoginForm extends React.Component {
   constructor(props){
@@ -22,6 +23,7 @@ class LoginForm extends React.Component {
   render(){
     return (
       <div>
+        <Errors errors={ this.props.errors }/>
         <form onSubmit={ this.handleSubmit }>
           <input
             onChange={this.handleChange("username")}

@@ -6,8 +6,14 @@ class Errors extends React.Component {
   }
 
   render() {
+    let errors = null;
+    if (this.props.errors.login) {
+      errors = this.props.errors.login.join(", ")
+    }
     return(
-      <div>Erors</div>
+      <div>
+        { errors }
+      </div>
     )
   }
 }
