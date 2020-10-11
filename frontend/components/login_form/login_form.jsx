@@ -3,6 +3,7 @@ import React from 'react'
 class LoginForm extends React.Component {
   constructor(props){
     super(props)
+    this.state = { username: "", password: "" }
   }
 
   render(){
@@ -11,3 +12,5 @@ class LoginForm extends React.Component {
     )
   }
 }
+
+export default LoginForm;

@@ -9,11 +9,14 @@ import { signup, login, logout } from './actions/session_actions/session_actions
 // import * as UserAPIUtil from './util/user_api_util/user_api_util'
 import { fetchAllUsers } from './actions/user_actions/user_actions'
 
+//testing log in form container 
+import Root from './components/root'
+
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root")
   const store = configureStore();
 
-  ReactDOM.render(<div>We are in React</div>, root)
+  ReactDOM.render(<Root store={ store }/>, root)
 
   //testing store on window
   window.getState = store.getState
