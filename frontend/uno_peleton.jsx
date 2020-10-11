@@ -5,6 +5,9 @@ import configureStore from './store/store'
 //testing thunk action creators
 import { signup, login, logout } from './actions/session_actions/session_actions'
 
+//testing ajax calls
+import * as UserAPIUtil from './util/user_api_util/user_api_util'
+
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root")
   const store = configureStore();
@@ -17,5 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.signup = signup
   window.login = login
   window.logout = logout
-
+  window.fetchAllUsers = UserAPIUtil.fetchAllUsers
+  window.fetchUser = UserAPIUtil.fetchUser
 })
