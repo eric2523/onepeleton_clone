@@ -5,3 +5,27 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+User.destroy_all
+User.connection.execute('ALTER SEQUENCE users_id_seq RESTART WITH 1')
+
+# seed Users
+u1 = User.create(
+  username: Faker::Internet.user_name,
+  email: Faker::Internet.safe_email,
+  password: Faker::Internet.password(min_length: 6, max_length: 6),
+  is_instructor: false  
+)
+u2 = User.create(
+  username: Faker::Internet.user_name,
+  email: Faker::Internet.safe_email,
+  password: Faker::Internet.password(min_length: 6, max_length: 6),
+  is_instructor: false  
+)
+u3 = User.create(
+  username: Faker::Internet.user_name,
+  email: Faker::Internet.safe_email,
+  password: Faker::Internet.password(min_length: 6, max_length: 6),
+  is_instructor: false  
+)
