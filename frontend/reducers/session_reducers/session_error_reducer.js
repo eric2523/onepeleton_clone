@@ -1,12 +1,17 @@
 import {RECEIVE_ERRORS, CLEAR_ERRORS} from "../../actions/session_actions/session_actions";
 
-const sessionErrorReducer = (state = {}, action) => {
+const defaultErrorState = {
+  login: []
+}
+
+const sessionErrorReducer = (state = defaultErrorState, action) => {
   Object.freeze(state)
   switch (action.type) {
     case RECEIVE_ERRORS:
-      return action.errors 
+      let login = action.errors
+      return Object.assign({}, { login }) 
     case CLEAR_ERRORS:
-      return {}
+      return defaultErrorState;
     default:
       return state;
   }
