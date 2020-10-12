@@ -8,10 +8,26 @@ const Auth = ({ path, exact, loggedIn, component: Component}) => {
       path={ path }
       exact={ exact }
       render={ (props) => {
-        return (loggedIn) ? <Redirect to="/" /> : <Component {...props} />
+        return (loggedIn) ? <Redirect to="/classes" /> : <Component {...props} />
       }}
     />
   )
+}
+
+const Protected = ({path, loggedIn, exact, component: Component}) => {
+  return (
+    <Route
+      path={path}
+      exact={exact}
+      render={(props) => {
+        return loggedIn ? (
+          <Component {...props} />
+        ) : (
+          <Redirect to="/login" />
+        );
+      }}
+    />
+  );
 }
 
 const mSTP = (state) => {
@@ -22,4 +38,8 @@ const mSTP = (state) => {
 
 export const AuthRoute = withRouter(
   connect(mSTP, null)(Auth)
+)
+
+export const ProtectedRoute = withRouter(
+  connect(mSTP, null)(Protected)
 )
