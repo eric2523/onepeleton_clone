@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resources :users, only: [:index, :show, :create]
 
-    resources :classes, only: [:index, :show] 
+    resources :workout_classes, only: [:index, :show] 
 
     namespace :classes do 
       resources :category, only: [:index, :show]
