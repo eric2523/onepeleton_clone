@@ -1,5 +1,6 @@
 import React from 'react'
 import Errors from '../errors/errors'
+import { Link } from 'react-router-dom'
 
 class LoginForm extends React.Component {
   constructor(props){
@@ -41,16 +42,21 @@ class LoginForm extends React.Component {
 
           <div className="form-input">
             <label htmlFor="password">Password</label>
-              <input
-                id="password"
-                onChange={this.handleChange("password")}
-                type="password"
-                value={this.state.password}
-              />
+            <input
+              id="password"
+              onChange={this.handleChange("password")}
+              type="password"
+              value={this.state.password}
+            />
           </div>
-          
+
           <input className="submit-btn" type="submit" value="Log In" />
         </form>
+
+        <div className="_link-to">
+          <p>New to Peleton?&nbsp;</p>
+          <Link to="/signup">Sign up now</Link>
+        </div>
       </div>
     );
   }

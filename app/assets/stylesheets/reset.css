@@ -79,3 +79,7 @@ textarea
 	background:none;
 	line-height:1;
 }
+
+a {
+	text-decoration: none;
+}

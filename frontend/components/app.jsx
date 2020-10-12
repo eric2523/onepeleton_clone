@@ -5,7 +5,7 @@ import {AuthRoute} from '../util/route_util'
 
 const App = () => {
   return(
-    <div>
+    <div className="session-background">
       <header> 
         <h1>One Peleton Header</h1>
       </header>
