@@ -7,6 +7,7 @@ class LoginForm extends React.Component {
     super(props)
     this.state = { username: "", password: "" }
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleDemoUser = this.handleDemoUser.bind(this)
   }
 
   componentDidMount(){
@@ -25,6 +26,18 @@ class LoginForm extends React.Component {
     this.props.processForm(this.state)
   }
 
+  handleDemoUser(e) {
+    e.preventDefault();
+    this.setState({
+      username: "demouser",
+      password: "demopassword123",
+    });
+
+    window.setTimeout(() => {
+      $(".submit-btn").trigger("click");
+    }, 150)
+  }
+
   render(){
     let errors = null;
     // check if errors array is empty
@@ -33,7 +46,7 @@ class LoginForm extends React.Component {
     } 
     return (
       <div className="form">
-        { errors }
+        {errors}
         <h3>Log in</h3>
         <form onSubmit={this.handleSubmit}>
           <div className="form-input">
@@ -62,6 +75,10 @@ class LoginForm extends React.Component {
         <div className="_link-to">
           <p>New to Peleton?&nbsp;</p>
           <Link to="/signup">Sign up now</Link>
+        </div>
+        <div className="_link-to">
+          <p>Want to see a demo?&nbsp;</p>
+          <a onClick={ this.handleDemoUser }>Log in as Demo User</a>
         </div>
       </div>
     );

@@ -67,12 +67,14 @@
   /* border: 1px solid red; */
   color: rgb(168, 172, 177);
   font-size: 12px;
+  margin: 5px;
 }
 
 ._link-to > a {
   color: rgb(255, 255, 255);
   transition-duration: 250ms;
   transition-timing-function: ease;
+  cursor: pointer;
 }
 
 .session-background {
