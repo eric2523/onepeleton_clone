@@ -8,6 +8,12 @@
   flex: 1;
 }
 
+.form > h3 {
+  margin: 0 auto;
+  color: rgb(255, 255, 255);
+  padding: 20px;
+}
+
 .form-input {
   width: 360px;
   padding-left: 10px;
@@ -57,11 +63,17 @@
 
 ._link-to > a {
   color: rgb(255, 255, 255);
+  transition-duration: 250ms;
+  transition-timing-function: ease;
 }
 
 .session-background {
   height: 100%;
   background-color: rgb(34, 37, 41);
   min-height: 100vh;
+}
+
+._link-to > a:hover {
+  color: rgb(255, 51, 71)
 }
 

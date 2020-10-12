@@ -29,6 +29,7 @@ class LoginForm extends React.Component {
     return (
       <div className="form">
         <Errors errors={this.props.errors} />
+        <h3>Log in</h3>
         <form onSubmit={this.handleSubmit}>
           <div className="form-input">
             <label htmlFor="username">Username</label>
