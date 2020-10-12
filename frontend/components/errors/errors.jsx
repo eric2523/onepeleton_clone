@@ -11,7 +11,7 @@ class Errors extends React.Component {
       errors = this.props.errors.login.join(", ")
     }
     return(
-      <div>
+      <div className="session-errors">
         { errors }
       </div>
     )

@@ -26,9 +26,14 @@ class SignUpForm extends React.Component {
   }
 
   render() {
+    let errors = null;
+    // check if errors array is empty
+    if (this.props.errors.login.length) {
+      errors = <Errors errors={this.props.errors} />;
+    } 
     return (
       <div className="form">
-        <Errors errors={this.props.errors} />
+        { errors }
         <h3>Create an account</h3>
         <form onSubmit={this.handleSubmit}>
           <div className="form-input">

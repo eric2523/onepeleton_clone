@@ -1,0 +1,10 @@
+.session-errors {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 360px;
+  height: 60px;
+  background-color: rgb(255, 226, 140);
+  border-radius: 5px;
+}
