@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :workout_classes, only: [:index, :show] 
 
     namespace :classes do 
-      resources :category, only: [:index, :show]
+      resources :categories, only: [:index, :show]
     end
 
     resource :session, only: [:create, :destroy]
