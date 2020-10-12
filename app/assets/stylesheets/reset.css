@@ -46,3 +46,36 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+input:focus, select:focus {
+	outline: 0;
+}
+
+button,
+input[type=reset],
+input[type=button],
+input[type=submit],
+input[type=checkbox],
+input[type=radio],
+select
+{
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+input,
+label,
+select,
+button,
+textarea
+{
+	margin:0;
+	border:0;
+	padding:0;
+	display:inline-block;
+	vertical-align:middle;
+	white-space:normal;
+	background:none;
+	line-height:1;
+}

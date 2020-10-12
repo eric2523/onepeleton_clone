@@ -5,7 +5,7 @@ import SignUpFormContainer from './signup_form/signup_form_container'
 const App = () => {
   return(
     <div>
-      <header>
+      <header> 
         <h1>One Peleton Header</h1>
       </header>
       <SignUpFormContainer />
