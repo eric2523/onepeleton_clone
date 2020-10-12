@@ -2,9 +2,11 @@ Rails.application.routes.draw do
   root to: "static_pages#root"
 
   namespace :api, defaults: {format: :json} do
-    resources :users, only: [:index, :show, :create]
+    resources :users, only: [:index, :show, :create] do 
+      resources :workout_classes, only: [:index]
+    end
 
-    resources :workout_classes, only: [:index, :show] 
+    resources :workout_classes, only: [:show] 
 
     namespace :classes do 
       resources :categories, only: [:index, :show]

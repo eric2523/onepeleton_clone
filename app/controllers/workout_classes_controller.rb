@@ -1,2 +1,0 @@
-class WorkoutClassesController < ApplicationController
-end
