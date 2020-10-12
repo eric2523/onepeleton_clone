@@ -33,7 +33,7 @@ class SignUpForm extends React.Component {
     } 
     return (
       <div className="form">
-        { errors }
+        {errors}
         <h3>Create an account</h3>
         <form onSubmit={this.handleSubmit}>
           <div className="form-input">
@@ -66,7 +66,7 @@ class SignUpForm extends React.Component {
         </form>
 
         <div className="_link-to">
-          <p>Already have an account?&nbsp;</p>
+          <p>Already have an account?&nbsp;&nbsp;</p>
           <Link to="/login">Sign in</Link>
         </div>
       </div>

@@ -73,12 +73,12 @@ class LoginForm extends React.Component {
         </form>
 
         <div className="_link-to">
-          <p>New to Peleton?&nbsp;</p>
+          <p>New to Peleton?&nbsp;&nbsp;</p>
           <Link to="/signup">Sign up now</Link>
         </div>
         <div className="_link-to">
-          <p>Want to see a demo?&nbsp;</p>
-          <a onClick={ this.handleDemoUser }>Log in as Demo User</a>
+          <p>Want to see a demo?&nbsp;&nbsp;</p>
+          <a onClick={this.handleDemoUser}>Log in as Demo User</a>
         </div>
       </div>
     );
