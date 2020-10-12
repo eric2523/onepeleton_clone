@@ -46,6 +46,12 @@
   border-radius: 50px;
   cursor: pointer;
   margin: 10px;
+  transition-duration: 250ms;
+  transition-timing-function: ease;
+}
+
+.submit-btn:hover {
+  background-color: rgb(235, 49, 67)
 }
 
 .form > form {
