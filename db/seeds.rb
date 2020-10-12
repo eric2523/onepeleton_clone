@@ -29,3 +29,10 @@ u3 = User.create(
   password: Faker::Internet.password(min_length: 6, max_length: 6),
   is_instructor: false  
 )
+
+demo_user = User.create(
+  username: "demouser",
+  email: "demoemail@example.com",
+  password: "demopassword123",
+  is_instructor: false 
+)
