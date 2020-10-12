@@ -15,7 +15,7 @@ u1 = User.create(
   username: Faker::Internet.user_name,
   email: Faker::Internet.safe_email,
   password: Faker::Internet.password(min_length: 6, max_length: 6),
-  is_instructor: false  
+  is_instructor: true  
 )
 u2 = User.create(
   username: Faker::Internet.user_name,
@@ -36,3 +36,35 @@ demo_user = User.create(
   password: "demopassword123",
   is_instructor: false 
 )
+
+Category.destroy_all
+Category.connection.execute('ALTER SEQUENCE categories_id_seq RESTART WITH 1')
+
+# seed Categories
+c1 = Category.create(
+  name: "Strength"
+)
+c2 = Category.create(
+  name: "Cycling"
+)
+
+WorkoutClass.destroy_all
+WorkoutClass.connection.execute('ALTER SEQUENCE workout_classes_id_seq RESTART WITH 1')
+
+# seed Workout Classes
+wc1 = WorkoutClass.create(
+  name: "20 min Full Body Strength",
+  date: DateTime.new(2020, 12, 23, 8, 00, 00),
+  skill_level: "Intermediate",
+  category_id: c1.id,
+  instructor_id: u1.id 
+)
+
+wc2 = WorkoutClass.create(
+  name: "10 min Arms Toning",
+  date: DateTime.new(2020, 11, 10, 10, 00, 00),
+  skill_level: "Beginner",
+  category_id: c1.id,
+  instructor_id: u1.id 
+)
+
