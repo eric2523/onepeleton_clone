@@ -37,13 +37,14 @@
 }
 
 .form-input > label {
+  display: block;
   font-size: 11px;
   color: white;
 }
 
 .form-input > input {
   padding: 5px;
-  width: 360px;
+  width: 330px;
   height: 20px;
   color: rgb(255, 255, 255);
   font-size: 16px;
@@ -100,4 +101,19 @@
 
 .logout-btn {
   color: white;
+}
+
+.fa-times-circle {
+  color: rgb(168, 172, 177);
+  cursor: pointer;
+  transition-duration: 250ms;
+  transition-timing-function: ease;
+}
+
+.fa-times-circle:hover {
+  color: rgb(255, 255, 255);
+}
+
+.times-button-container {
+  display: inline-block
 }

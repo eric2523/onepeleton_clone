@@ -26,6 +26,12 @@ class SignUpForm extends React.Component {
     this.props.processForm(this.state);
   }
 
+  handleTimesClick(type) {
+    return (e) => {
+      this.setState({ [type]: ""})
+    }
+  }
+
   render() {
     let errors = null;
     // check if errors array is empty
@@ -34,9 +40,7 @@ class SignUpForm extends React.Component {
     } 
     return (
       <div className="form-container">
-        <div className="fixed-error-div">
-          {errors}
-        </div>
+        <div className="fixed-error-div">{errors}</div>
         <form onSubmit={this.handleSubmit} className="form">
           <h3>Create an account</h3>
           <div className="form-input">
@@ -46,6 +50,12 @@ class SignUpForm extends React.Component {
               type="text"
               value={this.state.username}
             />
+            <div
+              className="times-button-container"
+              onClick={this.handleTimesClick("username")}
+            >
+              <i className="far fa-times-circle"></i>
+            </div>
           </div>
 
           <div className="form-input">
@@ -55,6 +65,12 @@ class SignUpForm extends React.Component {
               type="text"
               value={this.state.email}
             />
+            <div
+              className="times-button-container"
+              onClick={this.handleTimesClick("email")}
+            >
+              <i className="far fa-times-circle"></i>
+            </div>
           </div>
 
           <div className="form-input">

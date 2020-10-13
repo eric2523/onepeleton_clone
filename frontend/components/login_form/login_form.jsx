@@ -3,27 +3,33 @@ import Errors from '../errors/errors'
 import { Link } from 'react-router-dom'
 
 class LoginForm extends React.Component {
-  constructor(props){
-    super(props)
-    this.state = { username: "", password: "" }
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.handleDemoUser = this.handleDemoUser.bind(this)
+  constructor(props) {
+    super(props);
+    this.state = { username: "", password: "" };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoUser = this.handleDemoUser.bind(this);
   }
 
-  componentDidMount(){
-    this.props.clearErrors()
+  componentDidMount() {
+    this.props.clearErrors();
   }
 
   handleChange(type) {
     return (e) => {
       e.preventDefault();
-      this.setState({ [type]: e.target.value })
-    }
+      this.setState({ [type]: e.target.value });
+    };
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.processForm(this.state)
+    this.props.processForm(this.state);
+  }
+
+  handleTimesClick(type) {
+    return (e) => {
+      this.setState({ [type]: "" });
+    };
   }
 
   handleDemoUser(e) {
@@ -35,20 +41,18 @@ class LoginForm extends React.Component {
 
     window.setTimeout(() => {
       $(".submit-btn").trigger("click");
-    }, 150)
+    }, 150);
   }
 
-  render(){
+  render() {
     let errors = null;
     // check if errors array is empty
     if (this.props.errors.login.length) {
-      errors = <Errors errors={this.props.errors} />
-    } 
+      errors = <Errors errors={this.props.errors} />;
+    }
     return (
       <div className="form-container">
-        <div className="fixed-error-div">
-          {errors}  
-        </div>
+        <div className="fixed-error-div">{errors}</div>
         <form onSubmit={this.handleSubmit} className="form">
           <h3>Log in</h3>
           <div className="form-input">
@@ -59,6 +63,12 @@ class LoginForm extends React.Component {
               type="text"
               value={this.state.username}
             />
+            <div
+              className="times-button-container"
+              onClick={this.handleTimesClick("username")}
+            >
+              <i className="far fa-times-circle"></i>
+            </div>
           </div>
 
           <div className="form-input">
