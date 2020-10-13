@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom'
 import configureStore from './store/store'
 
 //testing thunk action creators
-import { signup, login, logout } from './actions/session_actions/session_actions'
+// import { signup, login, logout } from './actions/session_actions/session_actions'
 
 //testing ajax calls
 // import * as UserAPIUtil from './util/user_api_util/user_api_util'
-import { fetchAllUsers } from './actions/user_actions/user_actions'
+// import { fetchAllUsers } from './actions/user_actions/user_actions'
+// import * as ClassAPIUtil from './util/class_api_util/class_api_util'
+// import * as CategoryAPIUtil from './util/category_api_util/category_api_util'
+import { fetchClass, fetchCategoryClasses } from './actions/class_actions/class_actions'
 
 //testing log in form container 
 import Root from './components/root'
@@ -34,9 +37,14 @@ document.addEventListener("DOMContentLoaded", () => {
   //testing store on window
   window.getState = store.getState
   window.dispatch = store.dispatch
-  window.signup = signup
-  window.login = login
-  window.logout = logout
-  window.fetchAllUsers = fetchAllUsers
+  // window.signup = signup
+  // window.login = login
+  // window.logout = logout
+  // window.fetchAllUsers = fetchAllUsers
   // window.fetchUser = UserAPIUtil.fetchUser
+  // window.getClass = ClassAPIUtil.getClass
+  // window.fetchAllCategories = CategoryAPIUtil.fetchAllCategories
+  // window.fetchCategoryClasses = CategoryAPIUtil.fetchCategoryClasses
+  window.fetchClass = fetchClass
+  window.fetchCategoryClasses = fetchCategoryClasses
 })
