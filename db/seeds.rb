@@ -48,6 +48,22 @@ c2 = Category.create(
   name: "Cycling"
 )
 
+c3 = Category.create(
+  name: "Meditation"
+)
+
+c4 = Category.create(
+  name: "Cardio"
+)
+
+c5 = Category.create(
+  name: "Yoga"
+)
+
+c6 = Category.create(
+  name: "Stretching"
+)
+
 WorkoutClass.destroy_all
 WorkoutClass.connection.execute('ALTER SEQUENCE workout_classes_id_seq RESTART WITH 1')
 

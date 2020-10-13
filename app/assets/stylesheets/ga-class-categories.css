@@ -6,8 +6,8 @@
 
 .class-category-header {
   margin-top: 30px;
-  margin-left: 55px;
-  margin-right: 55px;
+  margin-left: 12%;
+  margin-right: 12%;
   font-size: 16.5px;
 }
 
@@ -22,6 +22,7 @@
 .class-category-list {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .category-item-title {
@@ -53,6 +54,22 @@
 
 .cc-item-cycling {
   background-image: url("https://res.cloudinary.com/peloton-cycle/image/fetch/c_scale,dpr_1.0,f_auto,q_auto,w_580/https://s3.amazonaws.com/browse-categories-images-prod/c290929eba4b47cdb1fbfa406a31c8c0")
+}
+
+.cc-item-meditation {
+  background-image: url("https://res.cloudinary.com/peloton-cycle/image/fetch/c_scale,dpr_1.0,f_auto,q_auto,w_580/https://s3.amazonaws.com/browse-categories-images-prod/0d46022c5c0a4db3b280242ed0e11738")
+}
+
+.cc-item-cardio {
+  background-image: url("https://res.cloudinary.com/peloton-cycle/image/fetch/c_scale,dpr_1.0,f_auto,q_auto,w_580/https://s3.amazonaws.com/browse-categories-images-prod/fd484c6545fe4a8ea6f1599ae13b7700")
+}
+
+.cc-item-yoga {
+  background-image: url("https://res.cloudinary.com/peloton-cycle/image/fetch/c_scale,dpr_1.0,f_auto,q_auto,w_580/https://s3.amazonaws.com/browse-categories-images-prod/9298f58b41a64d05ae47cbb236fd87e4")
+}
+
+.cc-item-stretching {
+  background-image: url("https://res.cloudinary.com/peloton-cycle/image/fetch/c_scale,dpr_1.0,f_auto,q_auto,w_580/https://s3.amazonaws.com/browse-categories-images-prod/1e66c2e74060403196aba588a60f1ec7")
 }
 
 .class-category-item:hover .cc-item {
