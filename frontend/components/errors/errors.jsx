@@ -5,6 +5,14 @@ class Errors extends React.Component {
     super(props)
   }
 
+  componentDidMount(){
+    $(".form-input").addClass("error-border-highlight")
+  }
+
+  componentWillUnmount(){
+    $(".form-input").removeClass("error-border-highlight");
+  }
+
   render() {
     let errors = null;
     if (this.props.errors.login) {
