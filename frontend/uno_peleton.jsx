@@ -10,7 +10,8 @@ import configureStore from './store/store'
 // import { fetchAllUsers } from './actions/user_actions/user_actions'
 // import * as ClassAPIUtil from './util/class_api_util/class_api_util'
 // import * as CategoryAPIUtil from './util/category_api_util/category_api_util'
-import { fetchClass, fetchCategoryClasses } from './actions/class_actions/class_actions'
+// import { fetchClass, fetchCategoryClasses } from './actions/class_actions/class_actions'
+import { fetchAllCategories } from './actions/category_actions/category_actions'
 
 //testing log in form container 
 import Root from './components/root'
@@ -43,8 +44,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // window.fetchAllUsers = fetchAllUsers
   // window.fetchUser = UserAPIUtil.fetchUser
   // window.getClass = ClassAPIUtil.getClass
-  // window.fetchAllCategories = CategoryAPIUtil.fetchAllCategories
+  window.fetchAllCategories = fetchAllCategories
   // window.fetchCategoryClasses = CategoryAPIUtil.fetchCategoryClasses
-  window.fetchClass = fetchClass
-  window.fetchCategoryClasses = fetchCategoryClasses
+  // window.fetchClass = fetchClass
+  // window.fetchCategoryClasses = fetchCategoryClasses
 })

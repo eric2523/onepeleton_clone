@@ -4,7 +4,7 @@ import ClassComponent from './class_index'
 
 const mSTP = (state) => {
   return ({
-    test: ""
+    categories: ""
   })
 }
 
