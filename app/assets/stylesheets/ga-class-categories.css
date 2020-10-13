@@ -1,0 +1,60 @@
+.class-category-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.class-category-header {
+  margin-top: 30px;
+  margin-left: 55px;
+  margin-right: 55px;
+  font-size: 16.5px;
+}
+
+.class-category-item {
+  display: block;
+  max-width: calc((100% - 20 px) / 2);
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+  margin: 10px;
+}
+
+.class-category-list {
+  display: flex;
+  justify-content: center;
+}
+
+.category-item-title {
+  position: absolute;
+  top: 65px;
+  left: 35px;
+  color: rgb(255, 255, 255);
+  font-size: 26px;
+  font-weight: 300;
+}
+
+.cc-item {
+  position: relative;
+  display: flex;
+  height: 200px;
+  width: 475px;
+  box-sizing: border-box;
+  background-size: 100%;
+  flex-basis: calc((100% - 20px) / 2);
+  max-width: calc((100% - 20 px) / 2);
+  border-radius: 5px;
+  transition-duration: 250ms;
+  transition-timing-function: ease;
+}
+
+.cc-item-strength {
+  background-image: url(https://res.cloudinary.com/peloton-cycle/image/fetch/c_scale,dpr_1.0,f_auto,q_auto,w_580/https://s3.amazonaws.com/browse-categories-images-prod/24a289db28b9418ca6afc7316a8686fc);
+}
+
+.cc-item-cycling {
+  background-image: url("https://res.cloudinary.com/peloton-cycle/image/fetch/c_scale,dpr_1.0,f_auto,q_auto,w_580/https://s3.amazonaws.com/browse-categories-images-prod/c290929eba4b47cdb1fbfa406a31c8c0")
+}
+
+.class-category-item:hover .cc-item {
+  transform: scale(1.03);
+}

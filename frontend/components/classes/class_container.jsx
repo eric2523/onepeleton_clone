@@ -1,11 +1,18 @@
 import {connect} from 'react-redux'
 import {logout} from '../../actions/session_actions/session_actions'
-import ClassComponent from './class_index'
+import ClassIndex from './class_index'
+import {fetchAllCategories} from '../../actions/category_actions/category_actions'
 
 const mSTP = (state) => {
   return ({
-    categories: ""
+    categories: state.entities.categories
   })
 }
 
-export default connect(mSTP, null)(ClassComponent)
+const mDTP = (dispatch) => {
+  return ({
+    fetchAllCategories: () => dispatch(fetchAllCategories())
+  })
+}
+
+export default connect(mSTP, mDTP)(ClassIndex)
