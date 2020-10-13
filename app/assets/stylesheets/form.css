@@ -78,9 +78,15 @@
 }
 
 .session-background {
+  display: flex;
+  flex-direction: column;
   height: 100%;
   background-color: rgb(34, 37, 41);
   min-height: 100vh;
+}
+
+.component-body {
+  flex: 1
 }
 
 ._link-to > a:hover {
