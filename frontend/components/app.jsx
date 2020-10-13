@@ -11,8 +11,7 @@ const App = () => {
   return (
     <div className="session-background">
       <header>
-        {/* going to need a switch case here later  */}
-        <Route path="/" component={MainNavigationBarContainer} />
+        <ProtectedRoute path="/" component={MainNavigationBarContainer} />
       </header>
 
       <div className="component-body">
