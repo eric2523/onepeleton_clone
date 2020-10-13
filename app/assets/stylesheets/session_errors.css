@@ -1,12 +1,25 @@
 .session-errors {
-  margin: 0 auto;
+  /* margin: 0 auto; */
   display: flex;
   justify-content: center;
   align-items: center;
   width: 350px;
   height: 50px;
-  padding: 10px;
   background-color: rgb(255, 226, 140);
   border-radius: 5px;
   font-size: 13px;
+  position: absolute;
+  padding: 10px;
+}
+
+.fixed-error-div {
+  margin: 0 auto;
+  /* border: 1px solid red; */
+  position: relative;
+  top: 25px;
+  display: flex;
+  width: 400px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
 }

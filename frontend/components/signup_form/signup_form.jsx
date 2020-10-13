@@ -32,10 +32,10 @@ class SignUpForm extends React.Component {
       errors = <Errors errors={this.props.errors} />;
     } 
     return (
-      <div className="form">
-        {errors}
-        <h3>Create an account</h3>
-        <form onSubmit={this.handleSubmit}>
+      <div className="form-container">
+        <div className="fixed-error-div">{errors}</div>
+        <form onSubmit={this.handleSubmit} className="form">
+          <h3>Create an account</h3>
           <div className="form-input">
             <label htmlFor="username">Username</label>
             <input
