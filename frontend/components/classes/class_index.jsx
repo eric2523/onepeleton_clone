@@ -6,6 +6,14 @@ class ClassComponent extends React.Component {
     this.handleSignOut = this.handleSignOut.bind(this)
   }
 
+  componentDidMount(){
+    $(".session-background").addClass("main-light-grey-background")
+  }
+
+  componentWillUnmount(){
+    $(".session-background").removeClass("main-light-grey-background");
+  }
+
   handleSignOut(){
     this.props.history.push('/login')
     this.props.logout()

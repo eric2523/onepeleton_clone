@@ -5,12 +5,14 @@ import {AuthRoute, ProtectedRoute} from '../util/route_util'
 import {Route, Switch} from 'react-router-dom'
 import ClassContainer from './classes/class_container'
 import LightIconIndex from './social_media_icons/light_icon_index'
+import MainNavigationBarContainer from './navbar/main_navigationbar'
 
 const App = () => {
   return (
     <div className="session-background">
       <header>
-        <h1>One Peleton Header</h1>
+        {/* going to need a switch case here later  */}
+        <Route path="/" component={MainNavigationBarContainer} />
       </header>
 
       <div className="component-body">

@@ -84,8 +84,9 @@ button:focus {
 	outline: 0;
 }
 
-a {
+a, a:visited {
 	text-decoration: none;
+	color: inherit
 }
 
 /* autofill reset */
