@@ -18,7 +18,8 @@
   border-radius: 5px;
   transition: background-color 250ms ease 0s;
   font-weight: 600;
-  color: rgb(98,107,122)
+  color: rgb(98,107,122);
+  cursor: pointer;
 }
 
 .nav-bar-item:hover {

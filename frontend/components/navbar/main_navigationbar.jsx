@@ -1,14 +1,20 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { NavLink, Link, withRouter } from 'react-router-dom'
 import NavBarItem from './nav_bar_item'
+import {logout} from '../../actions/session_actions/session_actions'
 
 class MainNavigationBar extends React.Component {
-  constructor(props){
-    super (props)
+  constructor(props) {
+    super(props);
+    this.handleSignOut = this.handleSignOut.bind(this)
   }
 
-  render(){
+  handleSignOut() {
+    this.props.history.push("/login");
+    this.props.logout();
+  }
+
+  render() {
     return (
       <div className="nav-bar-div">
         <ul className="nav-bar-list">
@@ -16,6 +22,7 @@ class MainNavigationBar extends React.Component {
           <NavBarItem path="/schedule" itemTitle="Schedule" />
           <NavBarItem path="/challenges" itemTitle="Challenges" />
           <NavBarItem path="/profile" itemTitle="Profile" />
+          <li className="nav-bar-item"><a onClick={ this.handleSignOut}>LOG OUT</a></li>
         </ul>
       </div>
     );
@@ -28,4 +35,10 @@ const mSTP = (state) => {
   })
 }
 
-export default connect(mSTP, null)(MainNavigationBar)
+const mDTP = (dispatch) => {
+  return {
+    logout: () => dispatch(logout()),
+  };
+};
+
+export default connect(mSTP, mDTP)(MainNavigationBar)

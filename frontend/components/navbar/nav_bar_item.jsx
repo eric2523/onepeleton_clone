@@ -1,5 +1,5 @@
 import React from 'react'
-import {NavLink, withRouter} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 
 const NavBarItem = (props) => {
   return (
@@ -12,5 +12,3 @@ const NavBarItem = (props) => {
 }
 
 export default NavBarItem
-
-// export const NavBarItemWithRouter = withRouter(NavBarItem())

@@ -8,10 +8,4 @@ const mSTP = (state) => {
   })
 }
 
-const mDTP = (dispatch) => {
-  return ({
-    logout: () => dispatch(logout())
-  })
-}
-
-export default connect(mSTP, mDTP)(ClassComponent)
+export default connect(mSTP, null)(ClassComponent)
