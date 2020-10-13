@@ -17,7 +17,7 @@ class Errors extends React.Component {
 
   componentWillUnmount(){
     $(".form-input").removeClass("error-border-highlight");
-    $(".session-errors").removeClass("transition-y", "transition-fade-out");
+    $(".session-errors").removeClass("transition-y");
   }
 
   handleClick(e){
