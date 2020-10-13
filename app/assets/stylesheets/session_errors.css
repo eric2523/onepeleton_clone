@@ -10,10 +10,17 @@
   font-size: 13px;
   position: absolute;
   padding: 10px;
-  /* opacity: 0.5; */
-    /* transition-property: opacity; */
-    transition-duration: 250ms;
-    transition-timing-function: ease;
+  transform: translate(0, -100%)
+}
+
+.transition-y {
+  transition-duration: 600ms;
+  transition-timing-function: ease;
+  transform: translate(0%)
+}
+
+.transition-fade-out {
+  opacity: 0;
 }
 
 .session-errors:hover {

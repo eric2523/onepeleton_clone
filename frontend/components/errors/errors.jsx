@@ -10,15 +10,23 @@ class Errors extends React.Component {
 
   componentDidMount(){
     $(".form-input").addClass("error-border-highlight")
+    window.setTimeout(() => {
+      $(".session-errors").addClass("transition-y")
+    }, 5)
   }
 
   componentWillUnmount(){
     $(".form-input").removeClass("error-border-highlight");
+    $(".session-errors").removeClass("transition-y", "transition-fade-out");
   }
 
   handleClick(e){
+    let that = this;
     e.preventDefault();
-    this.props.clearErrors();
+    $(".session-errors").addClass("transition-fade-out");
+    window.setTimeout(() => {
+      that.props.clearErrors();
+    }, 400)
   }
 
   render() {
