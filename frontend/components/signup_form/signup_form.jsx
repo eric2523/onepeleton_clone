@@ -65,7 +65,7 @@ class SignUpForm extends React.Component {
               value={this.state.password}
             />
           </div>
-          <input className="submit-btn" type="submit" value="Sign Up" />
+          <input className="submit-btn" type="submit" value="SIGN UP" />
         </form>
 
         <div className="_link-to">
