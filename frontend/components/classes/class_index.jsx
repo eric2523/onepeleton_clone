@@ -3,10 +3,12 @@ import React from 'react'
 class ClassIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.categoryName = this.props.match.params.category
   }
 
   componentDidMount() {
     $(".session-background").addClass("main-light-grey-background");
+    this.props.fetchCategoryClasses(this.categoryName)
   }
 
   componentWillUnmount() {
@@ -14,7 +16,11 @@ class ClassIndex extends React.Component {
   }
 
   render() {
-    return <div>we are in class index</div>;
+    return (
+    <div className="class-category-div">
+      <h2 className="class-category-header">{ this.categoryName.toUpperCase() }</h2>
+    </div>
+    )
   }
 }
 

@@ -19,9 +19,9 @@ const App = () => {
         <Switch>
           <AuthRoute path="/login" component={LoginFormContainer} />
           <AuthRoute path="/signup" component={SignUpFormContainer} />
-          <Route path="/classes/:category" component={ClassContainer} />
+          <Route exact path="/classes/:category" component={ClassContainer} />
           <ProtectedRoute path="/classes" component={CategoryContainer} />
-          <ProtectedRoute path="/" component={ClassContainer} />
+          <ProtectedRoute path="/" component={CategoryContainer} />
         </Switch>
       </div>
 

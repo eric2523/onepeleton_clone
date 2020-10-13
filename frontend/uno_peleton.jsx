@@ -47,5 +47,5 @@ document.addEventListener("DOMContentLoaded", () => {
   // window.fetchAllCategories = fetchAllCategories
   // window.fetchCategoryClasses = CategoryAPIUtil.fetchCategoryClasses
   // window.fetchClass = fetchClass
-  // window.fetchCategoryClasses = fetchCategoryClasses
+  window.fetchCategoryClasses = fetchCategoryClasses
 })
