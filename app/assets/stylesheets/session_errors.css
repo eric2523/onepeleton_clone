@@ -1,7 +1,7 @@
 .session-errors {
   /* margin: 0 auto; */
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 350px;
   height: 50px;
@@ -10,6 +10,18 @@
   font-size: 13px;
   position: absolute;
   padding: 10px;
+  /* opacity: 0.5; */
+    /* transition-property: opacity; */
+    transition-duration: 250ms;
+    transition-timing-function: ease;
+}
+
+.session-errors:hover {
+  opacity: 0.9;
+}
+
+.session-errors:hover, .x-btn {
+ color: rgb(34, 37, 41)
 }
 
 .fixed-error-div {
@@ -22,4 +34,14 @@
   height: 60px;
   justify-content: center;
   align-items: center;
+}
+
+.x-btn {
+  padding: 10px;
+  cursor: pointer;
+  color: rgba(34, 37, 41, 0.75);
+}
+
+.div-pointer {
+  cursor: pointer;
 }
