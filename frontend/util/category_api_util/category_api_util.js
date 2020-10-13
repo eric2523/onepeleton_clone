@@ -5,10 +5,10 @@ export const fetchAllCategories = () => {
   });
 }
 
-export const fetchCategoryClasses = (categoryId) => {
+export const fetchCategoryClasses = (categoryName) => {
   return $.ajax({
     method: "get",
-    url: `/api/classes/categories/${categoryId}`,
+    url: `/api/classes/categories/${categoryName}`,
   });
 }
 

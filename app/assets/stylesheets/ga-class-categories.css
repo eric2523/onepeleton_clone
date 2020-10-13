@@ -17,6 +17,7 @@
   box-sizing: border-box;
   transform-style: preserve-3d;
   margin: 10px;
+  cursor: pointer;
 }
 
 .class-category-list {

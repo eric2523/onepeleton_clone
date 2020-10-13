@@ -24,9 +24,9 @@ export const fetchClass = (classId) => {
   }
 }
 
-export const fetchCategoryClasses = (categoryId) => {
+export const fetchCategoryClasses = (categoryName) => {
   return (dispatch) => {
-    return CategoryAPIUtil.fetchCategoryClasses(categoryId)
+    return CategoryAPIUtil.fetchCategoryClasses(categoryName)
       .then((workoutClasses) => dispatch(receiveClasses(workoutClasses)) )
   }
 }
