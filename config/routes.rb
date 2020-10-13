@@ -9,8 +9,10 @@ Rails.application.routes.draw do
     resources :workout_classes, only: [:show] 
 
     namespace :classes do 
-      resources :categories, only: [:index, :show]
+      resources :categories, only: [:show]
     end
+
+    resources :categories, only: [:index]
 
     resource :session, only: [:create, :destroy]
   end
