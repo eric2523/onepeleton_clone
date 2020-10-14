@@ -20,3 +20,22 @@
 .media-icons:hover {
   color: rgb(255, 255, 255)
 }
+
+.peleton-logo {
+  position: relative;
+  width: 170px;
+  height: auto;
+}
+
+.master-header-div {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.logo-link {
+  cursor: pointer;
+  z-index: 2;
+  position: relative;
+  top: 25px;
+}

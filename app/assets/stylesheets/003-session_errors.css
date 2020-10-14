@@ -10,7 +10,8 @@
   font-size: 13px;
   position: absolute;
   padding: 10px;
-  transform: translate(0, -100%)
+  transform: translate(0, -100%);
+  z-index: 5;
 }
 
 .transition-y {
@@ -24,7 +25,7 @@
 }
 
 .session-errors:hover {
-  opacity: 0.9;
+  background-color: #F4D885;
 }
 
 .session-errors:hover, .x-btn {
@@ -35,7 +36,7 @@
   margin: 0 auto;
   /* border: 1px solid red; */
   position: relative;
-  top: 25px;
+  bottom: 40px;
   display: flex;
   width: 400px;
   height: 60px;

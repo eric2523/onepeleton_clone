@@ -7,12 +7,17 @@ import ClassContainer from './classes/classes_container'
 import LightIconIndex from './social_media_icons/light_icon_index'
 import MainNavigationBarContainer from './navbar/main_navigationbar'
 import {CategoryContainer} from './categories/category_container'
+import PeletonLogo from './main_logo/main_logo'
 
 const App = () => {
   return (
     <div className="session-background">
-      <header>
-        <ProtectedRoute path="/" component={MainNavigationBarContainer} />
+      <header className="master-header-div">
+        {/* <Switch> */}
+          <Route path="/login" component={PeletonLogo} />
+          <Route path="/signup" component={PeletonLogo} />
+          <ProtectedRoute path="/" component={MainNavigationBarContainer} />
+        {/* </Switch> */}
       </header>
       {/* need to dry up main containers through root file container or something like that */}
       <div className="component-body">
