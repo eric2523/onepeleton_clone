@@ -1,0 +1,47 @@
+.categories-svg {
+  width: 58px;
+  height: 35px;
+}
+
+.category-nav-div {
+  position: relative;
+  display: flex;
+  height: 85px;
+  width: 100%;
+  background-color: rgb(255,255,255);
+  align-items: center;
+  justify-content: space-around;
+}
+
+.category-svg-list {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.svg-list-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 55px;
+  padding: 8px;
+  border-radius: 2px;
+  transition: background-color 250ms ease 0s;
+}
+
+.svg-list-items:hover {
+  background-color: rgb(245, 247, 249);
+}
+
+.svg-title {
+  display: flex;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.svg-active {
+  fill: rgb(223,30,49);
+  color: rgb(223,30,49);
+}

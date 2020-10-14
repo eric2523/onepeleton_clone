@@ -6,7 +6,7 @@ import {Route, Switch} from 'react-router-dom'
 import ClassContainer from './classes/classes_container'
 import LightIconIndex from './social_media_icons/light_icon_index'
 import MainNavigationBarContainer from './navbar/main_navigationbar'
-import CategoryContainer from './categories/category_container'
+import {CategoryContainer} from './categories/category_container'
 
 const App = () => {
   return (
