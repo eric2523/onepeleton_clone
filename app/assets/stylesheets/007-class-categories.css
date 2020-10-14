@@ -80,3 +80,17 @@
   padding: 2px;
 }
 
+.class-content-items h2:first-child{
+  color: rgb(210, 213, 217);
+  font-size: 12px;
+}
+
+.class-content-items h2:last-child {
+  color: rgb(210, 213, 217);
+  font-size: 12px;
+}
+
+.class-content-items h2:nth-child(3) {
+  font-size: 12px;
+  padding-bottom: 8px;
+}
