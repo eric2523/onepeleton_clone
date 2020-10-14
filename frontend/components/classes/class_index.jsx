@@ -21,7 +21,10 @@ class ClassIndex extends React.Component {
       .map((workoutClass) => (
         <ClassIndexItem 
           key={workoutClass.id} 
-          workoutClass={workoutClass} />)
+          workoutClass={workoutClass} 
+          classId={ workoutClass.id}
+          category={ this.categoryName }
+          />)
       )
 
     return (

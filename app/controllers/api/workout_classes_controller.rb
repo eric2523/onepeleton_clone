@@ -5,6 +5,8 @@ class Api::WorkoutClassesController < ApplicationController
 
   def show
     @workout_class = WorkoutClass.find(params[:id])
+    
+    # @workout_class.date.strftime("%a %m/%d/%y @ %I:%M %p")
   end
 
   private
