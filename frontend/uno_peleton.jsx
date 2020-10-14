@@ -10,7 +10,7 @@ import configureStore from './store/store'
 // import { fetchAllUsers } from './actions/user_actions/user_actions'
 // import * as ClassAPIUtil from './util/class_api_util/class_api_util'
 // import * as CategoryAPIUtil from './util/category_api_util/category_api_util'
-import { fetchClass, fetchCategoryClasses } from './actions/class_actions/class_actions'
+// import { fetchClass, fetchCategoryClasses } from './actions/class_actions/class_actions'
 // import { fetchAllCategories } from './actions/category_actions/category_actions'
 
 //testing log in form container 
@@ -36,8 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(<Root store={ store }/>, root)
 
   //testing store on window
-  window.getState = store.getState
-  window.dispatch = store.dispatch
+  // window.getState = store.getState
+  // window.dispatch = store.dispatch
   // window.signup = signup
   // window.login = login
   // window.logout = logout
@@ -47,5 +47,5 @@ document.addEventListener("DOMContentLoaded", () => {
   // window.fetchAllCategories = fetchAllCategories
   // window.fetchCategoryClasses = CategoryAPIUtil.fetchCategoryClasses
   // window.fetchClass = fetchClass
-  window.fetchCategoryClasses = fetchCategoryClasses
+  // window.fetchCategoryClasses = fetchCategoryClasses
 })
