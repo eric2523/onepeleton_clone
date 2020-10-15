@@ -32,4 +32,9 @@ class WorkoutClass < ApplicationRecord
   has_many :users_workout_class,
     foreign_key: :workout_class_id,
     class_name: :UsersWorkoutClass
+
+  has_many :students,
+    through: :users_workout_class,
+    source: :user 
+  
 end

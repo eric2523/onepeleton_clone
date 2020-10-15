@@ -1,0 +1,1 @@
+json.extract! @new_user_workout_class, :id, :user_id, :workout_class_id

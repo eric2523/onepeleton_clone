@@ -4,6 +4,7 @@ import configureStore from './store/store'
 
 //testing thunk action creators
 // import { signup, login, logout } from './actions/session_actions/session_actions'
+import { fetchUsersClasses } from './actions/user_workout_classes_actions/user_workout_classes_action'
 
 //testing ajax calls
 // import * as UserAPIUtil from './util/user_api_util/user_api_util'
@@ -12,8 +13,8 @@ import configureStore from './store/store'
 // import * as CategoryAPIUtil from './util/category_api_util/category_api_util'
 // import { fetchClass, fetchCategoryClasses } from './actions/class_actions/class_actions'
 // import { fetchAllCategories } from './actions/category_actions/category_actions'
-import * as SpotifyAPIUtil from './util/spotify_api_util'
-import { fetchSong, fetchSpotToken } from './actions/spotify_api_actions'
+// import * as SpotifyAPIUtil from './util/spotify_api_util'
+// import { fetchSong, fetchSpotToken } from './actions/spotify_api_actions'
 
 //testing log in form container 
 import Root from './components/root'
@@ -40,8 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
   //testing store on window
   // window.getState = store.getState
   window.dispatch = store.dispatch
-  window.fetchSong = fetchSong
-  window.fetchSpot = fetchSpotToken
+  window.fetchUsersClasses = fetchUsersClasses
+  // window.fetchSong = fetchSong
+  // window.fetchSpot = fetchSpotToken
   // window.requestEncodedToken = SpotifyAPIUtil.requestEncodedToken
   // window.requestSpotifyAuth = SpotifyAPIUtil.requestSpotifyAuth
   // window.signup = signup

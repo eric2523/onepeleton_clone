@@ -15,3 +15,4 @@ export const fetchAllUsers = () => {
       .then((users) => dispatch(receiveAllUsers(users)))
   }
 }
+

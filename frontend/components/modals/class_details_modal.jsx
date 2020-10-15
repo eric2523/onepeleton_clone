@@ -80,5 +80,7 @@ const mSTP = (state, ownProps) => {
   })
 }
 
+// const mDTP = (dispatch) 
+
 export default connect(mSTP, null)(ClassDetailsModal)
 

@@ -57,4 +57,8 @@ class User < ApplicationRecord
   has_many :users_workout_class,
     foreign_key: :user_id,
     class_name: :UsersWorkoutClass
+
+  has_many :workout_classes,
+    through: :users_workout_class,
+    source: :workout_class
 end
