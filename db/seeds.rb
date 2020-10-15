@@ -74,7 +74,8 @@ wc1 = WorkoutClass.create(
   date: DateTime.new(2020, 12, 23, 8, 00, 00),
   skill_level: "Intermediate",
   category_id: c1.id,
-  instructor_id: u1.id 
+  instructor_id: u1.id,
+  description: Faker::Lorem.paragraphs.join(" ")
 )
 
 # f1 = open("s3://active-storage-unopeleton-seeds/strength/strength-1.jpg")
@@ -85,6 +86,7 @@ wc2 = WorkoutClass.create(
   date: DateTime.new(2020, 11, 10, 10, 00, 00),
   skill_level: "Beginner",
   category_id: c1.id,
-  instructor_id: u1.id 
+  instructor_id: u1.id,
+  description: Faker::Lorem.paragraphs.join(" ") 
 )
 

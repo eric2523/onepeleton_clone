@@ -22,6 +22,7 @@ class ClassDetailsModal extends React.Component {
         </div>
         <div className="modal-main-content">
           <ModalClassRatings />
+          <ModalClassDescription description={this.props.workoutClass.description} />
         </div>
       </div>
     );
@@ -57,6 +58,14 @@ const RightClassRatings = () => (
     <p className="class-ratings">Difficulty</p>
   </div>
 );
+
+const ModalClassDescription = (props) => (
+  <div className="class-description">
+    <p className="description-content">
+      {props.description}
+    </p>
+  </div>
+)
 
 const mSTP = (state, ownProps) => {
   let workoutClass = state.entities.workoutClasses[ownProps.classId];

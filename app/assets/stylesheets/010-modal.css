@@ -59,7 +59,7 @@
   padding: 4px;
 }
 
-.left-class-ratings, .right-class-ratings {
+.left-class-ratings, .right-class-ratings{
   display: flex;
   align-items: center;
   width: 70px;
@@ -91,4 +91,11 @@
 .modal-class-ratings {
   display: flex;
   align-items: baseline;
+}
+
+.class-description {
+  margin: 40px 15px 15px 15px;
+  font-size: 13px;
+  color: rgb(76, 82, 94);
+  font-weight: 300;
 }

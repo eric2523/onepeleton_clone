@@ -13,6 +13,7 @@
 #
 class WorkoutClass < ApplicationRecord
   validates :name, :date, :skill_level, :category_id, :instructor_id, presence: true
+  validates :description, presence: true 
   validates :name, uniqueness: true 
 
   belongs_to :category,
