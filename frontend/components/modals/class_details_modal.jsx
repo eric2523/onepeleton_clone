@@ -19,6 +19,7 @@ class ClassDetailsModal extends React.Component {
             <h2>{this.props.category.name.toUpperCase()}</h2>
             <h2>{date}</h2>
           </div>
+          <button className="submit-btn">JOIN</button>
         </div>
         <div className="modal-main-content">
           <ModalClassRatings />

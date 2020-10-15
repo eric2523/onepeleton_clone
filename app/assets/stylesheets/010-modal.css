@@ -4,8 +4,18 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: transparent;
   z-index: 10;
+  transition: all 400ms ease 0s;
+}
+
+.session-background {
+  transition: all 400ms ease 0s;
+}
+
+.modal-background-color {
+  background: rgba(0, 0, 0, 0.7);
+  transition: all 400ms ease 0s;
 }
 
 .modal-child {
@@ -27,6 +37,7 @@
 .class-detail-hero-img {
   display: flex;
   align-items: flex-end;
+  justify-content: space-between;
   width: 100%;
   height: 315px;
   background-size: cover;
@@ -98,4 +109,15 @@
   font-size: 13px;
   color: rgb(76, 82, 94);
   font-weight: 300;
+}
+
+.description-content {
+  line-height: 20px;
+}
+
+.class-detail-hero-img .submit-btn {
+  width: 155px;
+  height: 45px;
+  position: relative;
+  bottom: 15px;
 }

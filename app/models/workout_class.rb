@@ -10,6 +10,7 @@
 #  instructor_id :integer          not null
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  description   :text             not null
 #
 class WorkoutClass < ApplicationRecord
   validates :name, :date, :skill_level, :category_id, :instructor_id, presence: true
@@ -27,4 +28,8 @@ class WorkoutClass < ApplicationRecord
     class_name: :User
 
   has_one_attached :photo
+
+  has_many :users_workout_class,
+    foreign_key: :workout_class_id,
+    class_name: :UsersWorkoutClass
 end

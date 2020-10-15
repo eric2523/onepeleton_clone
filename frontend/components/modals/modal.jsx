@@ -12,8 +12,8 @@ class Modal extends React.Component {
   }
 
   handleCloseModal(e){
-    this.props.history.goBack()
-    this.props.closeModal;
+    let category = this.props.match.params.category
+    this.props.history.push(`/classes/${category}`)
   }
 
   render() {

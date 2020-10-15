@@ -11,6 +11,9 @@ class ClassIndexItem extends React.Component {
       pathname: `/classes/${this.props.category}/classDetails/${this.props.classId}`
     })
     this.props.openModal()
+    window.setTimeout(() => (
+      $(".modal-background").addClass("modal-background-color")
+    ), 3)
   }
 
   

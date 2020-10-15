@@ -75,3 +75,5 @@ yarn-debug.log*
 /storage/*
 !/storage/.keep
 /public/uploads
+# Ignore application configuration
+/config/application.yml

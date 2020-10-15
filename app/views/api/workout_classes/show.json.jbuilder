@@ -6,3 +6,4 @@ json.extract! @workout_class,
   :category_id,
   :instructor_id, 
   :description
+json.photoUrl url_for(@workout_class.photo)

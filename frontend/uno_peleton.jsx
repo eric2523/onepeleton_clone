@@ -12,6 +12,8 @@ import configureStore from './store/store'
 // import * as CategoryAPIUtil from './util/category_api_util/category_api_util'
 // import { fetchClass, fetchCategoryClasses } from './actions/class_actions/class_actions'
 // import { fetchAllCategories } from './actions/category_actions/category_actions'
+import * as SpotifyAPIUtil from './util/spotify_api_util'
+import { fetchSong, fetchSpotToken } from './actions/spotify_api_actions'
 
 //testing log in form container 
 import Root from './components/root'
@@ -37,7 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //testing store on window
   // window.getState = store.getState
-  // window.dispatch = store.dispatch
+  window.dispatch = store.dispatch
+  window.fetchSong = fetchSong
+  window.fetchSpot = fetchSpotToken
+  // window.requestEncodedToken = SpotifyAPIUtil.requestEncodedToken
+  // window.requestSpotifyAuth = SpotifyAPIUtil.requestSpotifyAuth
   // window.signup = signup
   // window.login = login
   // window.logout = logout
