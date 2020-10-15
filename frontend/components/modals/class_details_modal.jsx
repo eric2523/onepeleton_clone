@@ -9,10 +9,14 @@ class ClassDetailsModal extends React.Component {
 
   render(){
     let date = new Date(this.props.workoutClass.date).toUTCString();
+    const divStyle = {
+      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url(${this.props.workoutClass.photoUrl})`,
+    };
+
     return (
       <div className="class-details-modal">
         {/* need to attach img to backend to fetch correct img per class */}
-        <div className="class-detail-hero-img cc-item-strength1">
+        <div className="class-detail-hero-img" style={divStyle}>
           <div className="class-content-items modal-content-items">
             <h2>{this.props.workoutClass.skillLevel.toUpperCase()}</h2>
             <h2>{this.props.workoutClass.name}</h2>

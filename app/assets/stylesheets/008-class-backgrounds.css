@@ -26,14 +26,6 @@
   filter: brightness(115%)
 }
 
-.cc-item-strength1 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("https://res.cloudinary.com/peloton-cycle/image/fetch/c_scale,dpr_1.0,f_auto,q_auto,w_512/https://s3.amazonaws.com/peloton-ride-images/3ca85f1b761f916fe65c726e3675d2b54d2844fc/img_1602608423_590534ab1ef44800a7cda356dde18ec5.jpg");
-}
-
-.cc-item-strength2 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("https://res.cloudinary.com/peloton-cycle/image/fetch/c_scale,dpr_1.0,f_auto,q_auto,w_512/https://s3.amazonaws.com/peloton-ride-images/f8b2b05f7245177b50be80bce82b0d2086a3b1ff/img_1602436086_64c9ce30f06844e1b3e891b241b3fbef.png");
-}
-
 .class-list-cc {
   align-content: flex-end;
 }

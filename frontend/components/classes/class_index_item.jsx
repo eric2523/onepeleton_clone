@@ -20,10 +20,13 @@ class ClassIndexItem extends React.Component {
   render(){
     let path = this.props.category.concat(this.props.classId)
     let date = new Date(this.props.workoutClass.date).toUTCString()
-
+    const divStyle = {
+      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url(${this.props.workoutClass.photoUrl})`,
+    };
     return(
       <li onClick={this.handleClick} className="class-category-item class-list-cc">
-        <div className={`cc-item-class cc-item-${path}`}>
+        <div className={`cc-item-class`} style={divStyle}>
+          {/* <img className="cc-item-class-pic" src={this.props.workoutClass.photoUrl} alt="workoutclass"/> */}
           <div className="class-content-items">
             <h2>{this.props.workoutClass.skillLevel.toUpperCase()}</h2>
             <h2>{this.props.workoutClass.name}</h2>
