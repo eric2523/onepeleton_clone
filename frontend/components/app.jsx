@@ -8,10 +8,13 @@ import LightIconIndex from './social_media_icons/light_icon_index'
 import MainNavigationBarContainer from './navbar/main_navigationbar'
 import {CategoryContainer} from './categories/category_container'
 import PeletonLogo from './main_logo/main_logo'
+import Modal from './modals/modal'
 
 const App = () => {
   return (
     <div className="session-background">
+      <Route path="/classes/:category/classDetails/:classId" component={Modal} />
+      {/* <Modal /> */}
       <header className="master-header-div">
         {/* <Switch> */}
           <Route path="/login" component={PeletonLogo} />
@@ -24,7 +27,7 @@ const App = () => {
         <Switch>
           <AuthRoute path="/login" component={LoginFormContainer} />
           <AuthRoute path="/signup" component={SignUpFormContainer} />
-          <Route exact path="/classes/:category" component={ClassContainer} />
+          <Route path="/classes/:category" component={ClassContainer} />
           <ProtectedRoute path="/classes" component={CategoryContainer} />
           <ProtectedRoute path="/" component={CategoryContainer} />
         </Switch>

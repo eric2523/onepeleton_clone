@@ -1,0 +1,94 @@
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.class-details-modal {
+  display: flex;
+  flex-direction: column;
+  height: 851px;
+  width: 560px;
+  background-color: rgb(255,255,255);
+  border-radius: 10px;
+}
+
+.class-detail-hero-img {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 315px;
+  background-size: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.modal-content-items {
+  margin: 15px;
+}
+
+.modal-content-items h2:first-child {
+  font-size: 11px;
+}
+
+.modal-content-itmes h2:last-child {
+  font-size: 12px;
+}
+
+.modal-content-items h2:nth-child(2) {
+  font-size: 18px;
+}
+
+.fa-thumbs-up {
+  padding-left: 5px;
+}
+
+.percentage {
+  font-size: 11px;
+  padding: 4px;
+}
+
+.left-class-ratings, .right-class-ratings {
+  display: flex;
+  align-items: center;
+  width: 70px;
+  height: 40px;
+  flex-flow: wrap;
+  margin-top: 30px;
+  margin-left: 15px;
+  justify-content: flex-start;
+}
+
+.right-class-ratings {
+  margin-left: 35px;
+}
+
+.left-class-ratings span {
+  padding: 1px;
+}
+
+.thumbs-up-svg {
+  width: 20px;
+  height: auto;
+}
+
+.class-ratings {
+  font-size: 11px;
+  color: rgb(90, 100, 116);
+}
+
+.modal-class-ratings {
+  display: flex;
+  align-items: baseline;
+}

@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem 'open-uri'
 gem "aws-sdk-s3"
 gem 'faker'
 gem 'jquery-rails'

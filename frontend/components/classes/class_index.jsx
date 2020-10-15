@@ -19,7 +19,6 @@ class ClassIndex extends React.Component {
     }
   }
 
-
   componentWillUnmount() {
     $(".session-background").removeClass("main-light-grey-background");
   }
@@ -33,6 +32,8 @@ class ClassIndex extends React.Component {
         workoutClass={workoutClass}
         classId={workoutClass.id}
         category={this.props.match.params.category}
+        openModal={this.props.openModal}
+        ownProps={this.props.ownProps}
       />
     ));
 

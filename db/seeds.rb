@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+require 'open-uri'
 
 User.destroy_all
 User.connection.execute('ALTER SEQUENCE users_id_seq RESTART WITH 1')
@@ -75,6 +76,9 @@ wc1 = WorkoutClass.create(
   category_id: c1.id,
   instructor_id: u1.id 
 )
+
+# f1 = open("s3://active-storage-unopeleton-seeds/strength/strength-1.jpg")
+# wc1.photo.attach(io: f1, filename: 'strength-1.jpg')
 
 wc2 = WorkoutClass.create(
   name: "10 min Arms Toning",
