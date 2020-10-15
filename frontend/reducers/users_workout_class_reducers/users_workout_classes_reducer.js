@@ -6,7 +6,7 @@ const usersWorkoutClassesReducer = (state ={}, action) => {
   // debugger
   switch (action.type) {
     case RECEIVE_NEW_CLASS:
-      newState[action.usersJoinClass.id] = action.usersJoinClass.id 
+      newState[action.usersJoinClass.workout_class_id] = action.usersJoinClass.id 
       return newState;
     case RECEIVE_ALL_USERS_CLASSES:
       return action.usersClasses;

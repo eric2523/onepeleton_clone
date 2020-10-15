@@ -20,9 +20,10 @@ class Api::UsersWorkoutClassesController < ApplicationController
   end
 
   def destroy
-    @workout_class = UsersWorkoutClass.find_by(class_id: params[:id])
-    @workout_class.destroy 
-    redirect_to api_users_workout_class_url(@workout_class)
+    # debugger
+    @new_user_workout_class = UsersWorkoutClass.find_by(workout_class_id: params[:id])
+    @new_user_workout_class.destroy 
+    render :show
   end
 
   private

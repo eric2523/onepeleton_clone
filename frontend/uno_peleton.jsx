@@ -40,8 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //testing store on window
   // window.getState = store.getState
-  window.dispatch = store.dispatch
-  window.fetchUsersClasses = fetchUsersClasses
+  // window.dispatch = store.dispatch
+  // window.fetchUsersClasses = fetchUsersClasses
   // window.fetchSong = fetchSong
   // window.fetchSpot = fetchSpotToken
   // window.requestEncodedToken = SpotifyAPIUtil.requestEncodedToken

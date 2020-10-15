@@ -1,1 +1,1 @@
-json.extract! @new_user_workout_class, :id, :user_id, :workout_class_id
+json.extract! @new_user_workout_class, :user_id, :workout_class_id
