@@ -14,7 +14,7 @@ import { fetchUsersClasses } from './actions/user_workout_classes_actions/user_w
 // import { fetchClass, fetchCategoryClasses } from './actions/class_actions/class_actions'
 // import { fetchAllCategories } from './actions/category_actions/category_actions'
 // import * as SpotifyAPIUtil from './util/spotify_api_util'
-// import { fetchSong, fetchSpotToken } from './actions/spotify_api_actions'
+import { fetchSong, fetchSpotToken } from './actions/spotify_api_actions'
 
 //testing log in form container 
 import Root from './components/root'
@@ -40,10 +40,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //testing store on window
   // window.getState = store.getState
-  // window.dispatch = store.dispatch
+  window.dispatch = store.dispatch
   // window.fetchUsersClasses = fetchUsersClasses
   // window.fetchSong = fetchSong
-  // window.fetchSpot = fetchSpotToken
+  window.fetchSpot = fetchSpotToken
   // window.requestEncodedToken = SpotifyAPIUtil.requestEncodedToken
   // window.requestSpotifyAuth = SpotifyAPIUtil.requestSpotifyAuth
   // window.signup = signup

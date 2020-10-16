@@ -1,4 +1,5 @@
 import * as APIUtil from '../../util/session_api_util/session_api_util'
+import { fetchSpotToken } from '../spotify_api_actions';
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
@@ -35,6 +36,7 @@ export const login = (user) => {
   return (dispatch) => {
     return APIUtil.login(user)
       .then((user) => dispatch(receiveCurrentUser(user)))
+      // .then(() => dispatch(fetchSpotToken()))
       .fail((errors) => dispatch(receiveErrors(errors.responseJSON)))
   }
 }

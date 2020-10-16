@@ -1,13 +1,11 @@
-export const requestSpotifyAuth = () => {
-  let clientId = "a620fec0d0184efd8f0030c11fd61fe0";
-  let key = "090f47368c864b15907ed4bf8de5d514";
+import {generateSpotEncodedToken} from '../../keys'
 
-  let encodedToken = btoa(clientId + ':' + key)
+export const requestSpotifyAuth = () => {
   return $.ajax({
     method: "post",
     url: "https://accounts.spotify.com/api/token",
     headers: {
-      "Authorization": `Basic ${encodedToken}`
+      "Authorization": `Basic ${generateSpotEncodedToken()}`
     },
     data: "grant_type=client_credentials"
   });

@@ -27,6 +27,7 @@ export const fetchSong = (accessToken, songName) => {
 }
 
 export const fetchSpotToken = () => {
+  // debugger
   return (dispatch) => {
     SpotifyAPIUtil.requestSpotifyAuth()
       .then((token) => dispatch(receiveToken(token)))
