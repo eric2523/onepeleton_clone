@@ -130,6 +130,7 @@
 
 ::-webkit-scrollbar {
   width: 12px;
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -137,5 +138,6 @@
     width: 10px;
     border-radius: 10px;
     background:#C0C0C0; 
+    scroll-behavior: smooth;
 }
 

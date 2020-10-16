@@ -11,12 +11,12 @@ const receiveSong = (song) => {
   })
 }
 
-const receiveToken = (token) => {
-  return ({
-    type: RECEIVE_TEMP_TOKEN,
-    token
-  })
-}
+// const receiveToken = (token) => {
+//   return ({
+//     type: RECEIVE_TEMP_TOKEN,
+//     token
+//   })
+// }
 
 export const clearSongs = () => {
   return ({
@@ -33,9 +33,9 @@ export const fetchSong = (accessToken, songName) => {
   }
 }
 
-export const fetchSpotToken = () => {
-  return (dispatch) => {
-    SpotifyAPIUtil.requestSpotifyAuth()
-      .then((token) => dispatch(receiveToken(token)))
-  }
-}
+// export const fetchSpotToken = () => {
+//   return (dispatch) => {
+//     SpotifyAPIUtil.requestSpotifyAuth()
+//       .then((token) => dispatch(receiveToken(token)))
+//   }
+// }

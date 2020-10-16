@@ -5,6 +5,7 @@ const tokenReducer = (state = {}, action) => {
     case RECEIVE_TEMP_TOKEN:
       window.localStorage.setItem('spotToken', action.token.access_token)
       // return action.token.access_token 
+      break;
     default:
       return state;
   }

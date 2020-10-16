@@ -302,42 +302,161 @@ s20 = Song.create(
 
 WorkoutClassSong.create(
   song_id: s1.id,
-  workout_class_id: 1
+  workout_class_id: (1 + rand(12))
 )
 WorkoutClassSong.create(
   song_id: s2.id,
-  workout_class_id: 1
+  workout_class_id: (1 + rand(12))
 )
 WorkoutClassSong.create(
   song_id: s3.id,
-  workout_class_id: 1
+  workout_class_id: (1 + rand(12))
 )
 WorkoutClassSong.create(
   song_id: s4.id,
-  workout_class_id: 1
+  workout_class_id: (1 + rand(12))
 )
 WorkoutClassSong.create(
   song_id: s5.id,
-  workout_class_id: 1
+  workout_class_id: (1 + rand(12))
 )
 WorkoutClassSong.create(
   song_id: s6.id,
-  workout_class_id: 2
+  workout_class_id: (1 + rand(12))
 )
 WorkoutClassSong.create(
   song_id: s7.id,
-  workout_class_id: 2
+  workout_class_id: (1 + rand(12))
 )
 WorkoutClassSong.create(
   song_id: s8.id,
-  workout_class_id: 2
+  workout_class_id: (1 + rand(12))
 )
 WorkoutClassSong.create(
   song_id: s9.id,
-  workout_class_id: 3
+  workout_class_id: (1 + rand(12))
 )
 WorkoutClassSong.create(
   song_id: s10.id,
-  workout_class_id: 3
+  workout_class_id: (1 + rand(12))
 )
-
+WorkoutClassSong.create(
+  song_id: s11.id,
+  workout_class_id: (1 + rand(12))
+)
+WorkoutClassSong.create(
+  song_id: s12.id,
+  workout_class_id: (1 + rand(12))
+)
+WorkoutClassSong.create(
+  song_id: s13.id,
+  workout_class_id: (1 + rand(12))
+)
+WorkoutClassSong.create(
+  song_id: s14.id,
+  workout_class_id: (1 + rand(12))
+)
+WorkoutClassSong.create(
+  song_id: s15.id,
+  workout_class_id: (1 + rand(12))
+)
+WorkoutClassSong.create(
+  song_id: s16.id,
+  workout_class_id: (1 + rand(12))
+)
+WorkoutClassSong.create(
+  song_id: s17.id,
+  workout_class_id: (1 + rand(12))
+)
+WorkoutClassSong.create(
+  song_id: s18.id,
+  workout_class_id: (1 + rand(12))
+)
+WorkoutClassSong.create(
+  song_id: s19.id,
+  workout_class_id: (1 + rand(12))
+)
+WorkoutClassSong.create(
+  song_id: s20.id,
+  workout_class_id: (1 + rand(12))
+)
+WorkoutClassSong.create(
+  song_id: s1.id,
+  workout_class_id: (1 + rand(12))
+)
+WorkoutClassSong.create(
+  song_id: s2.id,
+  workout_class_id: (1 + rand(12))
+)
+WorkoutClassSong.create(
+  song_id: s3.id,
+  workout_class_id: (1 + rand(12))
+)
+WorkoutClassSong.create(
+  song_id: s4.id,
+  workout_class_id: (1 + rand(12))
+)
+WorkoutClassSong.create(
+  song_id: s5.id,
+  workout_class_id: (1 + rand(12))
+)
+WorkoutClassSong.create(
+  song_id: s6.id,
+  workout_class_id: (1 + rand(12))
+)
+WorkoutClassSong.create(
+  song_id: s7.id,
+  workout_class_id: (1 + rand(12))
+)
+WorkoutClassSong.create(
+  song_id: s8.id,
+  workout_class_id: (1 + rand(12))
+)
+WorkoutClassSong.create(
+  song_id: s9.id,
+  workout_class_id: (1 + rand(12))
+)
+WorkoutClassSong.create(
+  song_id: s10.id,
+  workout_class_id: (1 + rand(12))
+)
+WorkoutClassSong.create(
+  song_id: s11.id,
+  workout_class_id: (1 + rand(12))
+)
+WorkoutClassSong.create(
+  song_id: s12.id,
+  workout_class_id: (1 + rand(12))
+)
+WorkoutClassSong.create(
+  song_id: s13.id,
+  workout_class_id: (1 + rand(12))
+)
+WorkoutClassSong.create(
+  song_id: s14.id,
+  workout_class_id: (1 + rand(12))
+)
+WorkoutClassSong.create(
+  song_id: s15.id,
+  workout_class_id: (1 + rand(12))
+)
+WorkoutClassSong.create(
+  song_id: s16.id,
+  workout_class_id: (1 + rand(12))
+)
+WorkoutClassSong.create(
+  song_id: s17.id,
+  workout_class_id: (1 + rand(12))
+)
+WorkoutClassSong.create(
+  song_id: s18.id,
+  workout_class_id: (1 + rand(12))
+)
+WorkoutClassSong.create(
+  song_id: s19.id,
+  workout_class_id: (1 + rand(12))
+)
+WorkoutClassSong.create(
+  song_id: s20.id,
+  workout_class_id: (1 + rand(12))
+)

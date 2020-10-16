@@ -1,6 +1,7 @@
 import React from 'react'
 import Errors from "../errors/errors";
 import { Link } from 'react-router-dom';
+import * as SpotifyApiUtil from '../../util/spotify_api_util'
 
 class SignUpForm extends React.Component {
   constructor(props) {
@@ -23,7 +24,13 @@ class SignUpForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.processForm(this.state);
+    this.props
+      .processForm(this.state)
+      .then(() =>
+        SpotifyApiUtil.requestSpotifyAuth().then((token) =>
+          window.localStorage.setItem("spotToken", token.access_token)
+        )
+      );
   }
 
   handleTimesClick(type) {

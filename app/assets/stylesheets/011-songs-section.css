@@ -34,9 +34,9 @@
 }
 
 .songs-playlist-div {
-  background: rgb(255,255,255);
-  border-radius: 15px;
-  height: 255px;
+  /* background: rgb(255,255,255); */
+  /* border-radius: 15px; */
+  height: 10vh;
 }
 
 .song-item {
@@ -56,12 +56,19 @@
   padding: 13px 13px 0px 13px;
   font-size: 11px;
   color: rgb(90,100,116);
+  background: rgb(255,255,255);
   line-height: 1.35em;
   letter-spacing: 0.06em;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
 }
 
 .songs-list {
   counter-reset: playlist-order;
+  background: rgb(255,255,255);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  margin-bottom: 20px;
 }
 
 .song-item::before {
@@ -82,4 +89,8 @@
 .song-item-artists {
   font-weight: 300;
   padding-top: 5px;
+}
+
+.songs-list li:last-child{
+  border-bottom: none;
 }
