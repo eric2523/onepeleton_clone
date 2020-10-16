@@ -1,11 +1,20 @@
 import {generateSpotEncodedToken} from '../../keys'
 
 export const requestSpotifyAuth = () => {
+  let token = null;
+  if (process.env.NODE_ENV !== 'production'){
+    token = generateSpotEncodedToken()
+  } else {
+    token = btoa(
+      process.env.SPOT_CLIENT_ID + ":" + process.env.SPOT_SECRET_KEY
+    );
+  }
+
   return $.ajax({
     method: "post",
     url: "https://accounts.spotify.com/api/token",
     headers: {
-      "Authorization": `Basic ${generateSpotEncodedToken()}`
+      "Authorization": `Basic ${token}`
     },
     data: "grant_type=client_credentials"
   });
