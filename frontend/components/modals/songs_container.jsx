@@ -68,6 +68,8 @@ class ModalClassSongs extends React.Component {
   render() {
     let artistNames = null;
     let songRowItems = null;
+    let playlistHeader = null;
+    let songsHeader = null;
 
     let spotSongsLength = Object.keys(this.props.spotifySongs).length;
     let classSongsLength = this.props.classSongs.length;
@@ -80,13 +82,15 @@ class ModalClassSongs extends React.Component {
       songRowItems = this.generatePlaylistListItem(
         Object.values(this.props.spotifySongs)
       );
+      playlistHeader = <h2 className="playlist-header">PLAYLIST</h2>;
+      songsHeader = <h1 className="songs-header">FEATURING MUSIC BY</h1>;
     }
     return (
       <div className="modal-class-songs">
-        <h1 className="songs-header">FEATURING MUSIC BY</h1>
+        {songsHeader}
         <ul className="songs-artist-names">{artistNames}</ul>
         <div className="songs-playlist-div">
-          <h2 className="playlist-header">PLAYLIST</h2>
+          {playlistHeader}
           <ol className="songs-list">{songRowItems}</ol>
         </div>
       </div>

@@ -45,3 +45,8 @@
   fill: rgb(223,30,49);
   color: rgb(223,30,49);
 }
+
+.svg-active > h3 {
+  fill: rgb(223,30,49);
+  color: rgb(223,30,49);
+}
