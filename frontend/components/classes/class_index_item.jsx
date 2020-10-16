@@ -14,8 +14,14 @@ class ClassIndexItem extends React.Component {
     window.setTimeout(() => (
       $(".modal-background").addClass("modal-background-color")
     ), 3)
+    
+    $("body").addClass("modal-overflow-hidden")
   }
 
+//   document.querySelector("#open-modal-button").addEventListener('click', function() {
+//     document.querySelector("#modal-container").style.display = 'block';
+//     document.querySelector("body").style.overflow = 'hidden';
+// })
   
   render(){
     let path = this.props.category.concat(this.props.classId)

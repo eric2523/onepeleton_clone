@@ -215,4 +215,129 @@ demo_user = User.create(
 # y_f6 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/yoga/yoga-6.jpg")
 # y_wc6.photo.attach(io: y_f6, filename: 'yoga-6.jpg')
 
+s1 = Song.create(
+  name: "Mood",
+  artist: "24kGoldn"
+)
+s2 = Song.create(
+  name: "Dynamite",
+  artist: "BTS"
+)
+s2 = Song.create(
+  name: "Blinding Lights",
+  artist: "The Weeknd"
+)
+s3 = Song.create(
+  name: "ROCKSTAR",
+  artist: "DaBaby"
+)
+s4 = Song.create(
+  name: "Watermelon Sugar",
+  artist: "Harry Styles"
+)
+s5 = Song.create(
+  name: "Go Crazy",
+  artist: "Chris Brown"
+)
+s6 = Song.create(
+  name: "Come and Go",
+  artist: "Juice WRLD"
+)
+s7 = Song.create(
+  name: "We Might Fall",
+  artist: "Ghastly"
+)
+s8 = Song.create(
+  name: "Light",
+  artist: "San Holo"
+)
+s9 = Song.create(
+  name: "Money Longer",
+  artist: "Lil Uzi Vert"
+)
+s10 = Song.create(
+  name: "You Was Right",
+  artist: "Lil Uzi Vert"
+)
+s11 = Song.create(
+  name: "Get Right Witcha",
+  artist: "Migos"
+)
+s12 = Song.create(
+  name: "T-Shirt",
+  artist: "Migos"
+)
+s13 = Song.create(
+  name: "Mood",
+  artist: "24kGoldn"
+)
+s14 = Song.create(
+  name: "Antidote",
+  artist: "Travis Scott"
+)
+s15 = Song.create(
+  name: "outside",
+  artist: "Travis Scott"
+)
+s16 = Song.create(
+  name: "Ivy",
+  artist: "Frank Ocean"
+)
+s17 = Song.create(
+  name: "Biking",
+  artist: "Frank Ocean"
+)
+s18 = Song.create(
+  name: "Bad Religion",
+  artist: "Frank Ocean"
+)
+s19 = Song.create(
+  name: "Crawl Outta Love",
+  artist: "ILLENIUM"
+)
+s20 = Song.create(
+  name: "Sad Machine",
+  artist: "Porter Robinson"
+)
+
+WorkoutClassSong.create(
+  song_id: s1.id,
+  workout_class_id: 1
+)
+WorkoutClassSong.create(
+  song_id: s2.id,
+  workout_class_id: 1
+)
+WorkoutClassSong.create(
+  song_id: s3.id,
+  workout_class_id: 1
+)
+WorkoutClassSong.create(
+  song_id: s4.id,
+  workout_class_id: 1
+)
+WorkoutClassSong.create(
+  song_id: s5.id,
+  workout_class_id: 1
+)
+WorkoutClassSong.create(
+  song_id: s6.id,
+  workout_class_id: 2
+)
+WorkoutClassSong.create(
+  song_id: s7.id,
+  workout_class_id: 2
+)
+WorkoutClassSong.create(
+  song_id: s8.id,
+  workout_class_id: 2
+)
+WorkoutClassSong.create(
+  song_id: s9.id,
+  workout_class_id: 3
+)
+WorkoutClassSong.create(
+  song_id: s10.id,
+  workout_class_id: 3
+)
 

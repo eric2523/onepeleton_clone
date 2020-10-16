@@ -23,6 +23,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  overflow-y: auto;
 }
 
 .class-details-modal {
@@ -30,8 +31,9 @@
   flex-direction: column;
   height: 851px;
   width: 560px;
-  background-color: rgb(255,255,255);
+  background-color: #F5F7F9;
   border-radius: 10px;
+  overflow-y: scroll;
 }
 
 .class-detail-hero-img {
@@ -121,3 +123,19 @@
   position: relative;
   bottom: 15px;
 }
+
+.modal-overflow-hidden {
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    width: 10px;
+    border-radius: 10px;
+    background:#C0C0C0; 
+}
+

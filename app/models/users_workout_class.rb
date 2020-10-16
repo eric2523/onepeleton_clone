@@ -6,6 +6,7 @@
 #  workout_class_id :bigint           not null
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  id               :bigint           not null, primary key
 #
 class UsersWorkoutClass < ApplicationRecord
   belongs_to :user,

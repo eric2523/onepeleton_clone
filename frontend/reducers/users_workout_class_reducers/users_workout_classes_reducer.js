@@ -3,7 +3,6 @@ import { RECEIVE_NEW_CLASS, RECEIVE_ALL_USERS_CLASSES, REMOVE_USERS_CLASS } from
 const usersWorkoutClassesReducer = (state ={}, action) => {
   Object.freeze(state)
   let newState = Object.assign({}, state)
-  // debugger
   switch (action.type) {
     case RECEIVE_NEW_CLASS:
       newState[action.usersJoinClass.workout_class_id] = action.usersJoinClass.id 
@@ -19,16 +18,3 @@ const usersWorkoutClassesReducer = (state ={}, action) => {
 }
 
 export default usersWorkoutClassesReducer;
-
-//* userClasses: {
-//*       1: {
-//*         id: 1,
-//*         userId: 1,
-//*         classId: 1
-//*       },
-//*       2: {
-//*         id: 2,
-//*         userId: 2,
-//*         classId: 5
-//*       }
-//*     },

@@ -2,6 +2,7 @@ import * as SpotifyAPIUtil from '../util/spotify_api_util'
 
 export const RECEIVE_SONG = "RECEIVE_SONG";
 export const RECEIVE_TEMP_TOKEN = "RECEIVE_TEMP_TOKEN";
+export const CLEAR_SPOT_SONGS = "CLEAR_SPOT_SONGS";
 
 const receiveSong = (song) => {
   return ({
@@ -17,6 +18,12 @@ const receiveToken = (token) => {
   })
 }
 
+export const clearSongs = () => {
+  return ({
+    type: CLEAR_SPOT_SONGS,
+  })
+}
+
 export const fetchSong = (accessToken, songName) => {
   return (dispatch) => {
     SpotifyAPIUtil.requestSpotifyItem(accessToken, songName)
@@ -27,7 +34,6 @@ export const fetchSong = (accessToken, songName) => {
 }
 
 export const fetchSpotToken = () => {
-  // debugger
   return (dispatch) => {
     SpotifyAPIUtil.requestSpotifyAuth()
       .then((token) => dispatch(receiveToken(token)))

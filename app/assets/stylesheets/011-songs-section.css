@@ -1,0 +1,85 @@
+.songs-artist-names {
+  display: flex;
+  margin-top: 18px;
+  margin-bottom: 18px;
+  margin-right: 15px;
+}
+
+.songs-artist-names li {
+  padding-right: 10px;
+  font-size: 13px;
+  color: rgb(90,100,116);
+}
+
+.songs-artist-names li:not(:first-child)::before {
+  content: "|";
+  padding-right: 10px;
+}
+
+.songs-artist-names li:first-child{
+  border-left: none;
+}
+
+.modal-class-songs {
+  margin: 25px 15px 15px 15px;
+}
+
+.songs-header {
+ font-size: 13px;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid rgba(168, 172, 177, 0.4);
+  font-weight: 600;
+  margin-bottom: padding;
+  padding-bottom: 10px;
+}
+
+.songs-playlist-div {
+  background: rgb(255,255,255);
+  border-radius: 15px;
+  height: 255px;
+}
+
+.song-item {
+  display: flex;
+  border-bottom: 1px solid rgba(168, 172, 177, 0.25);
+  padding: 13px 0 13px 25px;
+  align-items: center;
+}
+
+.song-icon-img {
+  width: 40px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.playlist-header {
+  padding: 13px 13px 0px 13px;
+  font-size: 11px;
+  color: rgb(90,100,116);
+  line-height: 1.35em;
+  letter-spacing: 0.06em;
+}
+
+.songs-list {
+  counter-reset: playlist-order;
+}
+
+.song-item::before {
+  counter-increment: playlist-order;
+  content: counter(playlist-order);
+  color: rgb(90, 100, 116);
+  width: 3ch;
+}
+
+.song-item-description {
+  margin-left: 15px;
+}
+
+.song-item-title, .song-item-artists, .song-item::before {
+  font-size: 12px;
+}
+
+.song-item-artists {
+  font-weight: 300;
+  padding-top: 5px;
+}

@@ -37,4 +37,11 @@ class WorkoutClass < ApplicationRecord
     through: :users_workout_class,
     source: :user 
   
+  has_many :workout_class_songs,
+    foreign_key: :workout_class_id,
+    class_name: :WorkoutClassSong 
+
+  has_many :songs,
+    through: :workout_class_songs,
+    source: :song 
 end

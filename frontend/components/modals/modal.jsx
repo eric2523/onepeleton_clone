@@ -13,6 +13,7 @@ class Modal extends React.Component {
 
   handleCloseModal(e){
     let category = this.props.match.params.category
+    $("body").removeClass("modal-overflow-hidden");
     this.props.history.push(`/classes/${category}`)
   }
 

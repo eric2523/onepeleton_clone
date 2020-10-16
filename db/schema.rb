@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_15_220519) do
+ActiveRecord::Schema.define(version: 2020_10_16_013906) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,15 @@ ActiveRecord::Schema.define(version: 2020_10_15_220519) do
     t.index ["name"], name: "index_categories_on_name", unique: true
   end
 
+  create_table "songs", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "artist", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artist"], name: "index_songs_on_artist"
+    t.index ["name"], name: "index_songs_on_name"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
     t.string "email", null: false
@@ -63,6 +72,15 @@ ActiveRecord::Schema.define(version: 2020_10_15_220519) do
     t.datetime "updated_at", null: false
     t.index ["user_id", "workout_class_id"], name: "index_users_workout_classes_on_user_id_and_workout_class_id"
     t.index ["workout_class_id", "user_id"], name: "index_users_workout_classes_on_workout_class_id_and_user_id"
+  end
+
+  create_table "workout_class_songs", force: :cascade do |t|
+    t.integer "song_id", null: false
+    t.integer "workout_class_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["song_id"], name: "index_workout_class_songs_on_song_id"
+    t.index ["workout_class_id"], name: "index_workout_class_songs_on_workout_class_id"
   end
 
   create_table "workout_classes", force: :cascade do |t|

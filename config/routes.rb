@@ -6,11 +6,13 @@ Rails.application.routes.draw do
       resources :workout_classes, only: [:index]
     end
 
-    #? in progress: post request to follow a class
+    #* finished: post request to follow a class
     resources :users_workout_classes, only: [:create, :destroy, :index, :show]
 
     #* finished: fetches info about specific workout class 
-    resources :workout_classes, only: [:show] 
+    resources :workout_classes, only: [:show] do 
+      resources :songs, only: [:index]
+    end
 
     #* finished: fetches classes for specific category
     namespace :classes do 
@@ -23,8 +25,9 @@ Rails.application.routes.draw do
     #* finished: session login/signup
     resource :session, only: [:create, :destroy]
     
-    #! testing: token stuff still testing 
-    resources :tokens, only: [:index]
+    #! testing: songs controller / songs joins 
+    # resources :songs, only: [:show, :index]
+   
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

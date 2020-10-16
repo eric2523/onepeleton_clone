@@ -2,36 +2,41 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { ThumbsUpSVG } from '../../components/svgs/modal_svg'
 import { followClass, unfollowClass, fetchUsersClasses } from '../../actions/user_workout_classes_actions/user_workout_classes_action';
+import { fetchClassSongs } from '../../actions/songs_actions/songs_action';
+import { fetchSong } from '../../actions/spotify_api_actions';
+import ModalSongsContainer from './songs_container'
 
 class ClassDetailsModal extends React.Component {
   constructor(props){
     super(props)
-    this.state = { followsClass: null }
+    this.state = { followsClass: null, loaded: false }
     this.handleClick = this.handleClick.bind(this)
   }
 
   componentDidMount(){
     let that = this;
+
     this.props.fetchUsersClasses()
-      .then(() => {
-        let followsClass = 
-        Object.keys(that.props.userClasses)
-        .includes(that.props.classId);
-        that.setState({followsClass})
-      });
+    .then(() => {
+      let followsClass = Object.keys(that.props.userClasses).includes(that.props.classId);
+      that.setState({followsClass})
+      this.props.fetchClassSongs(this.props.classId)  
+    })
+  }
+
+  componentDidUpdate(prevProps){
+    if (this.props.workoutClassSongs !== prevProps.workoutClassSongs) {
+      this.setState({loaded: true})
+    }
   }
 
   handleClick(e) {
     if (this.state.followsClass) {
       this.setState({followsClass: false})
       this.props.unfollowClass(this.props.classId)
-        // .then(() => (
-        // ))
     } else {
       this.setState({followsClass: true})
       this.props.followClass(this.props.classId)
-        // .then(() => (
-        // ))
     }
   }
 
@@ -44,9 +49,17 @@ class ClassDetailsModal extends React.Component {
     let btnContent = "";
     (this.state.followsClass) ? (btnContent = "CANCEL") : (btnContent = "JOIN");
 
+    let modalSongs = null;
+    if (this.state.loaded) {
+      modalSongs = (
+        <ModalSongsContainer
+          classSongs={Object.values(this.props.workoutClassSongs)}
+        />
+      );
+    }
+
     return (
       <div className="class-details-modal">
-        {/* need to attach img to backend to fetch correct img per class */}
         <div className="class-detail-hero-img" style={divStyle}>
           <div className="class-content-items modal-content-items">
             <h2>{this.props.workoutClass.skillLevel.toUpperCase()}</h2>
@@ -54,13 +67,16 @@ class ClassDetailsModal extends React.Component {
             <h2>{this.props.category.name.toUpperCase()}</h2>
             <h2>{date}</h2>
           </div>
-          <button onClick={this.handleClick} className="submit-btn">{btnContent}</button>
+          <button onClick={this.handleClick} className="submit-btn">
+            {btnContent}
+          </button>
         </div>
         <div className="modal-main-content">
           <ModalClassRatings />
           <ModalClassDescription
             description={this.props.workoutClass.description}
           />
+          {modalSongs}
         </div>
       </div>
     );
@@ -110,16 +126,21 @@ const mSTP = (state, ownProps) => {
   return ({
     workoutClass,
     category: state.entities.categories[workoutClass.categoryId],
-    userClasses: state.entities.userClasses
+    userClasses: state.entities.userClasses,
+    workoutClassSongs: state.entities.workoutClassSongs,
+    spotifySongs: state.entities.songs,
+    accessToken: window.localStorage.spotToken
   })
 }
 
 const mDTP = (dispatch) => {
-  return ({
+  return {
     followClass: (classId) => dispatch(followClass(classId)),
     unfollowClass: (classId) => dispatch(unfollowClass(classId)),
-    fetchUsersClasses: () => dispatch(fetchUsersClasses())
-  })
+    fetchUsersClasses: () => dispatch(fetchUsersClasses()),
+    fetchClassSongs: (classId) => dispatch(fetchClassSongs(classId)),
+    fetchSpotifySong: (accessToken, songTitle) => dispatch(fetchSong(accessToken, songTitle))
+  };
 } 
 
 export default connect(mSTP, mDTP)(ClassDetailsModal)

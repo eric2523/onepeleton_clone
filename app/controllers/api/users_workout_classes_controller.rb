@@ -20,7 +20,6 @@ class Api::UsersWorkoutClassesController < ApplicationController
   end
 
   def destroy
-    # debugger
     @new_user_workout_class = UsersWorkoutClass.find_by(workout_class_id: params[:id])
     @new_user_workout_class.destroy 
     render :show
