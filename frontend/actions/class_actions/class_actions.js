@@ -30,3 +30,10 @@ export const fetchCategoryClasses = (categoryName) => {
       .then((workoutClasses) => dispatch(receiveClasses(workoutClasses)) )
   }
 }
+
+export const fetchMostRecentClasses = () => {
+  return (dispatch) => {
+    return ClassAPIUtil.getMostRecentClasses()
+      .then((workoutClasses) => dispatch(receiveClasses(workoutClasses)))
+  }
+}

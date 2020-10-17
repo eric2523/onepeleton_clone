@@ -5,6 +5,13 @@ export const getClass = (classId) => {
   });
 }
 
+export const getMostRecentClasses = () => {
+  return $.ajax({
+    method: "get",
+    url: "/api/workout_classes",
+  });
+}
+
 export const followClass = (classId) => {
   return $.ajax({
     method: "post",

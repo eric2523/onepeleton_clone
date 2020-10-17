@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :users_workout_classes, only: [:create, :destroy, :index, :show]
 
     #* finished: fetches info about specific workout class 
-    resources :workout_classes, only: [:show] do 
+    resources :workout_classes, only: [:show, :index] do 
       resources :songs, only: [:index]
     end
 

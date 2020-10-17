@@ -15,6 +15,10 @@
     <script type="text/javascript">
       window.logoURL = "<%= image_url('peleton-standard-logo.svg') %>"
     </script>
+    <script type="text/javascript">
+      window.spot_id = "<%= Rails.application.credentials.spot[:client_id] %>"
+      window.client_s = "<%= Rails.application.credentials.spot[:client_secret] %>"
+    </script>
   </head>
 
   <body>
