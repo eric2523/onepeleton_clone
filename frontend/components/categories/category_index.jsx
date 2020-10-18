@@ -1,5 +1,6 @@
 import React from 'react'
 import CategoryIndexItem from './category_index_item'
+import UpcomingClassesContainer from '../classes/upcoming_classes/upcoming_classes_container'
 
 class CategoryIndex extends React.Component {
   constructor(props){
@@ -21,12 +22,15 @@ class CategoryIndex extends React.Component {
 
     return (
       <div className="class-category-div">
-        <h2 className="class-category-header">Browse Classes</h2>
-        <ul className="class-category-list">
-          {categoryItems}
-        </ul>
+        <UpcomingClassesContainer />
+        <div className="category-list-cc-div">
+          <ul className="class-category-list">
+            <h2 className="class-category-header">Browse Classes</h2>
+            {categoryItems}
+          </ul>
+        </div>
       </div>
-    )
+    );
   }
 }
 

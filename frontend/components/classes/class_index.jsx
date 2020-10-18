@@ -45,7 +45,9 @@ class ClassIndex extends React.Component {
         <h2 className="class-category-header">
           {this.props.match.params.category.toUpperCase()}
         </h2>
-        <ul className="class-category-list">{classItems}</ul>
+        <div className="class-category-list-div">
+          <ul className="class-category-list">{classItems}</ul>
+        </div>
       </div>
     );
   }

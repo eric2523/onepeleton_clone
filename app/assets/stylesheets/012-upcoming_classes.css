@@ -1,0 +1,104 @@
+.upcoming-classes-div {
+  width: 100%;
+  border-bottom: 1px solid rgba(168, 172, 177, 0.4);
+  display: flex;
+  justify-content: center;
+}
+
+.upcoming-classes-header {
+  position: absolute;
+  top: -18px;
+  left: 5px;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  color: rgb(34, 37, 41);
+}
+
+.upcoming-classes-list {
+  display: flex;
+  position: relative;
+  max-width: 1565px;
+  min-width: 500px;
+  margin: 45px 5px 15px 5px;
+}
+
+
+.upcoming-class-item-div {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background: rgb(255, 255, 255);
+  width: 500px;
+  height: 140px;
+  margin: 15px 5px 15px 5px;
+  border-radius: 5px;
+  background-image: url("https://res.cloudinary.com/peloton-cycle/image/fetch/c_scale,dpr_1.0,f_auto,q_auto,w_160/https://s3.amazonaws.com/workout-metric-images-prod/dd5a2d3d655c410a92afa6da0e3cb5f6");
+  background-repeat: no-repeat;
+  background-position-x: calc(100% + 15px);
+  background-position-y: calc(100% + 35px);
+}
+
+.upcoming-classes-header > span {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.count-me-in {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(90, 100, 116);
+  color: rgb(90, 100, 116);
+  stroke: rgb(90, 100, 116);
+  border-radius: 20px;
+  height: 35px;
+  width: 150px;
+  transition-property: background-color, color, stroke;
+  transition-duration: 250ms;
+  transition-timing-function: ease;
+  cursor: pointer;
+}
+
+.count-me-in:hover {
+  background-color: rgb(90, 100, 116);
+  color: rgb(255,255,255)
+}
+
+.upc-class-description {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.upc-class-description > h2 {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.upc-class-description > h3 {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  margin-top: 8px;
+}
+
+.upc-class-time {
+  font-size: 13px;
+  letter-spacing: 0.06em;
+}
+
+.count-me-out {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(90, 100, 116);
+  color: rgb(255,255,255);
+  height: 35px;
+  width: 150px;
+  transition-property: background-color, color, stroke;
+  transition-duration: 250ms;
+  transition-timing-function: ease;
+  cursor: pointer;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
