@@ -24,6 +24,16 @@ export const fetchClass = (classId) => {
   }
 }
 
+export const fetchClasses = (classes) => {
+  for (const classId of classes) {
+    return (dispatch) => {
+      return ClassAPIUtil.getClass(classId).then((workoutClass) =>
+        dispatch(receiveClass(workoutClass))
+      );
+    };
+  }
+}
+
 export const fetchCategoryClasses = (categoryName) => {
   return (dispatch) => {
     return CategoryAPIUtil.fetchCategoryClasses(categoryName)

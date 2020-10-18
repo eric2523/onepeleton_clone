@@ -29,3 +29,22 @@
 .nav-bar-item > .nav-bar-item-active {
   color: rgb(224, 42, 59);
 }
+
+.nav-bar-item-active-light:hover {
+  background-color: #F5F7F9;
+}
+
+.profile-navbar-list {
+  display: flex;
+}
+
+.profile-nav-div {
+    position: sticky;
+    display: flex;
+    height: 44px;
+    width: 100%;
+    background-color: rgb(255,255,255);
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 5px 0px;
+}

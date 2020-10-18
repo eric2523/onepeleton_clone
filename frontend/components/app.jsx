@@ -9,15 +9,16 @@ import MainNavigationBarContainer from './navbar/main_navigationbar'
 import {CategoryContainer} from './categories/category_container'
 import PeletonLogo from './main_logo/main_logo'
 import Modal from './modals/modal'
+import OverviewContainer from './profile/overview_container'
 
 const App = () => {
   return (
     <div className="session-background">
+      {/* <Modal /> */}
       <Route
         path="/classes/:category/classDetails/:classId"
         component={Modal}
       />
-      {/* <Modal /> */}
       <header className="master-header-div">
         {/* <Switch> */}
         <Route path="/login" component={PeletonLogo} />
@@ -32,6 +33,7 @@ const App = () => {
           <AuthRoute path="/signup" component={SignUpFormContainer} />
           <ProtectedRoute path="/classes/:category" component={ClassContainer} />
           <ProtectedRoute path="/classes" component={CategoryContainer} />
+          <ProtectedRoute path="/profile/overview" component={OverviewContainer} />
           <ProtectedRoute exact path="/" component={CategoryContainer} />
           <Redirect to="/classes" />
         </Switch>
