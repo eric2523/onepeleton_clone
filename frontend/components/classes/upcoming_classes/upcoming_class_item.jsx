@@ -47,6 +47,13 @@ class UpcomingClassesItem extends React.Component {
      return dateString;
   }
 
+  getHoursTillStart(classDate){
+    let timeBetween = classDate - Date.now()
+    return (
+      Math.floor(timeBetween/(1000 * 60 * 60))
+    )
+  }
+
   render(){
     let submitBtn = null;
     if (this.props.followingClass){
@@ -69,6 +76,7 @@ class UpcomingClassesItem extends React.Component {
 
     let classDate = new Date(this.props.workoutClass.date)
     let classTime = this.getClassTime(classDate)
+    let timeBetween = this.getHoursTillStart(classDate)
 
     return(
       <div className="upcoming-class-item-div">
@@ -81,6 +89,10 @@ class UpcomingClassesItem extends React.Component {
           </div>
           <div className="upc-submit-div">
             {submitBtn}
+            <div className="time-countdown">
+              <h3>{timeBetween} hrs</h3>
+              <h4>till start</h4>
+            </div>
           </div>
       </div>
     )

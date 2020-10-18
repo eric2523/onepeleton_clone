@@ -102,3 +102,22 @@
   border-radius: 20px;
   text-transform: uppercase;
 }
+
+.upc-submit-div {
+  display: flex;
+  align-items: center;
+}
+
+.time-countdown {
+  color: rgb(90, 100, 116);
+  margin-left: 12px;
+}
+
+.time-countdown > h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.time-countdown > h4 {
+  font-size: 12px;
+}
