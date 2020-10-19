@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resources :users, only: [:index, :show, :create] do 
       resources :workout_classes, only: [:index]
+
+      #? in progress: following functinality
+      resources :user_follows, only: [:index, :create]
     end
 
     #* finished: post request to follow a class
@@ -24,6 +27,9 @@ Rails.application.routes.draw do
     
     #* finished: session login/signup
     resource :session, only: [:create, :destroy]
+
+    #? in progress: following/unfollowing user functinality
+    resources :user_follows, only: [:destroy]
     
     #! testing: songs controller / songs joins 
     # resources :songs, only: [:show, :index]

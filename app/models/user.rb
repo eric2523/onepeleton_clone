@@ -61,4 +61,20 @@ class User < ApplicationRecord
   has_many :workout_classes,
     through: :users_workout_class,
     source: :workout_class
+
+  has_many :following_users,
+    foreign_key: :user_id,
+    class_name: :UserFollow
+
+  has_many :followees,
+    foreign_key: :followed_user_id,
+    class_name: :UserFollow
+
+  has_many :users_followed,
+    through: :following_users,
+    source: :followed_user
+
+  has_many :followers,
+    through: :followees,
+    source: :user
 end

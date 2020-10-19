@@ -14,12 +14,16 @@ class OverviewIndex extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="user-overview">
         <header>
           <ProfileNavbar />
         </header>
 
-        <UserBioIndex />
+        <UserBioIndex 
+          userFollows={this.props.userFollows}
+          currUser={this.props.currUser}
+          fetchUsersFollows={this.props.fetchUsersFollows}
+        />
         <UserTotalWorkoutsIndex />
       </div>
     );

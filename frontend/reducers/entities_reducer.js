@@ -5,6 +5,7 @@ import categoryReducer from './category_reducers/category_reducer';
 import spotifyReducer from './spotify_api_reducer'
 import usersWorkoutClassesReducer from './users_workout_class_reducers/users_workout_classes_reducer';
 import songsReducer from './songs_reducers/songs_reducer';
+import userFollowsReducer from './user_follows_reducers/user_follows_reducer'
 
 const entitiesReducer = combineReducers({
   users: usersReducer,
@@ -12,7 +13,8 @@ const entitiesReducer = combineReducers({
   workoutClassSongs: songsReducer,
   songs: spotifyReducer,
   categories: categoryReducer,
-  userClasses: usersWorkoutClassesReducer
+  userClasses: usersWorkoutClassesReducer,
+  userFollows: userFollowsReducer
 })
 
 export default entitiesReducer;
