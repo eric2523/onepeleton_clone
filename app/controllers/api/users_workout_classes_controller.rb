@@ -16,7 +16,8 @@ class Api::UsersWorkoutClassesController < ApplicationController
   end
 
   def index
-    @curr_user_classes = current_user.users_workout_class 
+    # debugger
+    @curr_user_classes = current_user.workout_classes
   end
 
   def destroy

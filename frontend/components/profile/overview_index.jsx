@@ -11,6 +11,9 @@ class OverviewIndex extends React.Component {
   componentDidMount() {
     $(".session-background").addClass("main-light-grey-background");
     this.props.fetchUsersClasses()
+      .then(() => (
+        this.props.fetchUsersWorkoutClasses()
+      ))
   }
 
   componentWillUnmount(){

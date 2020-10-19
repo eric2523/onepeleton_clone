@@ -8,12 +8,14 @@ class UpcomingClassesRow extends React.Component {
 
   componentDidMount(){
     this.props.fetchMostRecentClasses()
-      .then(() =>  this.props.fetchUsersClasses());
+      .then(() =>  this.props.fetchUsersClasses()
+        .then(() => this.props.fetchAllCategories())
+      );
   }
 
   render(){
     let upcomingClasses = null;
-    if (this.props.categories) {
+    if (Object.values(this.props.categories).length) {
       upcomingClasses = Object.values(this.props.workoutClasses)
         .map((workoutClass) => (
           <UpcomingClassesItem 

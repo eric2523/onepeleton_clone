@@ -1,5 +1,12 @@
 @curr_user_classes.each do |workout_class|
-  json.set! workout_class.workout_class_id do 
-    json.extract! workout_class, :user_id, :workout_class_id
+  json.set! workout_class.id do 
+    json.extract! workout_class, 
+      :id, 
+      :name, 
+      :date, 
+      :skill_level, 
+      :category_id,
+      :instructor_id, 
+      :description
   end
 end

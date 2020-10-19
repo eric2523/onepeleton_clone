@@ -6,9 +6,7 @@ class UserBioIndex extends React.Component {
   }
 
   componentDidMount(){
-    
     this.props.fetchUsersFollows(this.props.currUser.id)
-    // debugger
   }
 
   render(){
