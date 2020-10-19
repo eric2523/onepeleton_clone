@@ -21,3 +21,12 @@
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+.p-wc-item {
+  margin: 15px;
+  background: rgb(255, 255, 255);
+}
+
+.p-wc-item-content {
+  margin: 15px;
+}
