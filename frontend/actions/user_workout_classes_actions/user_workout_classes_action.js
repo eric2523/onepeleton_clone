@@ -35,7 +35,7 @@ export const followClass = (classId) => {
 export const fetchUsersClasses = () => {
   return (dispatch) => {
     return ClassAPIUtil.getUsersWorkoutClasses()
-      .then((workoutClasses) => dispatch(receiveAllUsersClass(workoutClasses)))
+      .then((userClasses) => dispatch(receiveAllUsersClass(userClasses)))
   }
 }
 

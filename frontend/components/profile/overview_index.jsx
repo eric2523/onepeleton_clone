@@ -10,9 +10,15 @@ class OverviewIndex extends React.Component {
 
   componentDidMount() {
     $(".session-background").addClass("main-light-grey-background");
+    this.props.fetchUsersClasses()
+  }
+
+  componentWillUnmount(){
+     $(".session-background").removeClass("main-light-grey-background");
   }
 
   render() {
+    // debugger
     return (
       <div className="user-overview">
         <header>
@@ -26,7 +32,7 @@ class OverviewIndex extends React.Component {
         />
         <UserTotalWorkoutsIndex 
           userClasses={this.props.userClasses}
-          fetchUsersClasses={this.props.fetchUsersClasses}
+          workoutClasses={this.props.workoutClasses}
         />
       </div>
     );

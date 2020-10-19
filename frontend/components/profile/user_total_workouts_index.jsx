@@ -7,7 +7,6 @@ class UserTotalWorkoutsIndex extends React.Component {
   }
 
   componentDidMount(){
-    this.props.fetchUsersClasses();
   }
 
   render(){
@@ -28,7 +27,7 @@ class UserTotalWorkoutsIndex extends React.Component {
           </div>
 
           <div className="prof-workouts-bottom">
-            <ProfCategoryList />
+            <ProfCategoryList workoutClasses={this.props.workoutClasses}/>
           </div>
         </div>
       </div>

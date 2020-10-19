@@ -10,7 +10,7 @@ class MainNavigationBar extends React.Component {
   }
 
   handleSignOut() {
-    this.props.history.push("/login");
+    // this.props.history.push("/login");
     this.props.logout();
   }
 

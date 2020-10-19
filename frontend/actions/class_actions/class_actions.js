@@ -24,13 +24,10 @@ export const fetchClass = (classId) => {
   }
 }
 
-export const fetchClasses = (classes) => {
-  for (const classId of classes) {
-    return (dispatch) => {
-      return ClassAPIUtil.getClass(classId).then((workoutClass) =>
-        dispatch(receiveClass(workoutClass))
-      );
-    };
+export const fetchUsersWorkoutClasses = () => {
+  return (dispatch) => {
+    return ClassAPIUtil.getUsersWorkoutClasses()
+      .then((workoutClasses) => dispatch(receiveClasses(workoutClasses)))
   }
 }
 
