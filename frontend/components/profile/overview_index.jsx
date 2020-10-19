@@ -33,6 +33,8 @@ class OverviewIndex extends React.Component {
           fetchUsersFollows={this.props.fetchUsersFollows}
         />
         <UserTotalWorkoutsIndex 
+          fetchAllCategories={this.props.fetchAllCategories}
+          categories={this.props.categories}
           userClasses={this.props.userClasses}
           workoutClasses={this.props.workoutClasses}
         />

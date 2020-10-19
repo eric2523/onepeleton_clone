@@ -10,7 +10,6 @@ class UserBioIndex extends React.Component {
   }
 
   render(){
-    debugger
     let followingCount = null;
     let followersCount = null;
     if (

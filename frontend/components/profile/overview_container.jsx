@@ -4,6 +4,7 @@ import { fetchUsersFollows, createUsersFollows, removeUsersFollow } from '../../
 import { fetchUsersClasses } from '../../actions/user_workout_classes_actions/user_workout_classes_action'
 import { fetchClasses, fetchClass, fetchUsersWorkoutClasses } from '../../actions/class_actions/class_actions'
 import { fetchUser } from '../../actions/user_actions/user_actions'
+import { fetchAllCategories } from '../../actions/category_actions/category_actions'
 
 const mSTP = (state) => {
   return ({
@@ -17,6 +18,7 @@ const mSTP = (state) => {
 
 const mDTP = (dispatch) => {
   return ({
+    fetchAllCategories: () => dispatch(fetchAllCategories()),
     fetchUsersClasses: () => dispatch(fetchUsersClasses()),
     fetchUsersWorkoutClasses: () => dispatch(fetchUsersWorkoutClasses()),
     fetchUsersFollows: (userId) => dispatch(fetchUsersFollows(userId)),

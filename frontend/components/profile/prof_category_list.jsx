@@ -7,6 +7,8 @@ import {
   CyclingSVG,
   StretchingSVG
 } from '../svgs/categories_svg'
+import { categoryCountSelector } from '../../selectors/category_count_selector';
+import { connect } from 'react-redux'
 
 class ProfCategoryList extends React.Component {
   constructor(props){
@@ -14,34 +16,63 @@ class ProfCategoryList extends React.Component {
   }
 
   
-
   render(){
     return (
       <div>
         <ul className="prof-workouts-category-list">
           <li key={0} className="prof-workout-c-li">
+            <div className="prof-category-svg-div">
               <StrengthSVG />
-              <h3>Strength</h3>
+              <h3 className="prof-workout-c-title">Strength</h3>
+            </div>
+            <h3 className="category-count-num">
+              {this.props.categoryCount[1]}
+            </h3>
           </li>
           <li key={1} className="prof-workout-c-li">
-              <YogaSVG />
-              <h3>Yoga</h3>
+            <div className="prof-category-svg-div">
+              <CyclingSVG />
+              <h3 className="prof-workout-c-title">Cycling</h3>
+            </div>
+            <h3 className="category-count-num">
+              {this.props.categoryCount[2]}
+            </h3>
           </li>
           <li key={2} className="prof-workout-c-li">
+            <div className="prof-category-svg-div">
               <MeditationSVG />
-              <h3>Meditation</h3>
+              <h3 className="prof-workout-c-title">Meditation</h3>
+            </div>
+            <h3 className="category-count-num">
+              {this.props.categoryCount[3]}
+            </h3>
           </li>
           <li key={3} className="prof-workout-c-li">
+            <div className="prof-category-svg-div">
               <CardioSVG />
-              <h3>Cardio</h3>
+              <h3 className="prof-workout-c-title">Cardio</h3>
+            </div>
+            <h3 className="category-count-num">
+              {this.props.categoryCount[4]}
+            </h3>
           </li>
           <li key={4} className="prof-workout-c-li">
-              <StretchingSVG />
-              <h3>Stretching</h3>
+            <div className="prof-category-svg-div">
+              <YogaSVG />
+              <h3 className="prof-workout-c-title">Yoga</h3>
+            </div>
+            <h3 className="category-count-num">
+              {this.props.categoryCount[5]}
+            </h3>
           </li>
           <li key={5} className="prof-workout-c-li">
-              <CyclingSVG />
-              <h3>Cycling</h3>
+            <div className="prof-category-svg-div">
+              <StretchingSVG />
+              <h3 className="prof-workout-c-title">Stretching</h3>
+            </div>
+            <h3 className="category-count-num">
+              {this.props.categoryCount[6]}
+            </h3>
           </li>
         </ul>
       </div>
@@ -49,4 +80,13 @@ class ProfCategoryList extends React.Component {
   }
 }
 
-export default ProfCategoryList;
+const mSTP = (state, ownProps) => {
+  return {
+    categoryCount: categoryCountSelector(
+      ownProps.workoutClasses,
+      ownProps.categories
+    ),
+  };
+}
+
+export default connect(mSTP, null)(ProfCategoryList);
