@@ -49,7 +49,7 @@
   color: rgb(90, 100, 116);
 }
 
-.following-count {
+.following-count, .followers-count {
   margin-right: 10px;
   font-size: 16px;
 }

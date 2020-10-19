@@ -10,7 +10,16 @@ class UserBioIndex extends React.Component {
   }
 
   render(){
-    let followingCount = Object.keys(this.props.userFollows).length;
+    debugger
+    let followingCount = null;
+    let followersCount = null;
+    if (
+      (this.props.userFollows.followers !== undefined) && 
+      (this.props.userFollows.following !== undefined)
+    ) {
+      followingCount = Object.keys(this.props.userFollows.following).length;
+      followersCount = Object.keys(this.props.userFollows.followers).length;
+    }
 
     return (
       <div className="user-bio-div">
@@ -28,7 +37,7 @@ class UserBioIndex extends React.Component {
         <div className="user-bio-bottom">
           <div className="user-follows-div">
             <div className="user-followers">
-              <span className="followers-count"></span>
+              <span className="followers-count">{followersCount}</span>
               <h1 className="prof-follows">Followers</h1>
             </div>
 

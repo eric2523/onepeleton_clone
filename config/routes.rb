@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
       #? in progress: following functinality
       resources :user_follows, only: [:index, :create]
+
     end
 
     #* finished: post request to follow a class
