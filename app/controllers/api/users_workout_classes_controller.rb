@@ -16,7 +16,6 @@ class Api::UsersWorkoutClassesController < ApplicationController
   end
 
   def index
-    # debugger
     @curr_user_classes = current_user.workout_classes
   end
 

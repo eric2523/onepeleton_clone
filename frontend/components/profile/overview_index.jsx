@@ -21,7 +21,6 @@ class OverviewIndex extends React.Component {
   }
 
   render() {
-    // debugger
     return (
       <div className="user-overview">
         <header>

@@ -38,7 +38,6 @@ export const login = (user) => {
     return APIUtil.login(user)
       .then((user) => dispatch(receiveCurrentUser(user)))
       .then((res) => {
-        // debugger
         return dispatch(fetchUser(res.user.id))
       })
       .fail((errors) => dispatch(receiveErrors(errors.responseJSON)))
@@ -60,7 +59,6 @@ export const signup = (user) => {
         .then((user) => dispatch(receiveCurrentUser(user)))
         // .then(() => dispatch(fetchSpotToken()))
         .then((res) => {
-          // debugger
           return dispatch(fetchUser(res.user.id));
         })
         .fail((errors) => dispatch(receiveErrors(errors.responseJSON)))

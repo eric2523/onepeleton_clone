@@ -31,7 +31,6 @@ class ProfWorkoutsIndex extends React.Component {
 
     let workoutsList = null;
     //make sure both async requests are finished
-    // debugger
     if (workoutCount && categoriesCount === 6) {
       workoutsList = Object.values(this.props.workoutClasses).map((workoutClass) => {
         return (
