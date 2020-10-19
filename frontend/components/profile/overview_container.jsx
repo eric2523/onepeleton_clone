@@ -1,7 +1,7 @@
 import {connect} from 'react-redux'
 import OverviewIndex from './overview_index'
-import { fetchClasses } from '../../actions/class_actions/class_actions'
 import { fetchUsersFollows, createUsersFollows, removeUsersFollow } from '../../actions/user_follows_actions/user_follows_actions'
+import { fetchUsersClasses } from '../../actions/user_workout_classes_actions/user_workout_classes_action'
 
 const mSTP = (state) => {
   return ({
@@ -15,7 +15,7 @@ const mSTP = (state) => {
 
 const mDTP = (dispatch) => {
   return ({
-    fetchClasses: (classKeys) => dispatch(fetchClasses(classKeys)),
+    fetchUsersClasses: () => dispatch(fetchUsersClasses()),
     fetchUsersFollows: (userId) => dispatch(fetchUsersFollows(userId)),
     createUsersFollows: (userId) => dispatch(createUsersFollows(userId)),
     removeUsersFollow: (userFollowId) => dispatch(removeUsersFollow(userFollowId))

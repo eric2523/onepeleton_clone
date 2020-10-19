@@ -15,7 +15,7 @@ class UserBioIndex extends React.Component {
     return (
       <div className="user-bio-div">
         <div className="user-profile-pic">
-          <i class="fas fa-user-circle"></i>
+          <i className="fas fa-user-circle"></i>
         </div>
         <div className="user-bio-top">
           <div className="user-profile-info">

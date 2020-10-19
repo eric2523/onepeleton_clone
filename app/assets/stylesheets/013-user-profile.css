@@ -45,7 +45,6 @@
 .prof-follows {
   font-size: 16px;
   font-weight: 300;
-  line-height: 20px;
   letter-spacing: 0.2px;
   color: rgb(90, 100, 116);
 }
@@ -53,4 +52,38 @@
 .following-count {
   margin-right: 10px;
   font-size: 16px;
+}
+
+.total-workouts-div {
+  max-width: 960px;
+  /* min-width: 500px; */
+  width: 80%;
+  /* height: 80%; */
+  border-radius: 5px;
+  background: #F5F7F9;
+  margin-top: 20px;
+}
+
+.prof-workouts-top {
+  display: flex;
+  justify-content: center;
+  background: #F5F7F9;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  /* border-bottom: 1px solid rgba(168, 172, 177, 0.4); */
+}
+
+.total-workouts-count {
+  display: flex;
+}
+
+.total-workouts-outmost-div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.workouts-count {
+  margin-right: 5px;
 }

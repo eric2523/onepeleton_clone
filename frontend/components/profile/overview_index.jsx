@@ -24,7 +24,10 @@ class OverviewIndex extends React.Component {
           currUser={this.props.currUser}
           fetchUsersFollows={this.props.fetchUsersFollows}
         />
-        <UserTotalWorkoutsIndex />
+        <UserTotalWorkoutsIndex 
+          userClasses={this.props.userClasses}
+          fetchUsersClasses={this.props.fetchUsersClasses}
+        />
       </div>
     );
   }
