@@ -22,14 +22,13 @@
   margin: 45px 5px 15px 5px;
 }
 
-
 .upcoming-class-item-div {
   display: flex;
   flex-direction: column;
   padding: 15px;
   background: rgb(255, 255, 255);
-  width: 500px;
-  height: 140px;
+  width: 50vh;
+  height: 15vh;
   margin: 15px 5px 15px 5px;
   border-radius: 5px;
   background-image: url("https://res.cloudinary.com/peloton-cycle/image/fetch/c_scale,dpr_1.0,f_auto,q_auto,w_160/https://s3.amazonaws.com/workout-metric-images-prod/dd5a2d3d655c410a92afa6da0e3cb5f6");

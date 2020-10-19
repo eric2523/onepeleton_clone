@@ -10,7 +10,7 @@
     position: absolute;
     color: rgb(34, 37, 41);
     top: -24px;
-    left: 13px;
+    left: 45px;
 }
 
 .class-category-item {
@@ -25,7 +25,7 @@
 
 .class-category-list {
   display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     flex-wrap: wrap;
     position: relative;
     margin-top: 50px;
@@ -45,9 +45,10 @@
 
 .cc-item {
   position: relative;
+  justify-content: center;
   display: flex;
-  height: 235px;
-  width: 505px;
+  height: 22vh;
+  width: 52vh;
   box-sizing: border-box;
   background-size: 100%;
   border-radius: 5px;

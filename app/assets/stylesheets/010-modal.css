@@ -29,8 +29,8 @@
 .class-details-modal {
   display: flex;
   flex-direction: column;
-  height: 851px;
-  width: 560px;
+  height: 90vh;
+  width: 60vh;
   background-color: #F5F7F9;
   border-radius: 10px;
   overflow-y: scroll;
