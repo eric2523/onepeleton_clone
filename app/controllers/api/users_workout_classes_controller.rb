@@ -17,6 +17,7 @@ class Api::UsersWorkoutClassesController < ApplicationController
 
   def index
     @curr_user_classes = current_user.workout_classes
+    # redirect_to api_workout_classes_url(@curr_user_classes)
   end
 
   def destroy
