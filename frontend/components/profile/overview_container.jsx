@@ -5,6 +5,7 @@ import { fetchUsersClasses } from '../../actions/user_workout_classes_actions/us
 import { fetchClasses, fetchClass, fetchUsersWorkoutClasses } from '../../actions/class_actions/class_actions'
 import { fetchUser } from '../../actions/user_actions/user_actions'
 import { fetchAllCategories } from '../../actions/category_actions/category_actions'
+import { userFollowsSelector } from '../../selectors/user_follows_selector'
 
 const mSTP = (state) => {
   return ({
@@ -12,7 +13,7 @@ const mSTP = (state) => {
     userClasses: state.entities.userClasses,
     workoutClasses: state.entities.workoutClasses,
     currUser: state.entities.users[state.session.id],
-    userFollows: state.entities.userFollows
+    userFollows: userFollowsSelector(state.entities.userFollows, state.session.id)
   })
 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { checkSvg } from '../svgs/modal_svg'
 
-class FollowingBtn extends React.Component {
+class UnfollowBtn extends React.Component {
   constructor(props){
     super(props)
   }
@@ -19,4 +19,4 @@ class FollowingBtn extends React.Component {
 }
 
 
-export default FollowingBtn;
+export default UnfollowBtn;

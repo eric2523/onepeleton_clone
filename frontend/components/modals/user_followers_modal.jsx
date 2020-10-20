@@ -3,38 +3,66 @@ import { connect } from "react-redux";
 import {
   fetchUsersFollows,
   createUsersFollows,
+  removeUsersFollow
 } from "../../actions/user_follows_actions/user_follows_actions";
 import { fetchUser } from "../../actions/user_actions/user_actions";
 import UserModalInfo from "./user_modal_info";
 import { selectOtherUsers } from "../../selectors/users_selector";
-import { removeUsersFollow } from "../../util/user_follows_api_util/user_follows_api_util";
+import { userFollowsSelector } from "../../selectors/user_follows_selector";
 
 class UserFollowersModal extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {loaded: false}
+    this.isFollowing = this.isFollowing.bind(this)
   }
 
   componentDidMount() {
     // as of now only current user
     // need to make it to show diff users follows later
-    this.props.fetchUsersFollows(this.props.currUserId).then((res) => {
-      Object.values(res.userFollows.followers).forEach((userFollow) =>
-        this.props.fetchUser(userFollow.userId)
-      );
-    });
+    let currUserId = this.props.currUserId
+   
+    this.props.fetchUsersFollows(currUserId)
+    let followers = Object.values(this.props.userFollows.followers)
+
+    let funcs = followers.map((follower) => {
+      return this.props.fetchUser(follower.userId)
+    })
+    
+    Promise.all(funcs).then(() => (
+      this.setState({ loaded: true })
+    ))
+  }
+
+  componentWillUnmount(){
+    this.setState({ loaded: false })
+  }
+
+  isFollowing(user){
+    let followings = Object.values(this.props.userFollows.following)
+
+    for (let i = 0; i < followings.length; i++) {
+      let following = followings[i] 
+      if (user.id === following.followedUserId){
+        return true 
+      } 
+    }
+    return false 
   }
 
   render() {
     let followersList = null;
-    if (
-      this.props.userFollowers !== undefined &&
-      Object.keys(this.props.users).length
-    ) {
-      followersList = Object.values(this.props.userFollowers).map(
+    // debugger
+    if ( this.state.loaded ) {
+      followersList = Object.values(this.props.userFollows.followers).map(
         (follower) => {
           return (
             <UserModalInfo
+              isFollowing={this.isFollowing(
+                this.props.users[follower.userId]
+              )}
               key={follower.id}
+              userFollows={follower}
               user={this.props.users[follower.userId]}
               followUser={this.props.followUser}
               removeUsersFollow={this.props.removeUsersFollow}
@@ -62,7 +90,7 @@ class UserFollowersModal extends React.Component {
 
 const mSTP = (state) => {
   return {
-    userFollowers: state.entities.userFollows.followers,
+    userFollows: userFollowsSelector(state.entities.userFollows, state.session.id),
     users: selectOtherUsers(state.entities.users, state.session.id),
     currUserId: state.session.id,
   };

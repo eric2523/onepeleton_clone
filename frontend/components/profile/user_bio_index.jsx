@@ -23,14 +23,14 @@ class UserBioIndex extends React.Component {
   }
 
   render(){
-    let followingCount = null;
-    let followersCount = null;
-    if (
-      (this.props.userFollows.followers !== undefined) && 
-      (this.props.userFollows.following !== undefined)
-    ) {
-      followingCount = Object.keys(this.props.userFollows.following).length;
+    let followingCount = 0;
+    let followersCount = 0;
+    if (this.props.userFollows.followers !== undefined) {
       followersCount = Object.keys(this.props.userFollows.followers).length;
+    }
+
+    if (this.props.userFollows.following !== undefined) {
+      followingCount = Object.keys(this.props.userFollows.following).length;
     }
 
     return (

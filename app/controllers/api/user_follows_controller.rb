@@ -7,8 +7,8 @@ class Api::UserFollowsController < ApplicationController
 
   def create
     @user_follow = UserFollow.new(
-      user_id: params[:user_id],
-      followed_user_id: current_user.id 
+      user_id: current_user.id,
+      followed_user_id: params[:user_id]
       )
 
     if @user_follow.save
