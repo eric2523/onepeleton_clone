@@ -53,8 +53,12 @@ class ProfWorkoutsIndexItem extends React.Component {
     let wcDate = new Date(this.props.workoutClass.date)
     let dateString = this.getClassDateString(wcDate)
 
+
     return (
       <li className="p-wc-item">
+        {/* <div className="pc-wc-item-picture" style={divStyle}>
+        </div> */}
+
         <div className="p-wc-item-content">
           <h2 className="p-wc-item-desc">{this.props.workoutClass.name}</h2>
           <h2 className="p-wc-item-desc p-wc-item-category">
