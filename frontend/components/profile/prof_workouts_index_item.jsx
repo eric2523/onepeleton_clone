@@ -56,9 +56,11 @@ class ProfWorkoutsIndexItem extends React.Component {
     return (
       <li className="p-wc-item">
         <div className="p-wc-item-content">
-          <h1>{this.props.workoutClass.name}</h1>
-          <h2>{this.props.category.name}</h2>
-          <h2>{dateString}</h2>
+          <h2 className="p-wc-item-desc">{this.props.workoutClass.name}</h2>
+          <h2 className="p-wc-item-desc p-wc-item-category">
+            {this.props.category.name}
+          </h2>
+          <h2 className="p-wc-item-desc p-wc-item-time">{dateString}</h2>
         </div>
       </li>
     );

@@ -50,7 +50,7 @@ class ProfWorkoutsIndex extends React.Component {
         </header>
 
         <div className="prof-workouts-body">
-          <ul>
+          <ul className="prof-workouts-list">
             <div className="pw-body-head-title">
               <span className="pw-wc-count">
                 {workoutCount}
