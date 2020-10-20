@@ -1,0 +1,59 @@
+.user-follows-modal-div {
+  background: rgb(255, 255, 255);
+  display: flex;
+  width: 45vh;
+  height: 55vh;
+  border-radius: 15px;
+  flex-direction: column;
+}
+
+.users-follows-title {
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid rgb(210, 213, 217);
+}
+
+.user-follows-modal-li-item {
+  padding: 15px;
+  display: flex;
+  border-bottom: 1px solid rgba(168, 172, 177, 0.25);
+  justify-content: space-between;
+  align-items: center;
+}
+
+.followings-btn {
+  border: 1px solid rgb(90, 100, 116);
+  border-radius: 20px;
+  width: 13vh;
+  height: 3.5vh;
+  cursor: pointer;
+  transition-property: background-color, color, border-color;
+  transition-duration: 250ms;
+  transition-timing-function: ease;
+}
+
+.check-svg {
+  width: 12px;
+  height: 12px;
+}
+
+.followings-btn-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-content-text {
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.06rem;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.followings-btn:hover {
+  background-color: rgb(90, 100, 116);
+  color: rgb(255, 255, 255);
+  fill: rgb(255, 255, 255)
+}

@@ -20,6 +20,10 @@ const App = () => {
         path="/classes/:category/classDetails/:classId"
         component={Modal}
       />
+      <Route
+        path="/profile/overview"
+        component={Modal}
+      />
       <header className="master-header-div">
         {/* <Switch> */}
         <Route path="/login" component={PeletonLogo} />

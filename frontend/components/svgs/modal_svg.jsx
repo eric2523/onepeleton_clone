@@ -16,3 +16,14 @@ export const ThumbsUpSVG = () => (
     ></path>
   </svg>
 );
+
+export const checkSvg = () => {
+  return (
+    <svg className="check-svg" viewBox="0 0 11.9995 8.49975">
+      <path
+        d="M4.24975,8.5a.74409.74409,0,0,1-.53-.22l-3.5-3.5a.74953.74953,0,0,1,1.06-1.06l2.97,2.969,6.47-6.469a.74953.74953,0,0,1,1.06,1.06l-7,7a.74409.74409,0,0,1-.53.22"
+        transform="translate(0 -0.00025)"
+      ></path>
+    </svg>
+  );
+};

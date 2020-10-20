@@ -30,6 +30,7 @@
 
 .user-followers, .user-following {
   margin: 20px;
+  cursor: pointer;
 }
 
 .user-following {

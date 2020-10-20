@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import ClassDetailsModalContainer from './class_details_modal'
 import { withRouter } from 'react-router-dom';
 import { fetchClass } from '../../actions/class_actions/class_actions';
+import UserFollowersModalContainer from './user_followers_modal'
+import UserFollowingsModalContainer from './user_followings_modal'
 
 class Modal extends React.Component {
   constructor(props){
@@ -14,7 +16,11 @@ class Modal extends React.Component {
   handleCloseModal(e){
     let category = this.props.match.params.category
     $("body").removeClass("modal-overflow-hidden");
-    this.props.history.push(`/classes/${category}`)
+    if (this.props.match.path === "/classes/:category/classDetails/:classId"){
+      this.props.history.push(`/classes/${category}`)
+    } else {
+      this.props.closeModal();
+    }
   }
 
   render() {
@@ -27,6 +33,12 @@ class Modal extends React.Component {
         component = <ClassDetailsModalContainer 
                       fetchClass={this.props.fetchClass}
                       classId={this.props.match.params.classId}/>
+        break;
+      case 'userFollowers':
+        component = <UserFollowersModalContainer />
+        break;
+      case 'userFollowings':
+        component = <UserFollowingsModalContainer />
         break;
       default:
         return null;

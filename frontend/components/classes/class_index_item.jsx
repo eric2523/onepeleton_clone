@@ -18,11 +18,6 @@ class ClassIndexItem extends React.Component {
     $("body").addClass("modal-overflow-hidden")
   }
 
-//   document.querySelector("#open-modal-button").addEventListener('click', function() {
-//     document.querySelector("#modal-container").style.display = 'block';
-//     document.querySelector("body").style.overflow = 'hidden';
-// })
-  
   render(){
     let path = this.props.category.concat(this.props.classId)
     let date = new Date(this.props.workoutClass.date).toUTCString()
