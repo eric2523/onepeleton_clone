@@ -1,9 +1,6 @@
 import {connect} from 'react-redux'
-import {logout} from '../../actions/session_actions/session_actions'
 import CategoryIndex from './category_index'
 import {fetchAllCategories} from '../../actions/category_actions/category_actions'
-import { withRouter } from 'react-router-dom'
-import CategoryNavbar from '../classes/category_navbar'
 
 const mSTP = (state, ownProps) => {
   return ({
@@ -19,4 +16,3 @@ const mDTP = (dispatch) => {
 }
 
 export const CategoryContainer =  connect(mSTP, mDTP)(CategoryIndex)
-// export const CategoryNavContainer = connect(mSTP, mDTP)(CategoryNavbar)

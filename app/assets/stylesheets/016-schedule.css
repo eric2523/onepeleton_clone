@@ -1,0 +1,49 @@
+.schedule-item-main-div {
+  margin: 10px;
+  width: 100vh;
+}
+
+.schedule-index-list-item {
+  background: rgb(255, 255, 255);
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  padding: 30px 15px 30px 15px;
+}
+
+.schedule-class-item-desc {
+  padding-left: 35px;
+}
+
+.sc-desc-childs {
+  padding: 4px 0 4px 0;
+  font-weight: 300;
+}
+
+.schedule-class-item-desc h1 {
+  font-size: 18px;
+}
+
+.schedule-class-item-desc h2 {
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.schedule-item-h1 {
+  padding: 10px 0 8px 0;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgb(34, 37, 41);
+}
+
+.sc-item-ul li:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.sc-item-ul li:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}

@@ -12,40 +12,26 @@ class ProfWorkoutsIndexItem extends React.Component {
     let date = classDate.getDate()
     let fullYear = classDate.getFullYear();
 
+    const dayNames = [
+      "Sun",
+      "Mon",
+      "Tues",
+      "Wed",
+      "Thurs",
+      "Fri",
+      "Sat",
+    ];
+
     if (minutes < 10) {
       minutes = `0${minutes}`;
     }
 
     let day = classDate.getDay();
 
-    switch (day) {
-      case 0:
-        day = "Sun";
-        break;
-      case 1:
-        day = "Mon";
-        break;
-      case 2:
-        day = "Tues";
-        break;
-      case 3:
-        day = "Wed";
-        break;
-      case 4:
-        day = "Thurs";
-        break;
-      case 5:
-        day = "Fri";
-        break;
-      case 6:
-        day = "Sat";
-        break;
-    }
-
     let ampm = hours < 12 ? "AM" : "PM";
     let yearString = `${month}/${date}/${fullYear}`
 
-    let dateString = `From ${day} ${yearString} @ ${hours}:${minutes} ${ampm}`;
+    let dateString = `From ${dayNames[day]} ${yearString} @ ${hours}:${minutes} ${ampm}`;
     return dateString;
   }
 

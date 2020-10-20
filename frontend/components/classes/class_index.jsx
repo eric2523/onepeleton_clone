@@ -1,9 +1,9 @@
 import React from 'react'
 import ClassIndexItem from './class_index_item';
 import CategoryNavbar from './category_navbar';
-// import { CategoryNavContainer } from '../categories/category_container';
-import ScheduleIndexItem from '../schedule/schedule_index_item';
+import ScheduleIndex from '../schedule/schedule_index'
 import { classesCategoryPaths, scheduleCategoryPaths } from '../../selectors/category_paths'
+import {groupClassesByDate} from '../../selectors/group_classes_by_date_selector'
 
 class ClassIndex extends React.Component {
   constructor(props) {
@@ -31,17 +31,8 @@ class ClassIndex extends React.Component {
 
     switch (this.props.match.path) {
       case '/schedule/:category':
-        classItems = classItems.map((workoutClass) => (
-          <ScheduleIndexItem 
-            key={workoutClass.id}
-            workoutClass={workoutClass}
-            classId={workoutClass.id}
-            category={this.props.match.params.category}
-            openModal={this.props.openModal}
-            ownProps={this.props.ownProps}
-          />
-        ));
-        
+        classItems = <ScheduleIndex category={this.props.match.params.category} workoutClasses={groupClassesByDate(classItems)}/>
+
         categoryNavBar = <CategoryNavbar categories={scheduleCategoryPaths()} />;
 
         break;
