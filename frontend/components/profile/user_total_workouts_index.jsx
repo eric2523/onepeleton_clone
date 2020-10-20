@@ -1,5 +1,7 @@
 import React from 'react'
 import ProfCategoryList from './prof_category_list';
+import {carrotRightSVG} from '../svgs/profile_over_svg'
+import { Link } from 'react-router-dom'
 
 class UserTotalWorkoutsIndex extends React.Component {
   constructor(props){
@@ -16,16 +18,23 @@ class UserTotalWorkoutsIndex extends React.Component {
     return (
       <div className="total-workouts-outmost-div">
         <div className="total-workouts-div">
-          <div className="prof-workouts-top">
-            <div className="total-workouts-count">
-              <span className="followers-count workouts-count">
-                {workoutCounts}
-              </span>
-              <h1 className="prof-follows">
-                Total Workouts
-              </h1>
+          <Link to="/profile/workouts">
+            <div className="prof-workouts-top">
+              <div className="total-workouts-count">
+                <span className="followers-count workouts-count">
+                  {workoutCounts}
+                </span>
+                <h1 className="prof-follows">
+                  Total Workouts
+                </h1>
+              </div>
+
+              <div className="view-workouts-div">
+                <span className="view-workouts-title">View Workouts</span>
+                <span className="carrot-svg">{ carrotRightSVG() }</span>
+              </div>
             </div>
-          </div>
+          </Link>
 
           <div className="prof-workouts-bottom">
             <ProfCategoryList 

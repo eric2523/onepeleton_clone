@@ -71,7 +71,15 @@
   background: #F5F7F9;
   padding-top: 25px;
   padding-bottom: 25px;
-  /* border-bottom: 1px solid rgba(168, 172, 177, 0.4); */
+  position: relative;
+  cursor: pointer;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: ease;
+}
+
+.prof-workouts-top:hover {
+  background: #F4F4F4
 }
 
 .total-workouts-count {
@@ -111,4 +119,14 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+
+.view-workouts-div {
+  position: absolute;
+  right: 11px;
+}
+
+.view-workouts-title {
+  font-size: 13px;
+  color: rgb(90, 100, 116);
 }

@@ -59,3 +59,10 @@
 .plus-svg {
   width: 12px;
 }
+
+.carrot-right-svg {
+  transform: rotate(270deg);
+  width: 14px;
+  fill: rgb(90,100,116);
+  margin-left: 5px;
+}
