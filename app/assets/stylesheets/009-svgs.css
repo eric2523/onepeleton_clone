@@ -51,3 +51,11 @@
   fill: rgb(223,30,49);
   color: rgb(223,30,49);
 }
+
+.search-svg {
+  width: 30px;
+}
+
+.plus-svg {
+  width: 12px;
+}

@@ -6,6 +6,7 @@ import { withRouter } from 'react-router-dom';
 import { fetchClass } from '../../actions/class_actions/class_actions';
 import UserFollowersModalContainer from './user_followers_modal'
 import UserFollowingsModalContainer from './user_followings_modal'
+import AllUsersModalContainer from './all_users_modal'
 
 class Modal extends React.Component {
   constructor(props){
@@ -40,6 +41,9 @@ class Modal extends React.Component {
         break;
       case 'userFollowings':
         component = <UserFollowingsModalContainer />
+        break;
+      case 'allUsers':
+        component = <AllUsersModalContainer />
         break;
       default:
         return null;

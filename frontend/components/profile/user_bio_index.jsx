@@ -1,6 +1,7 @@
 import React from 'react'
 import { openModal } from '../../actions/modal_actions/modal_actions';
 import {connect} from 'react-redux'
+import {searchSVG} from '../svgs/modal_svg'
 
 class UserBioIndex extends React.Component {
   constructor(props){
@@ -64,7 +65,12 @@ class UserBioIndex extends React.Component {
               <h1 className="prof-follows">Following</h1>
             </div>
           </div>
-          <div className="user-search"></div>
+          <div className="user-search">
+            <div onClick={this.handleOpenModal("allUsers")} className="user-search-content">
+              {searchSVG()}
+              <span>Find Members</span>
+            </div>
+          </div>
         </div>
       </div>
     );

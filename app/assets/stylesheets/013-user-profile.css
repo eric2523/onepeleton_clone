@@ -88,3 +88,27 @@
 .workouts-count {
   margin-right: 5px;
 }
+
+.user-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.user-bio-bottom {
+  justify-content: space-between;
+}
+
+.user-search span {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgb(90, 100, 116);
+}
+
+.user-search-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
