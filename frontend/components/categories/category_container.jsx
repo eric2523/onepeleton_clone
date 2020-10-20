@@ -19,4 +19,4 @@ const mDTP = (dispatch) => {
 }
 
 export const CategoryContainer =  connect(mSTP, mDTP)(CategoryIndex)
-export const CategoryNavContainer = connect(mSTP, mDTP)(CategoryNavbar)
+// export const CategoryNavContainer = connect(mSTP, mDTP)(CategoryNavbar)

@@ -19,7 +19,7 @@ class MainNavigationBar extends React.Component {
       <div className="nav-bar-div">
         <ul className="nav-bar-list">
           <NavBarItem path="/classes" itemTitle="Classes" />
-          <NavBarItem path="/schedule" itemTitle="Schedule" />
+          <NavBarItem path="/schedule/strength" itemTitle="Schedule" />
           <NavBarItem path="/challenges" itemTitle="Challenges" />
           <NavBarItem path="/profile/overview" itemTitle="Profile" />
           <li className="nav-bar-item"><a onClick={ this.handleSignOut}>LOG OUT</a></li>

@@ -41,10 +41,6 @@ const App = () => {
             component={ClassContainer}
           />
           <ProtectedRoute path="/classes" component={CategoryContainer} />
-          {/* <ProtectedRoute
-            path="/profile"
-            component={OverviewContainer}
-          /> */}
           <ProtectedRoute
             path="/profile/overview"
             component={OverviewContainer}
@@ -53,6 +49,7 @@ const App = () => {
             path="/profile/workouts"
             component={ProfWorkoutsContainer}
           />
+          <ProtectedRoute path="/schedule/:category" component={ClassContainer} />
           <ProtectedRoute exact path="/" component={CategoryContainer} />
           <Redirect to="/classes" />
         </Switch>
