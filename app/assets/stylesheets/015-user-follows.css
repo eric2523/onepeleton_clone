@@ -5,6 +5,7 @@
   height: 55vh;
   border-radius: 15px;
   flex-direction: column;
+  overflow-y: scroll;
 }
 
 .users-follows-title {
