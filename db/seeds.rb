@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
-require 'open-uri'
+# require 'open-uri'
 
 User.destroy_all
 User.connection.execute('ALTER SEQUENCE users_id_seq RESTART WITH 1')
@@ -20,7 +20,7 @@ u1 = User.create(
 )
 
 uf1 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/profilepics/instructor-1.jpeg")
-u1.photo.attach(io: uf1, filename: 'instructor-1.jpeg')
+u1.profile_photo.attach(io: uf1, filename: 'instructor-1.jpeg')
 
 u2 = User.create(
   username: Faker::Internet.user_name,
@@ -30,7 +30,7 @@ u2 = User.create(
 )
 
 uf2 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/profilepics/instructor-2.jpeg")
-u2.photo.attach(io: uf2, filename: 'instructor-2.jpeg')
+u2.profile_photo.attach(io: uf2, filename: 'instructor-2.jpeg')
 
 
 u3 = User.create(
@@ -41,7 +41,7 @@ u3 = User.create(
 )
 
 uf3 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/profilepics/instructor-3.jpeg")
-u3.photo.attach(io: uf3, filename: 'instructor-3.jpeg')
+u3.profile_photo.attach(io: uf3, filename: 'instructor-3.jpeg')
 
 u4 = User.create(
   username: Faker::Internet.user_name,
@@ -51,7 +51,7 @@ u4 = User.create(
 )
 
 uf4 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/profilepics/instructor-4.jpeg")
-u4.photo.attach(io: uf4, filename: 'instructor-4.jpeg')
+u4.profile_photo.attach(io: uf4, filename: 'instructor-4.jpeg')
 
 u5 = User.create(
   username: Faker::Internet.user_name,
@@ -61,7 +61,7 @@ u5 = User.create(
 )
 
 uf5 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/profilepics/instructor-5.jpeg")
-u5.photo.attach(io: uf5, filename: 'instructor-5.jpeg')
+u5.profile_photo.attach(io: uf5, filename: 'instructor-5.jpeg')
 
 u6 = User.create(
   username: Faker::Internet.user_name,
@@ -71,69 +71,69 @@ u6 = User.create(
 )
 
 uf6 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/profilepics/instructor-6.jpeg")
-u6.photo.attach(io: uf6, filename: 'instructor-6.jpeg')
+u6.profile_photo.attach(io: uf6, filename: 'instructor-6.jpeg')
 
 # seed users
 
 u7 = User.create(
-  username: pro_hunter_gon,
+  username: "pro_hunter_gon",
   email: "prohuntergon@example.com",
   password: Faker::Internet.password(min_length: 6, max_length: 6),
   is_instructor: false
 )
 
 uf7 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/profilepics/gon.jpg")
-u7.photo.attach(io: uf7, filename: 'gon.jpg')
+u7.profile_photo.attach(io: uf7, filename: 'gon.jpg')
 
 u8 = User.create(
-  username: davidbikes123,
+  username: "davidbikes123",
   email: "david123@example.com",
   password: Faker::Internet.password(min_length: 6, max_length: 6),
   is_instructor: false
 )
 
 uf8 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/profilepics/david.jpg")
-u8.photo.attach(io: uf8, filename: 'david.jpg')
+u8.profile_photo.attach(io: uf8, filename: 'david.jpg')
 
 u9 = User.create(
-  username: waterbender5,
+  username: "waterbender5",
   email: "waterbender5@example.com",
   password: Faker::Internet.password(min_length: 6, max_length: 6),
   is_instructor: false
 )
 
-uf9 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/profilepics/katara.jpg")
-u9.photo.attach(io: uf9, filename: 'katara.jpg')
+uf9 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/profilepics/katara.png")
+u9.profile_photo.attach(io: uf9, filename: 'katara.png')
 
 u10 = User.create(
-  username: goldenstatelyfe,
+  username: "goldenstatelyfe",
   email: "goldenstatelyfe@example.com",
   password: Faker::Internet.password(min_length: 6, max_length: 6),
   is_instructor: false
 )
 
 uf10 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/profilepics/klay.jpg")
-u10.photo.attach(io: uf10, filename: 'klay.jpg')
+u10.profile_photo.attach(io: uf10, filename: 'klay.jpg')
 
 u11 = User.create(
-  username: morgan568
+  username: "morgan568",
   email: "morgan568@example.com",
   password: Faker::Internet.password(min_length: 6, max_length: 6),
   is_instructor: false
 )
 
 uf11 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/profilepics/morgan.jpg")
-u11.photo.attach(io: uf11, filename: 'morgan.jpg')
+u11.profile_photo.attach(io: uf11, filename: 'morgan.jpg')
 
 u12 = User.create(
-  username: naomiosaka7
+  username: "naomiosaka7",
   email: "tennisfam@example.com",
   password: Faker::Internet.password(min_length: 6, max_length: 6),
   is_instructor: false
 )
 
 uf12 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/profilepics/naomi.jpg")
-u12.photo.attach(io: uf12, filename: 'naomi.jpg')
+u12.profile_photo.attach(io: uf12, filename: 'naomi.jpg')
 
 # seed demo
 demo_user = User.create(
