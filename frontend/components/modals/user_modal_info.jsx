@@ -24,7 +24,7 @@ class UserModalInfo extends React.Component {
     if (this.state.delete){
       this.props.removeUsersFollow(this.props.userFollows.id);
     } else {
-      if (!this.props.isFollowing) {
+      if (this.state.following && !this.props.isFollowing) {
         this.props.followUser(this.props.user.id)
       }
     }
