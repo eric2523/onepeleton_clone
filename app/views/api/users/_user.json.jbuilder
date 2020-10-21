@@ -1,10 +1,6 @@
 json.extract! user, :id, :username, :email, :is_instructor
-# json.workout_classes do
-#   user.workout_classes.each do |workout_class|
-#     json.set! workout_class.id do 
-#       json.extract! workout_class,
-#         :id,
-#         :name 
-#     end
-#   end
-# end
+if !user.profile_photo.attached? 
+  json.photoUrl image_url("blank-profile-picture.png")
+else
+  json.photoUrl url_for(user.profile_photo)
+end

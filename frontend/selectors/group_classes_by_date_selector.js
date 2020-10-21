@@ -15,3 +15,19 @@ export const groupClassesByDate = (workoutClasses) => {
 
   return groupedClasses
 }
+
+export const sortByDate = (dates) => {
+  let sortedDates = null;
+  if (dates[0] instanceof String) {
+    sortedDates = dates.slice().sort((a,b) => {
+      return new Date(a) - new Date(b)
+    })
+  } else {
+    sortedDates = dates.slice().sort((a, b) => {
+      return new Date(a.date) - new Date(b.date)
+    })
+  }
+
+  return sortedDates
+}
+

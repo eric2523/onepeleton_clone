@@ -2,6 +2,8 @@ import React from 'react';
 import { followClass, unfollowClass, fetchUsersClasses } from '../../actions/user_workout_classes_actions/user_workout_classes_action';
 import { connect } from 'react-redux';
 import ScheduleIndexListItem from './schedule_index_list_item';
+import { sortByDate } from '../../selectors/group_classes_by_date_selector';
+import { fetchUser } from '../../actions/user_actions/user_actions';
 
 class ScheduleIndexItem extends React.Component {
   constructor(props) {
@@ -33,7 +35,8 @@ class ScheduleIndexItem extends React.Component {
   }
 
   render() {
-    let workoutClassesListItems = Object.values(this.props.workoutClasses).map(
+    let sortedWorkoutClasses = sortByDate(Object.values(this.props.workoutClasses))
+    let workoutClassesListItems = sortedWorkoutClasses.map(
       (workoutClass, idx) => {
         let classDate = new Date(workoutClass.date);
         let time = this.getTimeString(classDate);
@@ -48,6 +51,8 @@ class ScheduleIndexItem extends React.Component {
             followClass={this.props.followClass}
             unfollowClass={this.props.unfollowClass}
             fetchUsersClasses={this.props.fetchUsersClasses}
+            users={this.props.users}
+            fetchUser={this.props.fetchUser}
           />
         );
       }
@@ -60,6 +65,7 @@ class ScheduleIndexItem extends React.Component {
 const mSTP = (state) => {
   return {
     userClasses: state.entities.userClasses,
+    users: state.entities.users
   };
 };
 
@@ -67,7 +73,8 @@ const mDTP = (dispatch) => {
   return ({
     followClass: (classId) => dispatch(followClass(classId)),
     unfollowClass: (classId) => dispatch(unfollowClass(classId)),
-    fetchUsersClasses: () => dispatch(fetchUsersClasses())
+    fetchUsersClasses: () => dispatch(fetchUsersClasses()),
+    fetchUser: (userId) => dispatch(fetchUser(userId))
   })
 }
 

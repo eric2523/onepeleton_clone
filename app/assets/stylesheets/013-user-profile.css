@@ -23,9 +23,11 @@
 }
 
 .user-bio-top {
-  justify-content: center;
+  justify-content: space-between;
   border-bottom: 1px solid rgba(168, 172, 177, 0.4);
-  padding-bottom: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  align-items: center;
 }
 
 .user-followers, .user-following {
@@ -131,6 +133,25 @@
   color: rgb(90, 100, 116);
 }
 
-.user-profile-info {
-  margin-top: 20px;
+.user-profile-img-div, .hidden-user-profile-div {
+  width: 86px;
+  height: 86px;
+  margin: 15px 25px 15px 25px;
 }
+
+.user-profile-img-div {
+  position: relative;
+}
+
+.user-prof-img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 100%;
+}
+
+.hidden-user-profile-div {
+  background-color: transparent;
+}
+

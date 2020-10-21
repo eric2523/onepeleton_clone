@@ -29,9 +29,9 @@ class CancelBtn extends React.Component {
         onMouseEnter={this.handleMouseOver("mouse-in")}
         onMouseLeave={this.handleMouseOver("mouse-out")}
         onClick={this.handleClick}
-        className="count-me-out"
+        className="count-me-out count-me-out-sc"
       >
-        <h1>{this.state.btnText}</h1>
+        <h1 className="class-sign-title">{this.state.btnText}</h1>
       </button>
     );
   }

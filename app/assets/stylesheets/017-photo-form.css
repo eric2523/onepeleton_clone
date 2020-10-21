@@ -1,0 +1,40 @@
+#profile-pic-upload {
+  display: none;
+}
+
+.camera-svg {
+  width: 30px;
+  height: 30px;
+}
+
+.profile-image-form {
+  position: absolute;
+  bottom: -12px;
+  right: -27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-upload-label {
+  cursor: pointer;
+}
+
+#profile-pic-submit-btn {
+  background-color: rgb(255, 51, 71);
+  color: rgb(255, 255, 255);
+  width: 60px;
+  height: 26px;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 10px;
+  transition-duration: 250ms;
+  border: 1px solid rgb(255,255,255);
+  transition-timing-function: ease;
+}
+
+#profile-pic-submit-btn:hover {
+  background-color: rgb(235, 49, 67);
+}
+
+

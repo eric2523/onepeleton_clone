@@ -78,24 +78,24 @@ class UpcomingClassesItem extends React.Component {
     let classTime = this.getClassTime(classDate)
     let timeBetween = this.getHoursTillStart(classDate)
 
-    return(
-      <div className="upcoming-class-item-div">
-          <div className="upc-class-time">
-            <span>{classTime}</span>
+    return (
+      <div className={`upcoming-class-item-div upc-item-${this.props.categoryName}`}>
+        <div className="upc-class-time">
+          <span>{classTime}</span>
+        </div>
+        <div className="upc-class-description">
+          <h2>{this.props.workoutClass.name}</h2>
+          <h3>{this.props.categoryName.toUpperCase()}</h3>
+        </div>
+        <div className="upc-submit-div">
+          {submitBtn}
+          <div className="time-countdown">
+            <h3>{timeBetween} hrs</h3>
+            <h4>till start</h4>
           </div>
-          <div className="upc-class-description">
-            <h2>{this.props.workoutClass.name}</h2>
-            <h3>{this.props.categoryName.toUpperCase()}</h3>
-          </div>
-          <div className="upc-submit-div">
-            {submitBtn}
-            <div className="time-countdown">
-              <h3>{timeBetween} hrs</h3>
-              <h4>till start</h4>
-            </div>
-          </div>
+        </div>
       </div>
-    )
+    );
   }
 }
 

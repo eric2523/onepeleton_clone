@@ -56,9 +56,9 @@ class UserFollowingsModal extends React.Component {
               followUser={this.props.followUser}
               removeUsersFollow={this.props.removeUsersFollow}
               userFollows={following}
-              isFollowing={
-                this.isFollowing(this.props.users[following.followedUserId])
-              }
+              isFollowing={this.isFollowing(
+                this.props.users[following.followedUserId]
+              )}
             />
           );
         }

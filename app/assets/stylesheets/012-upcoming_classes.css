@@ -120,3 +120,11 @@
 .time-countdown > h4 {
   font-size: 12px;
 }
+
+.upc-item-Strength {
+  background-image: url("https://res.cloudinary.com/peloton-cycle/image/fetch/c_scale,dpr_1.0,f_auto,q_auto,w_160/https://s3.amazonaws.com/workout-metric-images-prod/3591c3b7b7d142c69c302d2edbeefbf5")
+}
+
+.upc-item-Cycling {
+  background-image: url("https://res.cloudinary.com/peloton-cycle/image/fetch/c_scale,dpr_1.0,f_auto,q_auto,w_160/https://s3.amazonaws.com/workout-metric-images-prod/f4b313d80bef41d0a15e3c91ac1b1840")
+}

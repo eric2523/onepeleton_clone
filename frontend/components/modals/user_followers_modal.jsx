@@ -58,9 +58,7 @@ class UserFollowersModal extends React.Component {
         (follower) => {
           return (
             <UserModalInfo
-              isFollowing={this.isFollowing(
-                this.props.users[follower.userId]
-              )}
+              isFollowing={this.isFollowing(this.props.users[follower.userId])}
               key={follower.id}
               userFollows={follower}
               user={this.props.users[follower.userId]}

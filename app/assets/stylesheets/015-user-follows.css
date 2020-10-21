@@ -57,3 +57,18 @@
   color: rgb(255, 255, 255);
   fill: rgb(255, 255, 255)
 }
+
+.uf-prof-img-div {
+  width: 45px;
+  height: 45px;
+  margin: 5px;
+}
+
+.users-follows-modal-left {
+  display: flex;
+  align-items: center;
+}
+
+.users-follows-modal-left h1 {
+  padding-left: 8px;
+}

@@ -38,7 +38,16 @@ class UserModalInfo extends React.Component {
 
     return (
       <li className="user-follows-modal-li-item">
-        <h1>{this.props.user.username}</h1>
+        <div className="users-follows-modal-left">
+          <div className="user-profile-img-div uf-prof-img-div">
+            <img
+              className="user-prof-img"
+              src={this.props.user.photoUrl}
+              alt="profile-pic"
+            />
+          </div>
+          <h1>{this.props.user.username}</h1>
+        </div>
         <div onClick={this.handleClick} className="user-modal-info-btn-c">
           {button}
         </div>

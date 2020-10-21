@@ -14,8 +14,8 @@ class SignUpBtn extends React.Component {
 
   render(){
     return (
-      <button onClick={this.handleClick} className="count-me-in">
-        <h1>COUNT ME IN</h1>
+      <button onClick={this.handleClick} className="count-me-in count-me-in-sc">
+        <h1 className="class-sign-title">COUNT ME IN</h1>
       </button>
     );
   }

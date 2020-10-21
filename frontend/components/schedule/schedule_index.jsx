@@ -1,7 +1,6 @@
 import React from 'react'
 import ScheduleIndexItem from './schedule_index_item'
-import { fetchUsersClasses } from '../../actions/user_workout_classes_actions/user_workout_classes_action';
-import { connect } from 'react-redux';
+import { sortByDate } from '../../selectors/group_classes_by_date_selector';
 
 class ScheduleIndex extends React.Component {
   constructor(props) {
@@ -43,38 +42,26 @@ class ScheduleIndex extends React.Component {
   }
 
   render() {
-    let scheduleItems = [];
-    for (const date in this.props.workoutClasses) {
-      let dateString = this.getClassDateString(new Date(date))
-      let currWorkoutClass = this.props.workoutClasses[date];
+    let sortedDateKeys = sortByDate(Object.keys(this.props.workoutClasses))
 
-      scheduleItems.push(
+    let scheduleItems = sortedDateKeys.map((date) => {
+      let currWorkoutClasses = this.props.workoutClasses[date]
+      let dateString = this.getClassDateString(new Date(date))
+
+      return (
         <div className="schedule-item-main-div" key={date}>
           <h1 className="schedule-item-h1">{dateString}</h1>
           <ScheduleIndexItem
-            workoutClasses={currWorkoutClass}
+            workoutClasses={currWorkoutClasses}
             date={date}
             category={this.props.category}
           />
         </div>
       );
-    }
+    })
 
     return <div>{scheduleItems}</div>;
   }
 }
 
-// const mSTP = (state) => {
-//   return ({
-//     userClasses: state.entities.userClasses
-//   })
-// }
-
-// const mDTP = (dispatch) => {
-//   return ({
-//     fetchUsersClasses: () => dispatch(fetchUsersClasses())
-//   })
-// }
-
-// export default connect(mSTP, mDTP)(ScheduleIndex)
 export default ScheduleIndex;
