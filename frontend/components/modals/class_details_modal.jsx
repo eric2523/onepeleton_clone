@@ -31,10 +31,6 @@ class ClassDetailsModal extends React.Component {
     }
   }
 
-  componentWillUnmount(){
-    debugger
-  }
-
   handleClick(e) {
     if (this.state.followsClass) {
       this.setState({followsClass: false})
