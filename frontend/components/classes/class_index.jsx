@@ -12,7 +12,9 @@ class ClassIndex extends React.Component {
 
   componentDidMount() {
     $(".session-background").addClass("main-light-grey-background");
-    this.props.fetchCategoryClasses(this.props.match.params.category);
+    this.props.fetchAllCategories().then(() => {
+      this.props.fetchCategoryClasses(this.props.match.params.category);
+    })
   }
 
   componentDidUpdate(prevProps){

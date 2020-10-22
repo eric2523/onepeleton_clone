@@ -6,6 +6,7 @@ import { fetchClassSongs } from '../../actions/songs_actions/songs_action';
 import { fetchSong } from '../../actions/spotify_api_actions';
 import ModalSongsContainer from './songs_container'
 import { fetchCategoryClasses } from '../../actions/class_actions/class_actions';
+import { fetchAllCategories } from '../../actions/category_actions/category_actions';
 
 class ClassDetailsModal extends React.Component {
   constructor(props){
@@ -16,7 +17,6 @@ class ClassDetailsModal extends React.Component {
 
   componentDidMount(){
     let that = this;
-    
     this.props.fetchUsersClasses(this.props.currUser.id)
     .then(() => {
       let followsClass = Object.keys(that.props.userClasses).includes(that.props.classId);
@@ -58,7 +58,6 @@ class ClassDetailsModal extends React.Component {
         />
       );
     }
-
     return (
       <div className="class-details-modal">
         <div className="class-detail-hero-img" style={divStyle}>
@@ -142,7 +141,7 @@ const mDTP = (dispatch) => {
     fetchUsersClasses: (userId) => dispatch(fetchUsersClasses(userId)),
     fetchClassSongs: (classId) => dispatch(fetchClassSongs(classId)),
     fetchSpotifySong: (accessToken, songTitle) => dispatch(fetchSong(accessToken, songTitle)),
-    fetchCategoryClasses: (categoryname) => dispatch(fetchCategoryClasses(categoryName))
+    fetchCategoryClasses: (categoryname) => dispatch(fetchCategoryClasses(categoryName)),
   };
 } 
 
