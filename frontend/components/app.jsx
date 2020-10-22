@@ -40,12 +40,12 @@ const App = () => {
           />
           <ProtectedRoute path="/classes" component={CategoryContainer} />
           <ProtectedRoute
-            // exact
+            exact
             path="/profile/overview/:userId"
             component={OverviewContainer}
           />
           <ProtectedRoute
-            // exact
+            exact
             path="/profile/workouts/:userId"
             component={ProfWorkoutsContainer}
           />

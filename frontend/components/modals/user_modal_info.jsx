@@ -74,9 +74,21 @@ class UserModalInfo extends React.Component {
   }
 
   render() {
-    let button = <UnfollowBtn />;
+    let button = (
+      <div onClick={this.handleClick} className="user-modal-info-btn-c">
+        <UnfollowBtn />
+      </div>
+    );
     if (!this.state.following) {
-      button = <FollowBtn />;
+      button = (
+        <div onClick={this.handleClick} className="user-modal-info-btn-c">
+          <FollowBtn />
+        </div>
+      );
+    }
+
+    if (this.props.userId === this.props.currUserId) {
+      button = null;
     }
     let img = null;
     let username = null;

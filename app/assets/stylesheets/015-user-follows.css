@@ -59,6 +59,10 @@
   fill: rgb(255, 255, 255)
 }
 
+.followings-btn:hover .followings-btn-content {
+  fill: rgb(255,255,255)
+}
+
 .uf-prof-img-div {
   width: 45px;
   height: 45px;
@@ -73,3 +77,8 @@
 .users-follows-modal-left h1 {
   padding-left: 8px;
 }
+
+.find-members {
+  color: rgb(90,100,116);
+}
+

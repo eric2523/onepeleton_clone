@@ -160,7 +160,7 @@ class UserBioIndex extends React.Component {
           className="user-search-content"
         >
           {searchSVG()}
-          <span>Find Members</span>
+          <span className="find-members">Find Members</span>
         </div>
       );
     }
