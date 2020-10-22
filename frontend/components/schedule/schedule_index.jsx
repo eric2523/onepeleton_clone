@@ -42,23 +42,31 @@ class ScheduleIndex extends React.Component {
   }
 
   render() {
-    let sortedDateKeys = sortByDate(Object.keys(this.props.workoutClasses))
+    let dateKeys = Object.keys(this.props.workoutClasses)
 
-    let scheduleItems = sortedDateKeys.map((date) => {
-      let currWorkoutClasses = this.props.workoutClasses[date]
-      let dateString = this.getClassDateString(new Date(date))
+    let sortedDateKeys = null;
+    if (dateKeys.length){
+      sortedDateKeys = sortByDate(dateKeys)
+    }
 
-      return (
-        <div className="schedule-item-main-div" key={date}>
-          <h1 className="schedule-item-h1">{dateString}</h1>
-          <ScheduleIndexItem
-            workoutClasses={currWorkoutClasses}
-            date={date}
-            category={this.props.category}
-          />
-        </div>
-      );
-    })
+    let scheduleItems = null
+    if (sortedDateKeys){
+      scheduleItems = sortedDateKeys.map((date) => {
+        let currWorkoutClasses = this.props.workoutClasses[date]
+        let dateString = this.getClassDateString(new Date(date))
+  
+        return (
+          <div className="schedule-item-main-div" key={date}>
+            <h1 className="schedule-item-h1">{dateString}</h1>
+            <ScheduleIndexItem
+              workoutClasses={currWorkoutClasses}
+              date={date}
+              category={this.props.category}
+            />
+          </div>
+        );
+      })
+    }
 
     return <div>{scheduleItems}</div>;
   }
