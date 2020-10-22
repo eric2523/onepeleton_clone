@@ -652,5 +652,38 @@ require 'faker'
 #   workout_class_id: (1 + rand(12))
 # )
 
-UserFollow.destroy_all
-UserFollow.connection.execute('ALTER SEQUENCE user_follows_id_seq RESTART WITH 1')
+# UserFollow.destroy_all
+# UserFollow.connection.execute('ALTER SEQUENCE user_follows_id_seq RESTART WITH 1')
+
+Challenge.destroy_all
+Challenge.connection.execute('ALTER SEQUENCE challenges_id_seq RESTART WITH 1')
+
+ch1 = Challenge.create!(
+  name: "The Annual",
+  description: "Build habits for success",
+  start_date: DateTime.new(2020, 10, 21),
+  end_date: Faker::Time.forward(days: 365, period: :all)
+)
+
+ch_img_1 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/challenges/the-annual.png")
+ch1.challenge_icon.attach(io: ch_img_1, filename: 'the-annual.png')
+
+ch2 = Challenge.create!(
+  name: "Fall Launch Challenge",
+  description: "Take a class everyday for life",
+  start_date: DateTime.new(2020, 10, 21),
+  end_date: Faker::Time.forward(days: 365, period: :all)
+)
+
+ch_img_2 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/challenges/leaf-challenge.png")
+ch2.challenge_icon.attach(io: ch_img_2, filename: 'leaf-challenge.png')
+
+ch3 = Challenge.create!(
+  name: "Up the Tempo",
+  description: "Get your grove on and take 7 themed DJ rides",
+  start_date: DateTime.new(2020, 10, 21),
+  end_date: Faker::Time.forward(days: 365, period: :all)
+)
+
+ch_img_3 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/challenges/flash-up-the-tempo.png")
+ch3.challenge_icon.attach(io: ch_img_3, filename: 'flash-up-the-tempo.png')

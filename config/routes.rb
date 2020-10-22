@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show, :create, :update] do 
       resources :workout_classes, only: [:index]
 
-      #? in progress: following functinality
+      #* finished: following functinality
       resources :user_follows, only: [:index, :create]
 
     end
@@ -29,11 +29,11 @@ Rails.application.routes.draw do
     #* finished: session login/signup
     resource :session, only: [:create, :destroy]
 
-    #? in progress: following/unfollowing user functinality
+    #* finished: following/unfollowing user functinality
     resources :user_follows, only: [:destroy]
     
-    #! testing: songs controller / songs joins 
-    # resources :songs, only: [:show, :index]
+    #! in progress: challenges
+    resources :challenges, only: [:index, :show]
    
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

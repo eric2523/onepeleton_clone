@@ -1,0 +1,1 @@
+json.partial! 'challenge', challenge: @challenge

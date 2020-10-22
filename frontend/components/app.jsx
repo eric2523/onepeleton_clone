@@ -11,6 +11,7 @@ import PeletonLogo from './main_logo/main_logo'
 import Modal from './modals/modal'
 import OverviewContainer from './profile/overview_container'
 import ProfWorkoutsContainer from './profile/prof_workouts_index'
+import ChallengesContainer from './challenges/challenges_index'
 
 const App = () => {
   return (
@@ -35,6 +36,7 @@ const App = () => {
           <AuthRoute path="/login" component={LoginFormContainer} />
           <AuthRoute path="/signup" component={SignUpFormContainer} />
           <ProtectedRoute
+            exact
             path="/profile/overview"
             component={OverviewContainer}
           />
@@ -46,11 +48,11 @@ const App = () => {
             path="/classes/:category"
             component={ClassContainer}
           />
-          <ProtectedRoute path="/classes" component={CategoryContainer} />
           <ProtectedRoute
             path="/profile/overview/:userId"
             component={OverviewContainer}
           />
+          <ProtectedRoute path="/classes" component={CategoryContainer} />
           <ProtectedRoute
             path="/profile/workouts/:userId"
             component={ProfWorkoutsContainer}
@@ -58,6 +60,11 @@ const App = () => {
           <ProtectedRoute
             path="/schedule/:category"
             component={ClassContainer}
+          />
+          <ProtectedRoute
+            exact
+            path="/challenges"
+            component={ChallengesContainer}
           />
           <ProtectedRoute exact path="/" component={CategoryContainer} />
           <Redirect to="/classes" />

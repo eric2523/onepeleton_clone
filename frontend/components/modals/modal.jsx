@@ -34,6 +34,7 @@ class Modal extends React.Component {
       case 'classDetails':
         component = <ClassDetailsModalContainer 
                       fetchClass={this.props.fetchClass}
+                      match={this.props.match}
                       classId={this.props.match.params.classId}/>
         break;
       case 'userFollowers':
@@ -61,7 +62,7 @@ class Modal extends React.Component {
 const mSTP = state => {
   return {
     modal: state.ui.modal,
-    workoutClasses: state.entities.workoutClasses 
+    // workoutClasses: state.entities.workoutClasses 
   }
 }
 
