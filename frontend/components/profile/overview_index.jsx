@@ -1,7 +1,7 @@
-import React from 'react'
-import ProfileNavbar from './profile_navbar'
-import UserBioIndex from './user_bio_index'
-import UserTotalWorkoutsIndex from './user_total_workouts_index'
+import React from "react";
+import ProfileNavbar from "./profile_navbar";
+import UserBioIndex from "./user_bio_index";
+import UserTotalWorkoutsIndex from "./user_total_workouts_index";
 
 class OverviewIndex extends React.Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class OverviewIndex extends React.Component {
         this.props.fetchUsersWorkoutClasses(userId),
         this.props.fetchUser(userId),
       ];
-      
+
       Promise.all(funcs);
     } else {
       this.props
@@ -28,13 +28,12 @@ class OverviewIndex extends React.Component {
     }
   }
 
-  componentDidUpdate(prevProps){
-    let userId = this.props.currUser.id
-    if (
-      this.props.match.path === "/profile/overview/:userId" &&
-      prevProps.location.pathname !== this.props.location.pathname
-    ) {
-      userId = this.props.match.params.userId;
+  componentDidUpdate(prevProps) {
+    let userId = this.props.currUser.id;
+    if (prevProps.location.pathname !== this.props.location.pathname) {
+      if (this.props.match.path === "/profile/overview/:userId") {
+        userId = this.props.match.params.userId;
+      }
       let funcs = [
         this.props.fetchUsersClasses(userId),
         this.props.fetchUsersWorkoutClasses(userId),
@@ -42,18 +41,16 @@ class OverviewIndex extends React.Component {
       ];
 
       Promise.all(funcs);
-    } 
+    }
   }
 
-  componentWillUnmount(){
-     $(".session-background").removeClass("main-light-grey-background");
+  componentWillUnmount() {
+    $(".session-background").removeClass("main-light-grey-background");
   }
 
   render() {
-    let user = this.props.currUser
-    if (
-      this.props.match.path === "/profile/overview/:userId"
-    ) {
+    let user = this.props.currUser;
+    if (this.props.match.path === "/profile/overview/:userId") {
       user = this.props.users[this.props.match.params.userId];
     }
 
@@ -81,7 +78,7 @@ class OverviewIndex extends React.Component {
     return (
       <div className="user-overview">
         <header>
-          <ProfileNavbar match={this.props.match}/>
+          <ProfileNavbar match={this.props.match} />
         </header>
         {userBioIndex}
         {usersTotalWorkoutsIndex}
@@ -90,4 +87,4 @@ class OverviewIndex extends React.Component {
   }
 }
 
-export default OverviewIndex
+export default OverviewIndex;

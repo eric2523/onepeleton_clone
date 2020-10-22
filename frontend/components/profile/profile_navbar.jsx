@@ -18,17 +18,13 @@ class ProfileNavbar extends React.Component {
     return (
       <div className="profile-nav-div">
         <ul className="profile-navbar-list">
-          <li className="nav-bar-item nav-bar-item-active-light">
-            <NavLink to={overviewPath} activeClassName="nav-bar-item-active">
-              Overview
-            </NavLink>
-          </li>
+          <NavLink to={overviewPath} activeClassName="nav-bar-item-active">
+            <li className="nav-bar-item nav-bar-item-active-light">Overview</li>
+          </NavLink>
 
-          <li className="nav-bar-item nav-bar-item-active-light">
-            <NavLink to={workoutsPath} activeClassName="nav-bar-item-active">
-              Workouts
-            </NavLink>
-          </li>
+          <NavLink to={workoutsPath} activeClassName="nav-bar-item-active">
+            <li className="nav-bar-item nav-bar-item-active-light">Workouts</li>
+          </NavLink>
         </ul>
       </div>
     );

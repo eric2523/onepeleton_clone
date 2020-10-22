@@ -1,7 +1,7 @@
 .prof-workouts-category-list {
   display: flex;
   justify-content: space-between;
-  background: rgb(255,255,255);
+  background: rgb(255, 255, 255);
 }
 
 .prof-workout-c-li {
@@ -25,6 +25,12 @@
 .p-wc-item {
   margin: 15px;
   background: rgb(255, 255, 255);
+  transition-duration: 250ms;
+  transition-timing-function: ease;
+}
+
+.p-wc-item:hover {
+  transform: scale(1.02);
 }
 
 .p-wc-item-content {
@@ -35,7 +41,7 @@
 .category-count-num {
   font-size: 16px;
   font-weight: 300;
-  color: rgb(34, 37 , 41)
+  color: rgb(34, 37, 41);
 }
 
 .prof-category-svg-div {
@@ -95,7 +101,7 @@
   text-transform: uppercase;
 }
 
-.p-wc-prof-img-div{
+.p-wc-prof-img-div {
   height: 90px;
   width: 90px;
   margin-left: 15px;
