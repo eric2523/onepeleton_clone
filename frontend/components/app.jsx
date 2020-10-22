@@ -35,28 +35,24 @@ const App = () => {
           <AuthRoute path="/login" component={LoginFormContainer} />
           <AuthRoute path="/signup" component={SignUpFormContainer} />
           <ProtectedRoute
+            path="/profile/overview"
+            component={OverviewContainer}
+          />
+          <ProtectedRoute
+            path="/profile/workouts"
+            component={ProfWorkoutsContainer}
+          />
+          <ProtectedRoute
             path="/classes/:category"
             component={ClassContainer}
           />
           <ProtectedRoute path="/classes" component={CategoryContainer} />
           <ProtectedRoute
-            exact
             path="/profile/overview/:userId"
             component={OverviewContainer}
           />
           <ProtectedRoute
-            exact
             path="/profile/workouts/:userId"
-            component={ProfWorkoutsContainer}
-          />
-          <ProtectedRoute
-            exact
-            path="/profile/overview"
-            component={OverviewContainer}
-          />
-          <ProtectedRoute
-            exact
-            path="/profile/workouts"
             component={ProfWorkoutsContainer}
           />
           <ProtectedRoute

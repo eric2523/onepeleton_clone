@@ -26,6 +26,10 @@
   background-color: #e4e7eb;
 }
 
+.nav-bar-item > .nav-bar-item-active {
+  color: rgb(224, 42, 59);
+}
+
 .nav-bar-item-active > .nav-bar-item {
   color: rgb(224, 42, 59);
 }
