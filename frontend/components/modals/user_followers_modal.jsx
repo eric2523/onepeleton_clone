@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import {
   fetchUsersFollows,
   createUsersFollows,
-  removeUsersFollow
+  removeUsersFollow,
 } from "../../actions/user_follows_actions/user_follows_actions";
 import { fetchUser } from "../../actions/user_actions/user_actions";
 import UserModalInfo from "./user_modal_info";
@@ -15,7 +15,6 @@ class UserFollowersModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loaded: false,
       userFollows: {
         followers: {},
         following: {},
@@ -25,40 +24,33 @@ class UserFollowersModal extends React.Component {
 
   componentDidMount() {
     let currUserId = this.props.currUserId;
-    if (this.props.location.pathname !== "/profile/overview"){
-      currUserId = this.props.match.params.userId
-    } 
-    
-    this.props.fetchUsersFollows(currUserId)
-    .then(() => {
-      let userFollows = userFollowsSelector(this.props.userFollows, currUserId)
-      this.setState({ userFollows })
-    })
-  }
+    if (this.props.location.pathname !== "/profile/overview") {
+      currUserId = this.props.match.params.userId;
+    }
 
-  componentWillUnmount(){
-    this.setState({ loaded: false })
+    this.props.fetchUsersFollows(currUserId).then(() => {
+      let userFollows = userFollowsSelector(this.props.userFollows, currUserId);
+      this.setState({ userFollows });
+    });
   }
 
   render() {
     let followers = Object.values(this.state.userFollows.followers);
     let followersList = null;
-    if ( followers.length ) {
-      followersList = followers.map(
-        (follower) => {
-          return (
-            <UserModalInfo
-              key={follower.id}
-              userId={follower.userId}
-              followUser={this.props.followUser}
-              removeUsersFollow={this.props.removeUsersFollow}
-              userFollow={follower}
-            />
-          );
-        }
-      );
+    if (followers.length) {
+      followersList = followers.map((follower) => {
+        return (
+          <UserModalInfo
+            key={follower.id}
+            userId={follower.userId}
+            followUser={this.props.followUser}
+            removeUsersFollow={this.props.removeUsersFollow}
+            userFollow={follower}
+          />
+        );
+      });
     }
-    
+
     let followingsCount = 0;
     if (followersList) {
       followingsCount = followersList.length;
@@ -92,4 +84,4 @@ const mDTP = (dispatch) => {
   };
 };
 
-export default withRouter(connect(mSTP, mDTP)(UserFollowersModal))
+export default withRouter(connect(mSTP, mDTP)(UserFollowersModal));

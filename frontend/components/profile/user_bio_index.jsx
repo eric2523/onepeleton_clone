@@ -5,17 +5,19 @@ import {searchSVG} from '../svgs/modal_svg'
 import ProfilePhotoForm from '../../forms/profile_photo_form';
 import { withRouter } from 'react-router-dom';
 import { userFollowsSelector } from '../../selectors/user_follows_selector';
+import FollowBtn from '../modals/follow_btn';
+import { createUsersFollows, removeUsersFollow } from '../../actions/user_follows_actions/user_follows_actions';
 
 class UserBioIndex extends React.Component {
   constructor(props){
     super(props)
-    this.handleOpenModal = this.handleOpenModal.bind(this)
     this.state = {
       userFollows: {
         followers: {},
         following: {}
       } 
     };
+    this.handleOpenModal = this.handleOpenModal.bind(this)
   }
 
   componentDidMount(){
@@ -26,6 +28,26 @@ class UserBioIndex extends React.Component {
       })
   }
 
+  componentDidUpdate(prevProps){
+    if (prevProps.match.path !== this.props.match.path){
+      this.props.fetchUsersFollows(this.props.currUser.id).then(() => {
+        let userFollows = userFollowsSelector(
+          this.props.userFollows,
+          this.props.currUser.id
+          );
+          this.setState({ userFollows });
+        });
+      } else if (Object.keys(prevProps.userFollows).length !== Object.keys(this.props.userFollows).length){
+        this.props.fetchUsersFollows(this.props.currUser.id).then(() => {
+          let userFollows = userFollowsSelector(
+            this.props.userFollows,
+            this.props.currUser.id
+            );
+            this.setState({ userFollows });
+          })
+        }
+      }
+
   handleOpenModal(type){
     return (e) => {
       this.props.openModal(type)
@@ -33,26 +55,6 @@ class UserBioIndex extends React.Component {
         () => $(".modal-background").addClass("modal-background-color"),
         3
       );
-    }
-  }
-
-  componentDidUpdate(prevProps){
-    if (prevProps.match.path !== this.props.match.path){
-      this.props.fetchUsersFollows(this.props.currUser.id).then(() => {
-        let userFollows = userFollowsSelector(
-          this.props.userFollows,
-          this.props.currUser.id
-        );
-        this.setState({ userFollows });
-      });
-    } else if (Object.keys(prevProps.userFollows).length !== Object.keys(this.props.userFollows).length){
-      this.props.fetchUsersFollows(this.props.currUser.id).then(() => {
-        let userFollows = userFollowsSelector(
-          this.props.userFollows,
-          this.props.currUser.id
-        );
-        this.setState({ userFollows });
-      })
     }
   }
 
@@ -87,10 +89,25 @@ class UserBioIndex extends React.Component {
       );
     }
 
+    let userBioRight = (
+     <div className="user-search-content">
+       <FollowBtn />
+     </div>
+    )
     let profilePicForm = null;
     if (this.props.match.path !== "/profile/overview/:userId"){
       profilePicForm = <ProfilePhotoForm />;
+      userBioRight = (
+        <div
+          onClick={this.handleOpenModal("allUsers")}
+          className="user-search-content"
+        >
+          {searchSVG()}
+          <span>Find Members</span>
+        </div>
+      )
     }
+
     return (
       <div className="user-bio-div">
         <div className="user-bio-top">
@@ -127,13 +144,7 @@ class UserBioIndex extends React.Component {
             </div>
           </div>
           <div className="user-search">
-            <div
-              onClick={this.handleOpenModal("allUsers")}
-              className="user-search-content"
-            >
-              {searchSVG()}
-              <span>Find Members</span>
-            </div>
+            {userBioRight}
           </div>
         </div>
       </div>
@@ -143,14 +154,18 @@ class UserBioIndex extends React.Component {
 
 const mSTP = (state) => {
   return ({
-    userFollows: state.entities.userFollows
+    userFollows: state.entities.userFollows,
+    sessionUser: state.entities.users[state.session.id]
   })
 }
 
 const mDTP = (dispatch) => {
-  return ({
-    openModal: (modal) => dispatch(openModal(modal))
-  })
+  return {
+    openModal: (modal) => dispatch(openModal(modal)),
+    createUsersFollows: (userId) => dispatch(createUsersFollows(userId)),
+    removeUsersFollows: (userFollowId) =>
+      dispatch(removeUsersFollow(userFollowId)),
+  };
 }
 
 export default withRouter(connect(mSTP, mDTP)(UserBioIndex));

@@ -6,9 +6,6 @@ import UserTotalWorkoutsIndex from './user_total_workouts_index'
 class OverviewIndex extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   onCurrUserProfile: Boolean(this.props.match.path !== "/profile/overview/:userId"),
-    // }
   }
 
   componentDidMount() {
@@ -60,6 +57,7 @@ class OverviewIndex extends React.Component {
       user = this.props.users[this.props.match.params.userId];
     }
 
+    let usersTotalWorkoutsIndex = null;
     let userBioIndex = null;
     if (user) {
       userBioIndex = (
@@ -68,19 +66,25 @@ class OverviewIndex extends React.Component {
           fetchUsersFollows={this.props.fetchUsersFollows}
         />
       );
-    }
-    return (
-      <div className="user-overview">
-        <header>
-          <ProfileNavbar />
-        </header>
-        {userBioIndex}
-        <UserTotalWorkoutsIndex 
+
+      usersTotalWorkoutsIndex = (
+        <UserTotalWorkoutsIndex
+          sessionUser={this.props.currUser}
+          currUser={user}
           fetchAllCategories={this.props.fetchAllCategories}
           categories={this.props.categories}
           userClasses={this.props.userClasses}
           workoutClasses={this.props.workoutClasses}
         />
+      );
+    }
+    return (
+      <div className="user-overview">
+        <header>
+          <ProfileNavbar match={this.props.match}/>
+        </header>
+        {userBioIndex}
+        {usersTotalWorkoutsIndex}
       </div>
     );
   }

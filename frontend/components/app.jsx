@@ -47,7 +47,7 @@ const App = () => {
           <ProtectedRoute
             // exact
             path="/profile/workouts/:userId"
-            component={OverviewContainer}
+            component={ProfWorkoutsContainer}
           />
           <ProtectedRoute
             exact

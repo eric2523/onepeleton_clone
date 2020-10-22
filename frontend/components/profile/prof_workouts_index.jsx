@@ -4,6 +4,7 @@ import ProfileNavbar from './profile_navbar';
 import { fetchUsersWorkoutClasses } from '../../actions/class_actions/class_actions';
 import ProfWorkoutsIndexItem from './prof_workouts_index_item';
 import { fetchAllCategories } from '../../actions/category_actions/category_actions';
+import { withRouter } from 'react-router-dom';
 
 class ProfWorkoutsIndex extends React.Component {
   constructor(props) {
@@ -12,8 +13,14 @@ class ProfWorkoutsIndex extends React.Component {
 
   componentDidMount() {
     $(".session-background").addClass("main-light-grey-background");
-    this.props.fetchUsersWorkoutClasses(this.props.currUser.id)
-      .then(() => this.props.fetchAllCategories())
+    if (this.props.match.path === "/profile/workouts/:userId"){
+      this.props
+        .fetchUsersWorkoutClasses(this.props.match.params.userId)
+        .then(() => this.props.fetchAllCategories());
+    } else {
+      this.props.fetchUsersWorkoutClasses(this.props.currUser.id)
+        .then(() => this.props.fetchAllCategories())
+    }
   }
 
   componentWillUnmount() {
@@ -25,9 +32,6 @@ class ProfWorkoutsIndex extends React.Component {
     let categoriesCount = Object.keys(this.props.categories).length
 
     let countTitle = "Workouts"
-    if (!workoutCount) {
-      countTitle = "Workout"
-    }
 
     let workoutsList = null;
     //make sure both async requests are finished
@@ -46,7 +50,7 @@ class ProfWorkoutsIndex extends React.Component {
     return (
       <div className="prof-workouts-div">
         <header>
-          <ProfileNavbar />
+          <ProfileNavbar match={this.props.match}/>
         </header>
 
         <div className="prof-workouts-body">
@@ -84,4 +88,4 @@ const mDTP = (dispatch) => {
   })
 }
 
-export default connect(mSTP, mDTP)(ProfWorkoutsIndex);
+export default withRouter(connect(mSTP, mDTP)(ProfWorkoutsIndex))

@@ -1,29 +1,37 @@
-import React from 'react'
-import {NavLink} from 'react-router-dom'
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 class ProfileNavbar extends React.Component {
-  constructor(props){
-    super(props)
+  constructor(props) {
+    super(props);
   }
 
-  render(){
+  render() {
+    let overviewPath = "/profile/overview";
+    let workoutsPath = "/profile/workouts";
+    debugger;
+    if (this.props.match !== undefined) {
+      if (
+        this.props.match.path !== overviewPath ||
+        this.props.match.path !== workoutsPath
+      ) {
+        let wildcard = "/" + this.props.match.params.userId;
+        overviewPath = overviewPath + wildcard;
+        workoutsPath = workoutsPath + wildcard;
+      }
+    }
+
     return (
       <div className="profile-nav-div">
         <ul className="profile-navbar-list">
           <li className="nav-bar-item nav-bar-item-active-light">
-            <NavLink
-              to="/profile/overview"
-              activeClassName="nav-bar-item-active"
-            >
+            <NavLink to={overviewPath} activeClassName="nav-bar-item-active">
               Overview
             </NavLink>
           </li>
 
           <li className="nav-bar-item nav-bar-item-active-light">
-            <NavLink
-              to="/profile/workouts"
-              activeClassName="nav-bar-item-active"
-            >
+            <NavLink to={workoutsPath} activeClassName="nav-bar-item-active">
               Workouts
             </NavLink>
           </li>
@@ -33,4 +41,4 @@ class ProfileNavbar extends React.Component {
   }
 }
 
-export default ProfileNavbar 
+export default ProfileNavbar;
