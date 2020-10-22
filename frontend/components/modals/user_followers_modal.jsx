@@ -63,7 +63,6 @@ class UserFollowersModal extends React.Component {
     if (followersList) {
       followingsCount = followersList.length;
     }
-    // debugger
     return (
       <div className="user-follows-modal-div">
         <div className="users-follows-title">

@@ -54,7 +54,6 @@ class AllUsersModal extends React.Component {
     if (this.state.loaded) {
       usersList = Object.values(this.props.users).map(
         (user) => {
-          debugger
           return (
             <UserModalInfo
               key={user.id}

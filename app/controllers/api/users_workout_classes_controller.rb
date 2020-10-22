@@ -16,7 +16,6 @@ class Api::UsersWorkoutClassesController < ApplicationController
   end
 
   def index
-    # debugger
     # @curr_user_classes = current_user.workout_classes
     user = User.find(users_classes_params[:user_id])
     @curr_user_classes = user.workout_classes

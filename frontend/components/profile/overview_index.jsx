@@ -69,7 +69,6 @@ class OverviewIndex extends React.Component {
         />
       );
     }
-    // debugger
     return (
       <div className="user-overview">
         <header>

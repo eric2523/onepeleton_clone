@@ -91,7 +91,6 @@ class UserBioIndex extends React.Component {
     if (this.props.match.path !== "/profile/overview/:userId"){
       profilePicForm = <ProfilePhotoForm />;
     }
-    // debugger
     return (
       <div className="user-bio-div">
         <div className="user-bio-top">
