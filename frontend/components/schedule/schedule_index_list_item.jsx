@@ -26,6 +26,7 @@ class ScheduleIndexListItem extends React.Component {
            processBtn={this.props.unfollowClass}
            workoutClassId={this.props.workoutClass.id}
            fetchUsersClasses={this.props.fetchUsersClasses}
+           currUser={this.props.currUser}
          />
        );
      } else {
@@ -34,6 +35,7 @@ class ScheduleIndexListItem extends React.Component {
            processBtn={this.props.followClass}
            workoutClassId={this.props.workoutClass.id}
            fetchUsersClasses={this.props.fetchUsersClasses}
+           currUser={this.props.currUser}
          />
        );
      }

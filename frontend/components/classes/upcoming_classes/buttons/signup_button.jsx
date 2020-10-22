@@ -9,7 +9,7 @@ class SignUpBtn extends React.Component {
   handleClick(e) {
    this.props
      .processBtn(this.props.workoutClassId)
-     .then(() => this.props.fetchUsersClasses());
+     .then(() => this.props.fetchUsersClasses(this.props.currUser.id));
   }
 
   render(){

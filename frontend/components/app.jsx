@@ -20,10 +20,8 @@ const App = () => {
         path="/classes/:category/classDetails/:classId"
         component={Modal}
       />
-      <Route
-        path="/profile/overview"
-        component={Modal}
-      />
+      <Route exact path="/profile/overview/:userId" component={Modal} />
+      <Route exact path="/profile/overview" component={Modal} />
       <header className="master-header-div">
         {/* <Switch> */}
         <Route path="/login" component={PeletonLogo} />
@@ -42,14 +40,29 @@ const App = () => {
           />
           <ProtectedRoute path="/classes" component={CategoryContainer} />
           <ProtectedRoute
+            // exact
+            path="/profile/overview/:userId"
+            component={OverviewContainer}
+          />
+          <ProtectedRoute
+            // exact
+            path="/profile/workouts/:userId"
+            component={OverviewContainer}
+          />
+          <ProtectedRoute
+            exact
             path="/profile/overview"
             component={OverviewContainer}
           />
           <ProtectedRoute
+            exact
             path="/profile/workouts"
             component={ProfWorkoutsContainer}
           />
-          <ProtectedRoute path="/schedule/:category" component={ClassContainer} />
+          <ProtectedRoute
+            path="/schedule/:category"
+            component={ClassContainer}
+          />
           <ProtectedRoute exact path="/" component={CategoryContainer} />
           <Redirect to="/classes" />
         </Switch>

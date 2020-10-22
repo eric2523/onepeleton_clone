@@ -32,9 +32,9 @@ export const followClass = (classId) => {
   };
 };
 
-export const fetchUsersClasses = () => {
+export const fetchUsersClasses = (userId) => {
   return (dispatch) => {
-    return ClassAPIUtil.getUsersWorkoutClasses()
+    return ClassAPIUtil.getUsersWorkoutClasses(userId)
       .then((userClasses) => dispatch(receiveAllUsersClass(userClasses)))
   }
 }

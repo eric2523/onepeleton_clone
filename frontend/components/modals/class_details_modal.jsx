@@ -16,7 +16,7 @@ class ClassDetailsModal extends React.Component {
   componentDidMount(){
     let that = this;
 
-    this.props.fetchUsersClasses()
+    this.props.fetchUsersClasses(this.props.currUser.id)
     .then(() => {
       let followsClass = Object.keys(that.props.userClasses).includes(that.props.classId);
       that.setState({followsClass})
@@ -129,7 +129,8 @@ const mSTP = (state, ownProps) => {
     userClasses: state.entities.userClasses,
     workoutClassSongs: state.entities.workoutClassSongs,
     spotifySongs: state.entities.songs,
-    accessToken: window.localStorage.spotToken
+    accessToken: window.localStorage.spotToken,
+    currUser: state.entities.users[state.session.id]
   })
 }
 
@@ -137,7 +138,7 @@ const mDTP = (dispatch) => {
   return {
     followClass: (classId) => dispatch(followClass(classId)),
     unfollowClass: (classId) => dispatch(unfollowClass(classId)),
-    fetchUsersClasses: () => dispatch(fetchUsersClasses()),
+    fetchUsersClasses: (userId) => dispatch(fetchUsersClasses(userId)),
     fetchClassSongs: (classId) => dispatch(fetchClassSongs(classId)),
     fetchSpotifySong: (accessToken, songTitle) => dispatch(fetchSong(accessToken, songTitle))
   };

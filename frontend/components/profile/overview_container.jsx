@@ -13,15 +13,16 @@ const mSTP = (state) => {
     userClasses: state.entities.userClasses,
     workoutClasses: state.entities.workoutClasses,
     currUser: state.entities.users[state.session.id],
-    userFollows: userFollowsSelector(state.entities.userFollows, state.session.id)
+    // userFollows: userFollowsSelector(state.entities.userFollows, state.session.id),
+    users: state.entities.users
   })
 }
 
 const mDTP = (dispatch) => {
   return ({
     fetchAllCategories: () => dispatch(fetchAllCategories()),
-    fetchUsersClasses: () => dispatch(fetchUsersClasses()),
-    fetchUsersWorkoutClasses: () => dispatch(fetchUsersWorkoutClasses()),
+    fetchUsersClasses: (userId) => dispatch(fetchUsersClasses(userId)),
+    fetchUsersWorkoutClasses: (userId) => dispatch(fetchUsersWorkoutClasses(userId)),
     fetchUsersFollows: (userId) => dispatch(fetchUsersFollows(userId)),
     createUsersFollows: (userId) => dispatch(createUsersFollows(userId)),
     removeUsersFollow: (userFollowId) => dispatch(removeUsersFollow(userFollowId)),

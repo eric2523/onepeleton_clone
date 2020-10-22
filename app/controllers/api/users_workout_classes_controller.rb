@@ -16,7 +16,10 @@ class Api::UsersWorkoutClassesController < ApplicationController
   end
 
   def index
-    @curr_user_classes = current_user.workout_classes
+    # debugger
+    # @curr_user_classes = current_user.workout_classes
+    user = User.find(users_classes_params[:user_id])
+    @curr_user_classes = user.workout_classes
     # redirect_to api_workout_classes_url(@curr_user_classes)
   end
 
@@ -28,6 +31,6 @@ class Api::UsersWorkoutClassesController < ApplicationController
 
   private
   def users_classes_params
-    params.require(:workout_class).permit(:workout_class_id)
+    params.require(:workout_class).permit(:workout_class_id, :user_id)
   end
 end

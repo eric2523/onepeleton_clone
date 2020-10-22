@@ -3,15 +3,27 @@ import { openModal } from '../../actions/modal_actions/modal_actions';
 import {connect} from 'react-redux'
 import {searchSVG} from '../svgs/modal_svg'
 import ProfilePhotoForm from '../../forms/profile_photo_form';
+import { withRouter } from 'react-router-dom';
+import { userFollowsSelector } from '../../selectors/user_follows_selector';
 
 class UserBioIndex extends React.Component {
   constructor(props){
     super(props)
     this.handleOpenModal = this.handleOpenModal.bind(this)
+    this.state = {
+      userFollows: {
+        followers: {},
+        following: {}
+      } 
+    };
   }
 
   componentDidMount(){
     this.props.fetchUsersFollows(this.props.currUser.id)
+      .then(() => {
+         let userFollows = userFollowsSelector(this.props.userFollows, this.props.currUser.id);
+         this.setState({ userFollows })
+      })
   }
 
   handleOpenModal(type){
@@ -24,35 +36,74 @@ class UserBioIndex extends React.Component {
     }
   }
 
+  componentDidUpdate(prevProps){
+    if (prevProps.match.path !== this.props.match.path){
+      this.props.fetchUsersFollows(this.props.currUser.id).then(() => {
+        let userFollows = userFollowsSelector(
+          this.props.userFollows,
+          this.props.currUser.id
+        );
+        this.setState({ userFollows });
+      });
+    } else if (Object.keys(prevProps.userFollows).length !== Object.keys(this.props.userFollows).length){
+      this.props.fetchUsersFollows(this.props.currUser.id).then(() => {
+        let userFollows = userFollowsSelector(
+          this.props.userFollows,
+          this.props.currUser.id
+        );
+        this.setState({ userFollows });
+      })
+    }
+  }
+
   render(){
     let followingCount = 0;
     let followersCount = 0;
-    if (this.props.userFollows.followers !== undefined) {
-      followersCount = Object.keys(this.props.userFollows.followers).length;
+    if (this.state.userFollows.followers !== undefined) {
+      followersCount = Object.keys(this.state.userFollows.followers).length;
     }
 
-    if (this.props.userFollows.following !== undefined) {
-      followingCount = Object.keys(this.props.userFollows.following).length;
+    if (this.state.userFollows.following !== undefined) {
+      followingCount = Object.keys(this.state.userFollows.following).length;
     }
 
+    let profImg = null;
+    if (this.props.currUser){
+      profImg = (
+        <img
+          className="user-prof-img"
+          src={this.props.currUser.photoUrl}
+          alt="blank-profile-pic"
+        />
+      );
+    }
+
+    let userName = null;
+    if (this.props.currUser){
+      userName = (
+        <h1 className="user-profile-username">
+          {this.props.currUser.username}
+        </h1>
+      );
+    }
+
+    let profilePicForm = null;
+    if (this.props.match.path !== "/profile/overview/:userId"){
+      profilePicForm = <ProfilePhotoForm />;
+    }
+    // debugger
     return (
       <div className="user-bio-div">
         <div className="user-bio-top">
           <div className="user-profile-pic">
             <div className="user-profile-img-div">
-              <img
-                className="user-prof-img"
-                src={this.props.currUser.photoUrl}
-                alt="blank-profile-pic"
-              />
-              <ProfilePhotoForm />
+              {profImg}
+              {profilePicForm}
             </div>
           </div>
 
           <div className="user-profile-info">
-            <h1 className="user-profile-username">
-              {this.props.currUser.username}
-            </h1>
+            {userName}
           </div>
 
           <div className="hidden-user-profile-div"></div>
@@ -91,10 +142,16 @@ class UserBioIndex extends React.Component {
   }
 }
 
+const mSTP = (state) => {
+  return ({
+    userFollows: state.entities.userFollows
+  })
+}
+
 const mDTP = (dispatch) => {
   return ({
     openModal: (modal) => dispatch(openModal(modal))
   })
 }
 
-export default connect(null, mDTP)(UserBioIndex);
+export default withRouter(connect(mSTP, mDTP)(UserBioIndex));

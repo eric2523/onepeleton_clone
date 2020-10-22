@@ -24,9 +24,9 @@ export const fetchClass = (classId) => {
   }
 }
 
-export const fetchUsersWorkoutClasses = () => {
+export const fetchUsersWorkoutClasses = (userId) => {
   return (dispatch) => {
-    return ClassAPIUtil.getUsersWorkoutClasses()
+    return ClassAPIUtil.getUsersWorkoutClasses(userId)
       .then((workoutClasses) => dispatch(receiveClasses(workoutClasses)))
   }
 }

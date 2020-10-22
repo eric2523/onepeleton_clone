@@ -8,7 +8,8 @@ const mSTP = (state) => {
   return ({
     workoutClasses: state.entities.workoutClasses,
     userClasses: state.entities.userClasses,
-    categories: state.entities.categories
+    categories: state.entities.categories,
+    currUser: state.entities.users[state.session.id]
   })
 }
 
@@ -17,8 +18,8 @@ const mDTP = (dispatch) => {
     fetchMostRecentClasses: () => dispatch(fetchMostRecentClasses()),
     followClass: (classId) => dispatch(followClass(classId)),
     unfollowClass: (classId) => dispatch(unfollowClass(classId)),
-    fetchUsersClasses: () => dispatch(fetchUsersClasses()),
-    fetchUsersWorkoutClasses: () => dispatch(fetchUsersWorkoutClasses()),
+    fetchUsersClasses: (userId) => dispatch(fetchUsersClasses(userId)),
+    fetchUsersWorkoutClasses: (userId) => dispatch(fetchUsersWorkoutClasses(userId)),
     fetchAllCategories: () => dispatch(fetchAllCategories())
   };
 }

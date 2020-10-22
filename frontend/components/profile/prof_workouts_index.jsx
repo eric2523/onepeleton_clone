@@ -12,7 +12,7 @@ class ProfWorkoutsIndex extends React.Component {
 
   componentDidMount() {
     $(".session-background").addClass("main-light-grey-background");
-    this.props.fetchUsersWorkoutClasses()
+    this.props.fetchUsersWorkoutClasses(this.props.currUser.id)
       .then(() => this.props.fetchAllCategories())
   }
 
@@ -72,13 +72,14 @@ class ProfWorkoutsIndex extends React.Component {
 const mSTP = (state) => {
   return ({
     workoutClasses: state.entities.workoutClasses,
-    categories: state.entities.categories
+    categories: state.entities.categories,
+    currUser: state.entities.users[state.session.id]
   })
 }
 
 const mDTP = (dispatch) => {
   return ({
-    fetchUsersWorkoutClasses: () => dispatch(fetchUsersWorkoutClasses()),
+    fetchUsersWorkoutClasses: (userId) => dispatch(fetchUsersWorkoutClasses(userId)),
     fetchAllCategories: () => dispatch(fetchAllCategories())
   })
 }

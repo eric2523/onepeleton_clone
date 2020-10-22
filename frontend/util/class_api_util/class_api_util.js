@@ -31,9 +31,14 @@ export const unfollowClass = (classId) => {
   });
 };
 
-export const getUsersWorkoutClasses = () => {
+export const getUsersWorkoutClasses = (userId) => {
   return $.ajax({
     method: "get",
     url: "/api/users_workout_classes",
+    data: {
+      workout_class:{
+        user_id: userId
+      } 
+    }
   });
 }

@@ -8,7 +8,7 @@ class UpcomingClassesRow extends React.Component {
 
   componentDidMount(){
     this.props.fetchMostRecentClasses()
-      .then(() =>  this.props.fetchUsersClasses()
+      .then(() =>  this.props.fetchUsersClasses(this.props.currUser.id)
         .then(() => this.props.fetchAllCategories())
       );
   }
@@ -27,6 +27,7 @@ class UpcomingClassesRow extends React.Component {
             followClass={this.props.followClass}
             unfollowClass={this.props.unfollowClass}
             fetchUsersClasses={this.props.fetchUsersClasses}
+            currUser={this.props.currUser}
           />
         ))
     }

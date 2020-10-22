@@ -14,7 +14,6 @@ class AllUsersModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = { loaded: false };
-    this.isFollowing = this.isFollowing.bind(this);
     this.selectUserFollows = this.selectUserFollows.bind(this)
   }
 
@@ -31,24 +30,12 @@ class AllUsersModal extends React.Component {
     Promise.all(funcs).then(() => (
       this.setState({ loaded: true })
     ))
-   
   }
 
   componentWillUnmount() {
     this.setState({ loaded: false });
   }
 
-  isFollowing(user) {
-    let followings = Object.values(this.props.userFollows.following);
-
-    for (let i = 0; i < followings.length; i++) {
-      let following = followings[i];
-      if (user.id === following.followedUserId) {
-        return true;
-      }
-    }
-    return false;
-  }
 
   selectUserFollows(user) {
     let followings = Object.values(this.props.userFollows.following);
@@ -67,12 +54,12 @@ class AllUsersModal extends React.Component {
     if (this.state.loaded) {
       usersList = Object.values(this.props.users).map(
         (user) => {
+          debugger
           return (
             <UserModalInfo
-              isFollowing={this.isFollowing(user)}
               key={user.id}
-              userFollows={this.selectUserFollows(user)}
-              user={user}
+              userFollow={this.selectUserFollows(user)}
+              userId={user.id}
               followUser={this.props.followUser}
               removeUsersFollow={this.props.removeUsersFollow}
             />

@@ -11,7 +11,7 @@ class ScheduleIndexItem extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUsersClasses();
+    this.props.fetchUsersClasses(this.props.currUser.id);
   }
 
   getTimeString(classDate) {
@@ -53,6 +53,7 @@ class ScheduleIndexItem extends React.Component {
             fetchUsersClasses={this.props.fetchUsersClasses}
             users={this.props.users}
             fetchUser={this.props.fetchUser}
+            currUser={this.props.currUser}
           />
         );
       }
@@ -65,7 +66,8 @@ class ScheduleIndexItem extends React.Component {
 const mSTP = (state) => {
   return {
     userClasses: state.entities.userClasses,
-    users: state.entities.users
+    users: state.entities.users,
+    currUser: state.entities.users[state.session.id]
   };
 };
 
@@ -73,7 +75,7 @@ const mDTP = (dispatch) => {
   return ({
     followClass: (classId) => dispatch(followClass(classId)),
     unfollowClass: (classId) => dispatch(unfollowClass(classId)),
-    fetchUsersClasses: () => dispatch(fetchUsersClasses()),
+    fetchUsersClasses: (userId) => dispatch(fetchUsersClasses(userId)),
     fetchUser: (userId) => dispatch(fetchUser(userId))
   })
 }
