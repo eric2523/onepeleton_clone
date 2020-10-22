@@ -24,7 +24,7 @@ class UserFollowingsModal extends React.Component {
 
   componentDidMount() {
     let currUserId = this.props.currUserId;
-    if (this.props.location.pathname !== "/profile/overview") {
+    if (this.props.match.path !== "/profile/overview") {
       currUserId = this.props.match.params.userId;
     }
 

@@ -23,11 +23,10 @@ class UserFollowersModal extends React.Component {
   }
 
   componentDidMount() {
-    let currUserId = this.props.currUserId;
-    if (this.props.location.pathname !== "/profile/overview") {
+    let currUserId = this.props.sessionUserId;
+    if (this.props.match.path === "/profile/overview/:userId") {
       currUserId = this.props.match.params.userId;
     }
-
     this.props.fetchUsersFollows(currUserId).then(() => {
       let userFollows = userFollowsSelector(this.props.userFollows, currUserId);
       this.setState({ userFollows });
@@ -70,7 +69,7 @@ const mSTP = (state) => {
   return {
     userFollows: state.entities.userFollows,
     users: state.entities.users,
-    currUserId: state.session.id,
+    sessionUserId: state.session.id,
   };
 };
 
