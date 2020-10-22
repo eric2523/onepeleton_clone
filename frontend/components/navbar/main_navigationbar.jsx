@@ -17,6 +17,20 @@ class MainNavigationBar extends React.Component {
   }
 
   render() {
+    let profPhoto = null;
+    let username = null;
+    if (this.props.currentUser) {
+      profPhoto = (
+        <img
+          className="user-prof-img"
+          src={this.props.currentUser.photoUrl}
+          alt="profile-photo"
+        />
+      );
+
+      username = <h1>{this.props.currentUser.username}</h1>;
+    }
+
     return (
       <div className="nav-bar-div">
         <Link to="/classes">
@@ -35,14 +49,10 @@ class MainNavigationBar extends React.Component {
         <Link to="/profile/overview">
           <div className="nav-bar-user-img-div">
             <div className="nav-bar-user-small-img">
-              <img
-                className="user-prof-img"
-                src={this.props.currentUser.photoUrl}
-                alt="profile-photo"
-              />
+              {profPhoto}
             </div>
             <div className="nav-bar-username">
-              <h1>{this.props.currentUser.username}</h1>
+              {username}
             </div>
           </div>
         </Link>
