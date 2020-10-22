@@ -1,64 +1,110 @@
-import React from 'react'
-import { openModal } from '../../actions/modal_actions/modal_actions';
-import {connect} from 'react-redux'
-import {searchSVG} from '../svgs/modal_svg'
-import ProfilePhotoForm from '../../forms/profile_photo_form';
-import { withRouter } from 'react-router-dom';
-import { userFollowsSelector } from '../../selectors/user_follows_selector';
-import FollowBtn from '../modals/follow_btn';
-import { createUsersFollows, removeUsersFollow } from '../../actions/user_follows_actions/user_follows_actions';
+import React from "react";
+import { openModal } from "../../actions/modal_actions/modal_actions";
+import { connect } from "react-redux";
+import { searchSVG } from "../svgs/modal_svg";
+import ProfilePhotoForm from "../../forms/profile_photo_form";
+import { withRouter } from "react-router-dom";
+import { userFollowsSelector } from "../../selectors/user_follows_selector";
+import FollowBtn from "../modals/follow_btn";
+import {
+  createUsersFollows,
+  removeUsersFollow,
+} from "../../actions/user_follows_actions/user_follows_actions";
+import UnfollowBtn from "../modals/unfollow_btn";
 
 class UserBioIndex extends React.Component {
-  constructor(props){
-    super(props)
+  constructor(props) {
+    super(props);
     this.state = {
       userFollows: {
         followers: {},
-        following: {}
-      } 
+        following: {},
+      },
     };
-    this.handleOpenModal = this.handleOpenModal.bind(this)
+    this.handleOpenModal = this.handleOpenModal.bind(this);
+    this.isFollowing = this.isFollowing.bind(this);
   }
 
-  componentDidMount(){
-    this.props.fetchUsersFollows(this.props.currUser.id)
-      .then(() => {
-         let userFollows = userFollowsSelector(this.props.userFollows, this.props.currUser.id);
-         this.setState({ userFollows })
-      })
+  componentDidMount() {
+    this.props.fetchUsersFollows(this.props.currUser.id).then(() => {
+      let userFollows = userFollowsSelector(
+        this.props.userFollows,
+        this.props.currUser.id
+      );
+      this.setState({ userFollows });
+    });
   }
 
-  componentDidUpdate(prevProps){
-    if (prevProps.match.path !== this.props.match.path){
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.path !== this.props.match.path) {
       this.props.fetchUsersFollows(this.props.currUser.id).then(() => {
         let userFollows = userFollowsSelector(
           this.props.userFollows,
           this.props.currUser.id
-          );
-          this.setState({ userFollows });
-        });
-      } else if (Object.keys(prevProps.userFollows).length !== Object.keys(this.props.userFollows).length){
-        this.props.fetchUsersFollows(this.props.currUser.id).then(() => {
-          let userFollows = userFollowsSelector(
-            this.props.userFollows,
-            this.props.currUser.id
-            );
-            this.setState({ userFollows });
-          })
-        }
-      }
+        );
+        this.setState({ userFollows });
+      });
+    } else if (
+      Object.keys(prevProps.userFollows).length !==
+      Object.keys(this.props.userFollows).length
+    ) {
+      this.props.fetchUsersFollows(this.props.currUser.id).then(() => {
+        let userFollows = userFollowsSelector(
+          this.props.userFollows,
+          this.props.currUser.id
+        );
+        this.setState({ userFollows });
+      });
+    }
+  }
 
-  handleOpenModal(type){
+  handleOpenModal(type) {
     return (e) => {
-      this.props.openModal(type)
+      this.props.openModal(type);
       window.setTimeout(
         () => $(".modal-background").addClass("modal-background-color"),
         3
       );
-    }
+    };
   }
 
-  render(){
+  handleFollow(type) {
+    return (e) => {
+      if (type === "follow") {
+        this.props.createUsersFollows(this.props.currUser.id);
+      } else {
+        let followsId = this.findUserFollowsId();
+        this.props.removeUsersFollows(followsId);
+      }
+    };
+  }
+
+  findUserFollowsId() {
+    let followers = Object.values(this.state.userFollows.followers);
+    for (let i = 0; i < followers.length; i++) {
+      let follower = followers[i];
+      if (follower.userId === this.props.sessionUser.id) {
+        return follower.id;
+      }
+    }
+    return null;
+  }
+
+  isFollowing() {
+    let followers = Object.values(this.state.userFollows.followers);
+    if (!followers.length) {
+      return false;
+    }
+
+    for (let i = 0; i < followers.length; i++) {
+      if (followers[i].userId === this.props.sessionUser.id) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  render() {
     let followingCount = 0;
     let followersCount = 0;
     if (this.state.userFollows.followers !== undefined) {
@@ -70,7 +116,8 @@ class UserBioIndex extends React.Component {
     }
 
     let profImg = null;
-    if (this.props.currUser){
+    let userName = null;
+    if (this.props.currUser) {
       profImg = (
         <img
           className="user-prof-img"
@@ -78,10 +125,6 @@ class UserBioIndex extends React.Component {
           alt="blank-profile-pic"
         />
       );
-    }
-
-    let userName = null;
-    if (this.props.currUser){
       userName = (
         <h1 className="user-profile-username">
           {this.props.currUser.username}
@@ -90,12 +133,26 @@ class UserBioIndex extends React.Component {
     }
 
     let userBioRight = (
-     <div className="user-search-content">
-       <FollowBtn />
-     </div>
-    )
+      <div
+        onClick={this.handleFollow("follow")}
+        className="user-search-content"
+      >
+        <FollowBtn />
+      </div>
+    );
+    if (this.isFollowing()) {
+      userBioRight = (
+        <div
+          onClick={this.handleFollow("unfollow")}
+          className="user-search-content"
+        >
+          <UnfollowBtn />
+        </div>
+      );
+    }
+
     let profilePicForm = null;
-    if (this.props.match.path !== "/profile/overview/:userId"){
+    if (this.props.match.path !== "/profile/overview/:userId") {
       profilePicForm = <ProfilePhotoForm />;
       userBioRight = (
         <div
@@ -105,7 +162,7 @@ class UserBioIndex extends React.Component {
           {searchSVG()}
           <span>Find Members</span>
         </div>
-      )
+      );
     }
 
     return (
@@ -118,9 +175,7 @@ class UserBioIndex extends React.Component {
             </div>
           </div>
 
-          <div className="user-profile-info">
-            {userName}
-          </div>
+          <div className="user-profile-info">{userName}</div>
 
           <div className="hidden-user-profile-div"></div>
         </div>
@@ -143,9 +198,7 @@ class UserBioIndex extends React.Component {
               <h1 className="prof-follows">Following</h1>
             </div>
           </div>
-          <div className="user-search">
-            {userBioRight}
-          </div>
+          <div className="user-search">{userBioRight}</div>
         </div>
       </div>
     );
@@ -153,11 +206,11 @@ class UserBioIndex extends React.Component {
 }
 
 const mSTP = (state) => {
-  return ({
+  return {
     userFollows: state.entities.userFollows,
-    sessionUser: state.entities.users[state.session.id]
-  })
-}
+    sessionUser: state.entities.users[state.session.id],
+  };
+};
 
 const mDTP = (dispatch) => {
   return {
@@ -166,6 +219,6 @@ const mDTP = (dispatch) => {
     removeUsersFollows: (userFollowId) =>
       dispatch(removeUsersFollow(userFollowId)),
   };
-}
+};
 
 export default withRouter(connect(mSTP, mDTP)(UserBioIndex));

@@ -9,16 +9,10 @@ class ProfileNavbar extends React.Component {
   render() {
     let overviewPath = "/profile/overview";
     let workoutsPath = "/profile/workouts";
-    debugger;
-    if (this.props.match !== undefined) {
-      if (
-        this.props.match.path !== overviewPath ||
-        this.props.match.path !== workoutsPath
-      ) {
-        let wildcard = "/" + this.props.match.params.userId;
-        overviewPath = overviewPath + wildcard;
-        workoutsPath = workoutsPath + wildcard;
-      }
+    if (this.props.match.params.userId !== undefined) {
+      let wildcard = "/" + this.props.match.params.userId;
+      overviewPath = overviewPath + wildcard;
+      workoutsPath = workoutsPath + wildcard;
     }
 
     return (
