@@ -22,7 +22,8 @@ class UserModalInfo extends React.Component {
   }
 
   handleClick() {
-    if (this.isFollowing(this.props.users[this.props.userId])) {
+    // debugger
+    if (this.state.following) {
       this.setState({ following: false, delete: true });
     } else {
       this.setState({ following: true, delete: false });

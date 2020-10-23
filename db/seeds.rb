@@ -688,10 +688,10 @@ require 'open-uri'
 # ch_img_3 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/challenges/flash-up-the-tempo.png")
 # ch3.challenge_icon.attach(io: ch_img_3, filename: 'flash-up-the-tempo.png')
 
-UserChallenge.destroy_all
-UserChallenge.connection.execute('ALTER SEQUENCE challenges_id_seq RESTART WITH 1')
+# UserChallenge.destroy_all
+# UserChallenge.connection.execute('ALTER SEQUENCE challenges_id_seq RESTART WITH 1')
 
-userch1 = UserChallenge.create!(
-  user_id: 13,
-  challenge_id: 1
-)
+# userch1 = UserChallenge.create!(
+#   user_id: 13,
+#   challenge_id: 1
+# )
