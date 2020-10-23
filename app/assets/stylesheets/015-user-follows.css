@@ -6,6 +6,8 @@
   border-radius: 15px;
   flex-direction: column;
   overflow-y: scroll;
+  min-width: 30vw;
+  min-height: 70vh;
 }
 
 .users-follows-title {
@@ -47,8 +49,8 @@
 
 .button-content-text {
   text-transform: uppercase;
-  font-size: 11px;
-  letter-spacing: 0.06rem;
+  font-size: 10px;
+  letter-spacing: 0.04rem;
   font-weight: 600;
   margin-left: 5px;
 }

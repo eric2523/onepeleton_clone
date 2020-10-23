@@ -34,7 +34,6 @@
   background-image: url("https://res.cloudinary.com/peloton-cycle/image/fetch/c_scale,dpr_1.0,f_auto,q_auto,w_160/https://s3.amazonaws.com/workout-metric-images-prod/dd5a2d3d655c410a92afa6da0e3cb5f6");
   background-repeat: no-repeat;
   background-position-x: calc(100% + 15px);
-  background-position-y: calc(100% + 35px);
 }
 
 .upcoming-classes-header > span {
