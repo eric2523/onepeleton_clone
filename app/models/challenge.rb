@@ -15,4 +15,12 @@ class Challenge < ApplicationRecord
   validates :name, uniqueness: true 
 
   has_one_attached :challenge_icon
+
+  has_many :user_challenges,
+    foreign_key: :challenge_id,
+    class_name: :UserChallenge
+
+  has_many :users,
+    through: :user_challenges,
+    source: :user
 end

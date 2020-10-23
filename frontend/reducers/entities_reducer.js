@@ -7,6 +7,7 @@ import usersWorkoutClassesReducer from './users_workout_class_reducers/users_wor
 import songsReducer from './songs_reducers/songs_reducer';
 import userFollowsReducer from './user_follows_reducers/user_follows_reducer'
 import challengesReducer from './challenges_reducers/challenge_reducer';
+import usersChallengesReducer from './users_challenge_reducers/users_challenges_reducer'
 
 const entitiesReducer = combineReducers({
   users: usersReducer,
@@ -16,7 +17,8 @@ const entitiesReducer = combineReducers({
   categories: categoryReducer,
   challenges: challengesReducer,
   userClasses: usersWorkoutClassesReducer,
-  userFollows: userFollowsReducer
+  userFollows: userFollowsReducer,
+  userChallenges: usersChallengesReducer
 })
 
 export default entitiesReducer;

@@ -26,7 +26,6 @@ class Modal extends React.Component {
   }
 
   render() {
-    debugger;
     if (
       !this.props.modal &&
       this.props.match.path === "/classes/:category/classDetails/:classId"

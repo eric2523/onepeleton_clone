@@ -1,9 +1,7 @@
 import React from "react";
 import { fetchAllChallenges } from "../../actions/challenges/challenges_action";
 import { connect } from "react-redux";
-import ChallengesLabels from "./challenges_labels";
 import ChallengesIndexItem from "./challenges_index_item";
-import ChallengesInputs from "./challenges_inputs";
 import { carrotRightSVG, carrotLeftSVG } from "../svgs/profile_over_svg";
 
 class ChallengesIndex extends React.Component {
@@ -35,13 +33,13 @@ class ChallengesIndex extends React.Component {
   }
 
   throttle(callback, limit) {
-    let wait = false; 
+    let wait = false;
     return function () {
       if (!wait) {
-        callback.call(); 
-        wait = true; 
+        callback.call();
+        wait = true;
         setTimeout(function () {
-          wait = false; 
+          wait = false;
         }, limit);
       }
     };
@@ -63,30 +61,38 @@ class ChallengesIndex extends React.Component {
     }
 
     return (
-      <div className="carousel-div">
-        <div className="gradient-overlay">
-          <section className="controls">
-            <div
-              onClick={this.throttle(this.handleControl("left"), 800)}
-              className="slide-control-left"
-            >
-              {carrotLeftSVG()}
+      <div className="test-div">
+        <div className="test-gradient-left"></div>
+        <div className="carousel-div">
+          <div className="controls">
+            <div className="controls-left">
+              <div
+                onClick={this.throttle(this.handleControl("left"), 800)}
+                className="slide-control-left"
+              >
+                {carrotLeftSVG()}
+              </div>
             </div>
-            <div
-              onClick={this.throttle(this.handleControl("right"), 800)}
-              className="slide-control-right"
-            >
-              {carrotRightSVG()}
+
+            <div className="controls-right">
+              <div
+                onClick={this.throttle(this.handleControl("right"), 800)}
+                className="slide-control-right"
+              >
+                {carrotRightSVG()}
+              </div>
             </div>
-          </section>
+          </div>
+
+          <div className="carousel">
+            <section className="slides">
+              <div className="slide-overflow">
+                <div className="slide-inner">{challengesList}</div>
+              </div>
+            </section>
+          </div>
         </div>
-        <div className="carousel">
-          <section className="slides">
-            <div className="slide-overflow">
-              <div className="slide-inner">{challengesList}</div>
-            </div>
-          </section>
-        </div>
+        <div className="test-gradient-right"></div>
       </div>
     );
   }

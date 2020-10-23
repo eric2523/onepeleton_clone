@@ -8,6 +8,9 @@ Rails.application.routes.draw do
       #* finished: following functinality
       resources :user_follows, only: [:index, :create]
 
+      #! in progress: user challenges
+      
+      resources :user_challenges, only: [:index]
     end
 
     #* finished: post request to follow a class
@@ -33,7 +36,13 @@ Rails.application.routes.draw do
     resources :user_follows, only: [:destroy]
     
     #! in progress: challenges
-    resources :challenges, only: [:index, :show]
+    resources :challenges, only: [:index] 
+
+    resources :challenges, only: [:show] do 
+      resources :user_challenges, only: [:create]
+    end
+
+    resources :user_challenges, only: [:index, :destroy]
    
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

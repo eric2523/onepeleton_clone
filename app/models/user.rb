@@ -79,4 +79,12 @@ class User < ApplicationRecord
     source: :user
 
   has_one_attached :profile_photo
+
+  has_many :user_challenges,
+    foreign_key: :user_id,
+    class_name: :UserChallenge
+
+  has_many :followed_challenges,
+    through: :user_challenges,
+    source: :challenge
 end
