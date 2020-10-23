@@ -24,9 +24,40 @@ Currently it allows users to sign in and sign up for an account and render model
 ![login-page-errors](https://github.com/eric2523/onepeleton_clone/blob/main/app/assets/images/login-page-errors.png?raw=true)
 
 ### Modals
-* Workout class modals renders specific class information and generates song information/images through the Spotify Web API.
+------
+#### Workout Class Modal
+* Renders specific class information and generates song information/images through the Spotify Web API.
+
 ![workout-class-modal](https://github.com/eric2523/onepeleton_clone/blob/main/app/assets/images/class-modal.png?raw=true)
+#### Followers/Following Modal
 * Following/Followers modals renders a user's followers/followings 
+* One challenge was to limit unneccesary POST/DELETE requests. For example if the user decides to unfollow a user but decides to follow again, rather than making two requests, no requests will be sent since the database did not change. To handle this, a marker was used on each item and the requests are handled on unmount. 
+```javascript
+  handleClick() {
+    if (this.state.following) {
+      this.setState({ following: false, delete: true });
+    } else {
+      this.setState({ following: true, delete: false });
+    }
+  }
+  componentWillUnmount() {
+    if (
+      this.state.delete &&
+      this.isFollowing(this.props.users[this.props.userId])
+    ) {
+      this.props.removeUsersFollow(this.props.userFollow.id);
+    } else if (
+      !this.isFollowing(this.props.users[this.props.userId]) &&
+      this.state.following
+    ) {
+      {
+        this.props.followUser(this.props.userId);
+      }
+    }
+  }
+```
+
+![followers-modal](https://github.com/eric2523/onepeleton_clone/blob/main/app/assets/images/followers-modal.png?raw=true)
 
 ### Challenges Page
 * Carousel was built using JavaScript and CSS
