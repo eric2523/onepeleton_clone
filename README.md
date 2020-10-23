@@ -1,4 +1,4 @@
-# UnoPeleton
+# Uno Peleton
 
 This clone implements some core features that are on One Peleton's member's side website. This clone is focused around CRUD operations to allow users to utilize many membership side features.
 
