@@ -49,13 +49,16 @@ class UserModalInfo extends React.Component {
   }
 
   componentWillUnmount() {
-    if (this.state.delete) {
+    if (
+      this.state.delete &&
+      this.isFollowing(this.props.users[this.props.userId])
+    ) {
       this.props.removeUsersFollow(this.props.userFollow.id);
-    } else {
-      if (
-        !this.isFollowing(this.props.users[this.props.userId]) &&
-        this.state.following
-      ) {
+    } else if (
+      !this.isFollowing(this.props.users[this.props.userId]) &&
+      this.state.following
+    ) {
+      {
         this.props.followUser(this.props.userId);
       }
     }
