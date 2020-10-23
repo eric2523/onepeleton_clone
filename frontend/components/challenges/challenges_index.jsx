@@ -34,11 +34,11 @@ class ChallengesIndex extends React.Component {
 
   throttle(callback, limit) {
     let wait = false;
-    return function () {
+    return () => {
       if (!wait) {
         callback.call();
         wait = true;
-        setTimeout(function () {
+        setTimeout(() => {
           wait = false;
         }, limit);
       }
