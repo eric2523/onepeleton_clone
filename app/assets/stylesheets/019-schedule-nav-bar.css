@@ -1,0 +1,70 @@
+.sched-nav-bar-ul {
+  display: flex;
+  justify-content: center;
+}
+
+.sched-nav-item {
+  padding: 10px;
+  margin: 0 5px 0 5px;
+  background-color: #5A6474;
+  border-radius: 50px;
+  min-width: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.schedule-idx-div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.schedule-nav-bar {
+  width: 100vw;
+  display: flex;
+  border-bottom: 1px solid rgba(168, 172, 177, 0.4);
+  padding: 25px 0 25px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.sched-nav-day {
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  color: rgb(255,255,255);
+  margin: 0 5px 0 5px;
+  font-weight: 300;
+}
+
+.sched-nav-date {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: rgb(255,255,255);
+  margin: 0 5px 0 5px;
+  font-weight: 300;
+}
+
+.sched-nav-date-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sched-carrot-left > svg {
+  width: 20px;
+}
+
+.sched-carrot-right > svg {
+  width: 20px;
+}
+
+.sched-carrot-left, .sched-carrot-right {
+  margin: 0 5px 0 5px;
+}
+
+.sched-carrot-right > svg:hover, .sched-carrot-left > svg:hover {
+  fill: rgba(90,100,116, 1);
+  width: 20px;
+}

@@ -83,6 +83,7 @@ Carousel was built using JavaScript and CSS
 ```
 
 ## Coming soon
+* Media queries for better responsiveness 
 * Page dedicated to rendering a User's upcoming/active/completed challenges 
 * Navigation bar at `/schedule/:category` that anchors to specific elements on the same page 
 * Character validations at login/signup 
