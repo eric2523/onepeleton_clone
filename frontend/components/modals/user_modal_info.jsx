@@ -1,7 +1,7 @@
 import React from "react";
 import UnfollowBtn from "./unfollow_btn";
 import FollowBtn from "./follow_btn";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { closeModal } from "../../actions/modal_actions/modal_actions";
 import { connect } from "react-redux";
 import { fetchUser } from "../../actions/user_actions/user_actions";
@@ -22,7 +22,6 @@ class UserModalInfo extends React.Component {
   }
 
   handleClick() {
-    // debugger
     if (this.state.following) {
       this.setState({ following: false, delete: true });
     } else {
@@ -144,4 +143,3 @@ const mDTP = (dispatch) => {
 };
 
 export default connect(mSTP, mDTP)(UserModalInfo);
-// export default UserModalInfo

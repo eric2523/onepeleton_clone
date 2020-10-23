@@ -1,6 +1,5 @@
 class Api::UserChallengesController < ApplicationController
   def index
-    # debugger
     if params[:user_id]
       user = User.find(params[:user_id])
       @user_challenges = user.user_challenges
