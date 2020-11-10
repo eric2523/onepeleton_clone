@@ -42,6 +42,10 @@
   transform: rotate(90deg);
 }
 
+.carrot-right-svg {
+  transform: rotate(-90deg);
+}
+
 .carrot-left-svg,
 .carrot-right-svg {
   width: 40px;
