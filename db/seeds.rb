@@ -320,6 +320,294 @@ require 'open-uri'
 # y_f6 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/yoga/yoga-6.jpg")
 # y_wc6.photo.attach(io: y_f6, filename: 'yoga-6.jpg')
 
+c_wc1 = WorkoutClass.create(
+    name: "45 min EDM Ride",
+    date: Faker::Time.forward(days: 60, period: :all),
+    skill_level: "Intermediate",
+    category_id: 2,
+    instructor_id: rand(6) ,
+    description: Faker::Lorem.paragraphs.join(" ") 
+  )
+
+c_f1 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/cycling/cycling-1.png")
+c_wc1.photo.attach(io: c_f1, filename: "cycling-1.png")
+
+c_wc2 = WorkoutClass.create(
+    name: "15 min Tabata Ride",
+    date: Faker::Time.forward(days: 60, period: :all),
+    skill_level: "Beginner",
+    category_id: 2,
+    instructor_id: rand(6) ,
+    description: Faker::Lorem.paragraphs.join(" ") 
+  )
+
+c_f2 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/cycling/cycling-2.png")
+c_wc2.photo.attach(io: c_f2, filename: "cycling-2.png")
+
+c_wc3 = WorkoutClass.create(
+    name: "20 mins 90s Ride",
+    date: Faker::Time.forward(days: 60, period: :all),
+    skill_level: "Intermediate",
+    category_id: 2,
+    instructor_id: rand(6) ,
+    description: Faker::Lorem.paragraphs.join(" ") 
+  )
+
+c_f3 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/cycling/cycling-3.jpg")
+c_wc3.photo.attach(io: c_f3, filename: "cycling-3.jpg")
+
+c_wc4 = WorkoutClass.create(
+    name: "20 min Groove Ride",
+    date: Faker::Time.forward(days: 60, period: :all),
+    skill_level: "Beginner",
+    category_id: 2,
+    instructor_id: rand(6) ,
+    description: Faker::Lorem.paragraphs.join(" ") 
+  )
+
+c_f4 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/cycling/cycling-4.png")
+c_wc4.photo.attach(io: c_f4, filename: "cycling-4.png")
+
+c_wc5 = WorkoutClass.create(
+    name: "30 min HIIT & Hills Ride",
+    date: Faker::Time.forward(days: 60, period: :all),
+    skill_level: "Advanced",
+    category_id: 2,
+    instructor_id: rand(6) ,
+    description: Faker::Lorem.paragraphs.join(" ") 
+  )
+
+c_f5 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/cycling/cycling-5.jpg")
+c_wc5.photo.attach(io: c_f5, filename: "cycling-5.jpg")
+
+c_wc6 = WorkoutClass.create(
+    name: "20 min Hip Hop Ride",
+    date: Faker::Time.forward(days: 60, period: :all),
+    skill_level: "Intermediate",
+    category_id: 2,
+    instructor_id: rand(6) ,
+    description: Faker::Lorem.paragraphs.join(" ") 
+  )
+
+c_f6 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/cycling/cycling-6.png")
+c_wc6.photo.attach(io: c_f6, filename: "cycling-6.png")
+
+car_wc1 = WorkoutClass.create(
+    name: "10 min HIIT Cardio Warm Up",
+    date: Faker::Time.forward(days: 60, period: :all),
+    skill_level: "Beginner",
+    category_id: 4,
+    instructor_id: rand(6) ,
+    description: Faker::Lorem.paragraphs.join(" ") 
+  )
+
+car_f1 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/cardio/cardio-1.jpg")
+car_wc1.photo.attach(io: car_f1, filename: "cardio-1.jpg")
+
+car_wc2 = WorkoutClass.create(
+    name: "5 min HIIT Cardio Warm Up",
+    date: Faker::Time.forward(days: 60, period: :all),
+    skill_level: "Beginner",
+    category_id: 4,
+    instructor_id: rand(6) ,
+    description: Faker::Lorem.paragraphs.join(" ") 
+  )
+
+car_f2 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/cardio/cardio-1.jpg")
+car_wc2.photo.attach(io: car_f2, filename: "cardio-2.jpg")
+
+car_wc3 = WorkoutClass.create(
+    name: "20 min 90s HIIT Cardio",
+    date: Faker::Time.forward(days: 60, period: :all),
+    skill_level: "Intermediate",
+    category_id: 4,
+    instructor_id: rand(6) ,
+    description: Faker::Lorem.paragraphs.join(" ") 
+  )
+
+car_f3 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/cardio/cardio-1.jpg")
+car_wc3.photo.attach(io: car_f3, filename: "cardio-3.jpg")
+
+car_wc4 = WorkoutClass.create(
+    name: "15 min Caribbean HIIT Cardio",
+    date: Faker::Time.forward(days: 60, period: :all),
+    skill_level: "Intermediate",
+    category_id: 4,
+    instructor_id: rand(6) ,
+    description: Faker::Lorem.paragraphs.join(" ") 
+  )
+
+car_f4 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/cardio/cardio-1.jpg")
+car_wc4.photo.attach(io: car_f4, filename: "cardio-4.jpg")
+
+car_wc5 = WorkoutClass.create(
+    name: "30 min HIIT Cardio",
+    date: Faker::Time.forward(days: 60, period: :all),
+    skill_level: "Advanced",
+    category_id: 4,
+    instructor_id: rand(6) ,
+    description: Faker::Lorem.paragraphs.join(" ") 
+  )
+
+car_f5 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/cardio/cardio-1.jpg")
+car_wc5.photo.attach(io: car_f5, filename: "cardio-5.jpg")
+
+car_wc6 = WorkoutClass.create(
+    name: "20 min Pop HIIT Cardio",
+    date: Faker::Time.forward(days: 60, period: :all),
+    skill_level: "Intermediate",
+    category_id: 4,
+    instructor_id: rand(6) ,
+    description: Faker::Lorem.paragraphs.join(" ") 
+  )
+
+car_f6 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/cardio/cardio-1.jpg")
+car_wc6.photo.attach(io: car_f6, filename: "cardio-6.jpg")
+
+str_wc1 = WorkoutClass.create(
+    name: "10 min Full Body Stretch",
+    date: Faker::Time.forward(days: 60, period: :all),
+    skill_level: "Intermediate",
+    category_id: 6,
+    instructor_id: rand(6) ,
+    description: Faker::Lorem.paragraphs.join(" ") 
+  )
+
+str_f1 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/stretching/stretching-1.jpg")
+str_wc1.photo.attach(io: str_f1, filename: "stretching-1.jpg")
+
+str_wc2 = WorkoutClass.create(
+    name: "10 min Post-Run Stretch",
+    date: Faker::Time.forward(days: 60, period: :all),
+    skill_level: "Intermediate",
+    category_id: 6,
+    instructor_id: rand(6) ,
+    description: Faker::Lorem.paragraphs.join(" ") 
+  )
+
+str_f2 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/stretching/stretching-2.png")
+str_wc2.photo.attach(io: str_f2, filename: "stretching-2.png")
+
+str_wc3 = WorkoutClass.create(
+    name: "5 min Post-Ride Stretch",
+    date: Faker::Time.forward(days: 60, period: :all),
+    skill_level: "Beginner",
+    category_id: 6,
+    instructor_id: rand(6) ,
+    description: Faker::Lorem.paragraphs.join(" ") 
+  )
+
+str_f3 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/stretching/stretching-3.jpg")
+str_wc3.photo.attach(io: str_f3, filename: "stretching-3.jpg")
+
+str_wc4 = WorkoutClass.create(
+    name: "10 min Full Body Stretch",
+    date: Faker::Time.forward(days: 60, period: :all),
+    skill_level: "Intermediate",
+    category_id: 6,
+    instructor_id: rand(6) ,
+    description: Faker::Lorem.paragraphs.join(" ") 
+  )
+
+str_f4 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/stretching/stretching-4.jpg")
+str_wc4.photo.attach(io: str_f4, filename: "stretching-4.jpg")
+
+str_wc5 = WorkoutClass.create(
+    name: "5 min Post-Ride Stretch",
+    date: Faker::Time.forward(days: 60, period: :all),
+    skill_level: "Advanced",
+    category_id: 6,
+    instructor_id: rand(6) ,
+    description: Faker::Lorem.paragraphs.join(" ") 
+  )
+
+str_f5 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/stretching/stretching-5.jpg")
+str_wc5.photo.attach(io: str_f5, filename: "stretching-5.jpg")
+
+str_wc6 = WorkoutClass.create(
+    name: "5 min Lower Body Stretch",
+    date: Faker::Time.forward(days: 60, period: :all),
+    skill_level: "Intermediate",
+    category_id: 6,
+    instructor_id: rand(6) ,
+    description: Faker::Lorem.paragraphs.join(" ") 
+  )
+
+str_f6 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/stretching/stretching-6.jpg")
+str_wc6.photo.attach(io: str_f6, filename: "stretching-6.jpg")
+
+med_wc1 = WorkoutClass.create(
+    name: "5 min Sleep Meditation",
+    date: Faker::Time.forward(days: 60, period: :all),
+    skill_level: "Beginner",
+    category_id: 3,
+    instructor_id: rand(6) ,
+    description: Faker::Lorem.paragraphs.join(" ") 
+  )
+
+med_f1 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/meditation/meditation-1.jpg")
+med_wc1.photo.attach(io: med_f1, filename: "meditation-1.jpg")
+
+med_wc2 = WorkoutClass.create(
+    name: "10 min Calming Meditation",
+    date: Faker::Time.forward(days: 60, period: :all),
+    skill_level: "Beginner",
+    category_id: 3,
+    instructor_id: rand(6) ,
+    description: Faker::Lorem.paragraphs.join(" ") 
+  )
+
+med_f2 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/meditation/meditation-2.png")
+med_wc2.photo.attach(io: med_f2, filename: "meditation-2.png")
+
+med_wc3 = WorkoutClass.create(
+    name: "5 min Rest Day Meditation",
+    date: Faker::Time.forward(days: 60, period: :all),
+    skill_level: "Beginner",
+    category_id: 3,
+    instructor_id: rand(6) ,
+    description: Faker::Lorem.paragraphs.join(" ") 
+  )
+
+med_f3 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/meditation/meditation-3.jpg")
+med_wc3.photo.attach(io: med_f3, filename: "meditation-3.jpg")
+
+med_wc4 = WorkoutClass.create(
+    name: "10 min Happiness Meditation",
+    date: Faker::Time.forward(days: 60, period: :all),
+    skill_level: "Beginner",
+    category_id: 3,
+    instructor_id: rand(6) ,
+    description: Faker::Lorem.paragraphs.join(" ") 
+  )
+
+med_f4 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/meditation/meditation-4.jpg")
+med_wc4.photo.attach(io: med_f4, filename: "meditation-4.jpg")
+
+med_wc5 = WorkoutClass.create(
+    name: "10 min Kindness Meditation",
+    date: Faker::Time.forward(days: 60, period: :all),
+    skill_level: "Beginner",
+    category_id: 3,
+    instructor_id: rand(6) ,
+    description: Faker::Lorem.paragraphs.join(" ") 
+  )
+
+med_f5 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/meditation/meditation-5.jpg")
+med_wc5.photo.attach(io: med_f5, filename: "meditation-5.jpg")
+
+med_wc6 = WorkoutClass.create(
+    name: "10 min Breathing Meditation",
+    date: Faker::Time.forward(days: 60, period: :all),
+    skill_level: "Beginner",
+    category_id: 3,
+    instructor_id: rand(6) ,
+    description: Faker::Lorem.paragraphs.join(" ") 
+  )
+
+med_f6 = open("https://active-storage-unopeleton-seeds.s3-us-west-1.amazonaws.com/meditation/meditation-6.jpg")
+med_wc6.photo.attach(io: med_f6, filename: "meditation-6.jpg")
+
 # Song.destroy_all
 # Song.connection.execute('ALTER SEQUENCE songs_id_seq RESTART WITH 1')
 
@@ -451,206 +739,206 @@ require 'open-uri'
 # WorkoutClassSong.destroy_all
 # WorkoutClassSong.connection.execute('ALTER SEQUENCE workout_class_songs_id_seq RESTART WITH 1')
 
-# WorkoutClassSong.create(
-#   song_id: s1.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s2.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s3.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s4.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s5.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s6.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s7.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s8.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s9.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s10.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s11.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s12.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s13.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s14.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s15.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s16.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s17.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s18.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s19.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s20.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s1.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s2.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s3.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s4.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s5.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s6.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s7.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s8.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s9.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s10.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s11.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s12.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s13.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s14.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s15.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s16.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s17.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s18.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s19.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s20.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s21.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s22.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s23.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s24.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s25.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s26.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s27.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s28.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s29.id,
-#   workout_class_id: (1 + rand(12))
-# )
-# WorkoutClassSong.create(
-#   song_id: s30.id,
-#   workout_class_id: (1 + rand(12))
-# )
+WorkoutClassSong.create(
+  song_id: s1.id,
+  workout_class_id: c_wc1.id
+)
+WorkoutClassSong.create(
+  song_id: s2.id,
+  workout_class_id: c_wc1.id
+)
+WorkoutClassSong.create(
+  song_id: s3.id,
+  workout_class_id: c_wc1.id
+)
+WorkoutClassSong.create(
+  song_id: s4.id,
+  workout_class_id: c_wc2.id
+)
+WorkoutClassSong.create(
+  song_id: s5.id,
+  workout_class_id: c_wc2.id
+)
+WorkoutClassSong.create(
+  song_id: s6.id,
+  workout_class_id: c_wc2.id
+)
+WorkoutClassSong.create(
+  song_id: s7.id,
+  workout_class_id: c_wc3.id
+)
+WorkoutClassSong.create(
+  song_id: s8.id,
+  workout_class_id: c_wc3.id
+)
+WorkoutClassSong.create(
+  song_id: s9.id,
+  workout_class_id: c_wc3.id
+)
+WorkoutClassSong.create(
+  song_id: s10.id,
+  workout_class_id: c_wc3.id
+)
+WorkoutClassSong.create(
+  song_id: s11.id,
+  workout_class_id: c_wc4.id
+)
+WorkoutClassSong.create(
+  song_id: s12.id,
+  workout_class_id: c_wc4.id
+)
+WorkoutClassSong.create(
+  song_id: s13.id,
+  workout_class_id: c_wc4.id
+)
+WorkoutClassSong.create(
+  song_id: s14.id,
+  workout_class_id: c_wc5.id
+)
+WorkoutClassSong.create(
+  song_id: s15.id,
+  workout_class_id: c_wc5.id
+)
+WorkoutClassSong.create(
+  song_id: s16.id,
+  workout_class_id: c_wc5.id
+)
+WorkoutClassSong.create(
+  song_id: s17.id,
+  workout_class_id: c_wc5.id
+)
+WorkoutClassSong.create(
+  song_id: s18.id,
+  workout_class_id: c_wc5.id
+)
+WorkoutClassSong.create(
+  song_id: s19.id,
+  workout_class_id: c_wc6.id
+)
+WorkoutClassSong.create(
+  song_id: s20.id,
+  workout_class_id: c_wc6.id
+)
+WorkoutClassSong.create(
+  song_id: s1.id,
+  workout_class_id: c_wc6.id
+)
+WorkoutClassSong.create(
+  song_id: s2.id,
+  workout_class_id: c_wc6.id
+)
+WorkoutClassSong.create(
+  song_id: s3.id,
+  workout_class_id: car_wc1.id
+)
+WorkoutClassSong.create(
+  song_id: s4.id,
+  workout_class_id: car_wc1.id
+)
+WorkoutClassSong.create(
+  song_id: s5.id,
+  workout_class_id: car_wc1.id
+)
+WorkoutClassSong.create(
+  song_id: s6.id,
+  workout_class_id: car_wc2.id
+)
+WorkoutClassSong.create(
+  song_id: s7.id,
+  workout_class_id: car_wc2.id
+)
+WorkoutClassSong.create(
+  song_id: s8.id,
+  workout_class_id: car_wc2.id
+)
+WorkoutClassSong.create(
+  song_id: s9.id,
+  workout_class_id: car_wc2.id
+)
+WorkoutClassSong.create(
+  song_id: s10.id,
+  workout_class_id: car_wc2.id
+)
+WorkoutClassSong.create(
+  song_id: s11.id,
+  workout_class_id: car_wc3.id
+)
+WorkoutClassSong.create(
+  song_id: s12.id,
+  workout_class_id: car_wc3.id
+)
+WorkoutClassSong.create(
+  song_id: s13.id,
+  workout_class_id: car_wc3.id
+)
+WorkoutClassSong.create(
+  song_id: s14.id,
+  workout_class_id: car_wc4.id
+)
+WorkoutClassSong.create(
+  song_id: s15.id,
+  workout_class_id: car_wc4.id
+)
+WorkoutClassSong.create(
+  song_id: s16.id,
+  workout_class_id: car_wc4.id
+)
+WorkoutClassSong.create(
+  song_id: s17.id,
+  workout_class_id: car_wc4.id
+)
+WorkoutClassSong.create(
+  song_id: s18.id,
+  workout_class_id: car_wc5.id
+)
+WorkoutClassSong.create(
+  song_id: s19.id,
+  workout_class_id: car_wc5.id
+)
+WorkoutClassSong.create(
+  song_id: s20.id,
+  workout_class_id: car_wc6.id
+)
+WorkoutClassSong.create(
+  song_id: s21.id,
+  workout_class_id: car_wc6.id
+)
+WorkoutClassSong.create(
+  song_id: s22.id,
+  workout_class_id: car_wc6.id
+)
+WorkoutClassSong.create(
+  song_id: s23.id,
+  workout_class_id: car_wc6.id
+)
+WorkoutClassSong.create(
+  song_id: s24.id,
+  workout_class_id: str_wc1.id
+)
+WorkoutClassSong.create(
+  song_id: s25.id,
+  workout_class_id: str_wc1.id
+)
+WorkoutClassSong.create(
+  song_id: s26.id,
+  workout_class_id: str_wc1.id
+)
+WorkoutClassSong.create(
+  song_id: s27.id,
+  workout_class_id: str_wc2.id
+)
+WorkoutClassSong.create(
+  song_id: s28.id,
+  workout_class_id: str_wc2.id
+)
+WorkoutClassSong.create(
+  song_id: s29.id,
+  workout_class_id: str_wc3.id
+)
+WorkoutClassSong.create(
+  song_id: s30.id,
+  workout_class_id: str_wc3.id
+)
 
 # UserFollow.destroy_all
 # UserFollow.connection.execute('ALTER SEQUENCE user_follows_id_seq RESTART WITH 1')
