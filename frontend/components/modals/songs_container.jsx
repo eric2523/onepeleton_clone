@@ -73,7 +73,7 @@ class ModalClassSongs extends React.Component {
 
     let spotSongsLength = Object.keys(this.props.spotifySongs).length;
     let classSongsLength = this.props.classSongs.length;
-    if (spotSongsLength === classSongsLength) {
+    if (spotSongsLength === classSongsLength && classSongsLength !== 0) {
       // let spotSongs = Object.values(this.props.spotifySongs);
 
       artistNames = this.generateListOfArtists(
