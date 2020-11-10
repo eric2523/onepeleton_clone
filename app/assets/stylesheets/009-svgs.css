@@ -60,7 +60,7 @@
   width: 12px;
 }
 
-.carrot-right-svg {
+.carrot-svg .carrot-right-svg {
   transform: rotate(270deg);
   width: 14px;
   fill: rgb(90,100,116);
