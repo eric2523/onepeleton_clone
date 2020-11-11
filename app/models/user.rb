@@ -11,13 +11,15 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
+
 class User < ApplicationRecord
   attr_reader :password
 
-  validates :username, :email, :password_digest, :session_token, presence: true
-  validates :username, :email, :password_digest, :session_token, uniqueness: true 
+  validates :username, :password_digest, :session_token, presence: true
+  validates :username, :password_digest, :session_token, uniqueness: true 
   validates :is_instructor, inclusion: {in: [true, false]}
   validates :password, length: {minimum: 6}, allow_nil: true 
+  validates :email, presence: true, 'valid_email_2/email': true
 
   before_validation :ensure_session_token
 

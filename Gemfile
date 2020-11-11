@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
-
+gem "valid_email2"
 gem 'figaro'
 # gem 'open-uri'
 gem "aws-sdk-s3"
