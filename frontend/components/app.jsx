@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactGA from 'react-ga'
 import LoginFormContainer from './login_form/login_form_container'
 import SignUpFormContainer from './signup_form/signup_form_container'
 import {AuthRoute, ProtectedRoute} from '../util/route_util'
@@ -12,6 +13,11 @@ import Modal from './modals/modal'
 import OverviewContainer from './profile/overview_container'
 import ProfWorkoutsContainer from './profile/prof_workouts_index'
 import ChallengesContainer from './challenges/challenges_index'
+
+function initializeReactGA() {
+  ReactGA.initialize('G-Y1J5PS6SFH');
+  ReactGA.pageview('/homepage');
+}
 
 const App = () => {
   return (
