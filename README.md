@@ -1,3 +1,7 @@
+[![website-link](https://img.shields.io/badge/Hosted%20On-Heroku-blueviolet)](https://unopeleton.herokuapp.com/#/)
+[![rails-link](https://img.shields.io/badge/Ruby%20on%20Rails-v5.2.4.4-red)](https://rubyonrails.org/)
+[![react-link](https://img.shields.io/badge/React-%5E16.13.1-informational)](https://reactjs.org/)
+[![react-redux-shield](https://img.shields.io/badge/React--Redux-%5E7.2.1-informational)](https://reactjs.org/)
 # Uno Peleton
 
 This clone implements some core features that are on One Peleton's member's side website. This clone is focused around CRUD operations to allow users to utilize many membership side features.
