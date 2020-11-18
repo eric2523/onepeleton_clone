@@ -68,3 +68,7 @@
   fill: rgba(90,100,116, 1);
   width: 20px;
 }
+
+.schedule-nav-bar img {
+  opacity: 0.3;
+}
