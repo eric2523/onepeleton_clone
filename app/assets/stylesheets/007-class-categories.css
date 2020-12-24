@@ -9,8 +9,9 @@
   font-weight: 600;
   position: absolute;
   color: rgb(34, 37, 41);
-  top: -24px;
-  left: 45px;
+  /* top: -24px; */
+  bottom: -25px;
+  left: 5px;
 }
 
 .class-category-item {

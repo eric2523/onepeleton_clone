@@ -25,7 +25,7 @@ class CategoryIndex extends React.Component {
         <UpcomingClassesContainer />
         <div className="category-list-cc-div">
           <ul className="class-category-list">
-            <h2 className="class-category-header">Browse Classes</h2>
+            {/* <h2 className="class-category-header">Browse Classes</h2> */}
             {categoryItems}
           </ul>
         </div>

@@ -40,6 +40,7 @@ class UpcomingClassesRow extends React.Component {
             <span>&amp;</span>Upcoming
           </h1>
           {upcomingClasses}
+          <h2 className="class-category-header">Browse Classes</h2>
         </ol>
       </div>
     );
